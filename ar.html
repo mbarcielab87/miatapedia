@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miatapedia - موارد مازدا MX-5 العالمية | أكبر مجتمع Miata</title>
+    <meta name="description" content="اكتشف أكبر مجموعة من موارد مازدا MX-5 Miata: الأدلة التقنية، الأندية العالمية، المتاجر المتخصصة، المنتديات النشطة والرعاة الرسميين.">
+    <meta name="keywords" content="مازدا MX-5، Miata، أدلة تقنية، أندية Miata، متاجر MX-5، منتديات مازدا، موارد Miata، مجتمع MX-5">
+    <meta name="author" content="Miatapedia">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Miatapedia - موارد مازدا MX-5 العالمية">
+    <meta property="og:description" content="أكبر مجموعة من موارد مازدا MX-5 Miata: الأدلة، الأندية، المتاجر والمزيد">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://miatapedia.com">
+    <meta property="og:image" content="https://miatapedia.com/images/og-image.jpg">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Miatapedia - موارد مازدا MX-5 العالمية">
+    <meta name="twitter:description" content="أكبر مجموعة من موارد مازدا MX-5 Miata">
+    <meta name="twitter:image" content="https://miatapedia.com/images/twitter-card.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://miatapedia.com">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'miata-red': '#C41E3A',
+                        'miata-blue': '#1E40AF',
+                        'miata-gray': '#374151'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Miatapedia",
+        "description": "موارد مازدا MX-5 العالمية",
+        "url": "https://miatapedia.com",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://miatapedia.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-car text-miata-red text-3xl"></i>
+                    <h1 class="text-2xl font-bold text-miata-gray">Miatapedia</h1>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#manuales" class="text-miata-gray hover:text-miata-red transition-colors">الأدلة</a>
+                    <a href="#clubs" class="text-miata-gray hover:text-miata-red transition-colors">الأندية</a>
+                    <a href="#tiendas" class="text-miata-gray hover:text-miata-red transition-colors">المتاجر</a>
+                    <a href="#foros" class="text-miata-gray hover:text-miata-red transition-colors">المنتديات</a>
+                    <a href="#enlaces" class="text-miata-gray hover:text-miata-red transition-colors">الروابط</a>
+                </div>
+                <button class="md:hidden text-miata-gray" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div class="md:hidden hidden mt-4" id="mobile-menu">
+                <div class="flex flex-col space-y-2">
+                    <a href="#manuales" class="text-miata-gray hover:text-miata-red transition-colors py-2">الأدلة</a>
+                    <a href="#clubs" class="text-miata-gray hover:text-miata-red transition-colors py-2">الأندية</a>
+                    <a href="#tiendas" class="text-miata-gray hover:text-miata-red transition-colors py-2">المتاجر</a>
+                    <a href="#foros" class="text-miata-gray hover:text-miata-red transition-colors py-2">المنتديات</a>
+                    <a href="#enlaces" class="text-miata-gray hover:text-miata-red transition-colors py-2">الروابط</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-miata-red to-red-600 text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl font-bold mb-6">Miatapedia</h1>
+            <h2 class="text-2xl mb-8 font-light">موارد مازدا MX-5 العالمية</h2>
+            <p class="text-xl mb-12 max-w-3xl mx-auto">
+                أكبر مجموعة موارد لعشاق مازدا MX-5 Miata.
+                ابحث عن الأدلة التقنية، الأندية العالمية، المتاجر المتخصصة والمزيد.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#manuales" class="bg-white text-miata-red px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                    <i class="fas fa-book ml-2"></i>استكشف الأدلة
+                </a>
+                <a href="#clubs" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-miata-red transition-colors">
+                    <i class="fas fa-users ml-2"></i>انضم للمجتمع
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Stats -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="text-3xl font-bold text-miata-red mb-2">500+</div>
+                    <div class="text-miata-gray">دليل تقني</div>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="text-3xl font-bold text-miata-red mb-2">200+</div>
+                    <div class="text-miata-gray">نادي عالمي</div>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="text-3xl font-bold text-miata-red mb-2">150+</div>
+                    <div class="text-miata-gray">متجر موثوق</div>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="text-3xl font-bold text-miata-red mb-2">50+</div>
+                    <div class="text-miata-gray">منتدى نشط</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manuales Section -->
+    <section id="manuales" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-miata-gray mb-4">
+                    <i class="fas fa-book text-miata-red ml-3"></i>الأدلة التقنية
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    احصل على أكمل مكتبة من الأدلة التقنية، مخططات الأسلاك،
+                    المواصفات وأدلة الإصلاح لجميع أجيال MX-5.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-wrench text-4xl text-miata-red mb-3"></i>
+                        <h3 class="text-xl font-semibold">أدلة الصيانة</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><i class="fas fa-check-circle text-green-500 ml-2"></i>NA (1989-1997)</li>
+                        <li><i class="fas fa-check-circle text-green-500 ml-2"></i>NB (1998-2005)</li>
+                        <li><i class="fas fa-check-circle text-green-500 ml-2"></i>NC (2006-2015)</li>
+                        <li><i class="fas fa-check-circle text-green-500 ml-2"></i>ND (2016-الحالي)</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-bolt text-4xl text-miata-red mb-3"></i>
+                        <h3 class="text-xl font-semibold">المخططات الكهربائية</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><i class="fas fa-check-circle text-green-500 ml-2"></i>أنظمة الإضاءة</li>
+                        <li><i class="fas fa-check-circle text-green-500 ml-2"></i>نظام الحقن</li>
+                        <li><i class="fas fa-check-circle text-green-500 ml-2"></i>تكييف الهواء</li>
+                        <li><i class="fas fa-check-circle text-green-500 ml-2"></i>النظام الصوتي</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-cogs text-4xl text-miata-red mb-3"></i>
+                        <h3 class="text-xl font-semibold">المواصفات</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><i class="fas fa-check-circle text-green-500 ml-2"></i>مواصفات عزم الدوران</li>
+                        <li><i class="fas fa-check-circle text-green-500 ml-2"></i>سعات السوائل</li>
+                        <li><i class="fas fa-check-circle text-green-500 ml-2"></i>تفاوتات المحرك</li>
+                        <li><i class="fas fa-check-circle text-green-500 ml-2"></i>أبعاد الهيكل</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clubs Section -->
+    <section id="clubs" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-miata-gray mb-4">
+                    <i class="fas fa-users text-miata-red ml-3"></i>الأندية والمجتمعات
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    اتصل مع عشاق MX-5 حول العالم.
+                    ابحث عن الأندية المحلية، الأحداث، اللقاءات وشارك شغفك بـ Miata.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="text-center">
+                    <div class="bg-red-100 p-4 rounded-full w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+                        <i class="fas fa-flag text-2xl text-miata-red"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">إسبانيا</h3>
+                    <p class="text-gray-600 text-sm">25+ نادي نشط</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-red-100 p-4 rounded-full w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+                        <i class="fas fa-flag-usa text-2xl text-miata-red"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">الولايات المتحدة</h3>
+                    <p class="text-gray-600 text-sm">80+ نادي إقليمي</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-red-100 p-4 rounded-full w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+                        <i class="fas fa-torii-gate text-2xl text-miata-red"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">اليابان</h3>
+                    <p class="text-gray-600 text-sm">40+ نادي رسمي</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-red-100 p-4 rounded-full w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+                        <i class="fas fa-globe text-2xl text-miata-red"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">دولي</h3>
+                    <p class="text-gray-600 text-sm">50+ دولة</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tiendas Section -->
+    <section id="tiendas" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-miata-gray mb-4">
+                    <i class="fas fa-store text-miata-red ml-3"></i>المتاجر المتخصصة
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    دليل شامل للمتاجر المتخصصة في MX-5.
+                    قطع غيار أصلية، تعديلات، إكسسوارات وكل ما تحتاجه لسيارة Miata الخاصة بك.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-tools text-2xl text-miata-red ml-3"></i>
+                        <h3 class="text-xl font-semibold">قطع OEM</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">قطع غيار مازدا الأصلية ومعادلات عالية الجودة</p>
+                    <div class="text-sm text-gray-500">
+                        <i class="fas fa-map-marker-alt ml-2"></i>موزعون عالميون
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-tachometer-alt text-2xl text-miata-red ml-3"></i>
+                        <h3 class="text-xl font-semibold">الأداء</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">تعديلات وترقيات لتحسين الأداء</p>
+                    <div class="text-sm text-gray-500">
+                        <i class="fas fa-map-marker-alt ml-2"></i>متخصصون معتمدون
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-palette text-2xl text-miata-red ml-3"></i>
+                        <h3 class="text-xl font-semibold">الهيكل والجمال</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">طقم أيروديناميكي، عجلات، طلاء وتخصيص</p>
+                    <div class="text-sm text-gray-500">
+                        <i class="fas fa-map-marker-alt ml-2"></i>ورش متخصصة
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Foros Section -->
+    <section id="foros" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-miata-gray mb-4">
+                    <i class="fas fa-comments text-miata-red ml-3"></i>منتديات MX-5
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    روابط مباشرة لأفضل منتديات MX-5 في العالم.
+                    اتصل مع المجتمع واعثر على إجابات لجميع أسئلتك.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-external-link-alt text-miata-red text-xl ml-3"></i>
+                        <h3 class="text-lg font-semibold">Miata.net</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">أكبر منتدى MX-5 مع أكثر من 200,000 عضو نشط</p>
+                    <a href="#" class="inline-block bg-miata-red text-white px-4 py-2 rounded hover:bg-red-700 transition-colors text-sm">
+                        زيارة المنتدى
+                    </a>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-external-link-alt text-miata-red text-xl ml-3"></i>
+                        <h3 class="text-lg font-semibold">Clubroadster.net</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">أنشط مجتمع إسباني لـ MX-5 والسيارات الرياضية المكشوفة</p>
+                    <a href="#" class="inline-block bg-miata-red text-white px-4 py-2 rounded hover:bg-red-700 transition-colors text-sm">
+                        زيارة المنتدى
+                    </a>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-external-link-alt text-miata-red text-xl ml-3"></i>
+                        <h3 class="text-lg font-semibold">MX5 Owners Club</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">النادي الدولي الرسمي مع منتديات تقنية متخصصة</p>
+                    <a href="#" class="inline-block bg-miata-red text-white px-4 py-2 rounded hover:bg-red-700 transition-colors text-sm">
+                        زيارة المنتدى
+                    </a>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <i class="fab fa-reddit text-miata-red text-xl ml-3"></i>
+                        <h3 class="text-lg font-semibold">r/Miata</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">منتدى فرعي بأكثر من 400 ألف عضو ومحتوى يومي</p>
+                    <a href="#" class="inline-block bg-miata-red text-white px-4 py-2 rounded hover:bg-red-700 transition-colors text-sm">
+                        زيارة Reddit
+                    </a>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <i class="fab fa-discord text-miata-red text-xl ml-3"></i>
+                        <h3 class="text-lg font-semibold">MX-5 Discord</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">دردشة فورية مع العشاق من جميع أنحاء العالم</p>
+                    <a href="#" class="inline-block bg-miata-red text-white px-4 py-2 rounded hover:bg-red-700 transition-colors text-sm">
+                        انضمام Discord
+                    </a>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <i class="fab fa-facebook text-miata-red text-xl ml-3"></i>
+                        <h3 class="text-lg font-semibold">مجموعات Facebook</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">أكثر من 100 مجموعة متخصصة حسب المنطقة والموديل</p>
+                    <a href="#" class="inline-block bg-miata-red text-white px-4 py-2 rounded hover:bg-red-700 transition-colors text-sm">
+                        عرض المجموعات
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Enlaces Section -->
+    <section id="enlaces" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-miata-gray mb-4">
+                    <i class="fas fa-link text-miata-red ml-3"></i>روابط مفيدة
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    موارد إضافية، أدوات ومواقع ويب أساسية
+                    لأي مالك أو عاشق لـ MX-5.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4 flex items-center">
+                        <i class="fas fa-calculator text-miata-red ml-3"></i>
+                        الأدوات
+                    </h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-miata-blue hover:underline">حاسبة التعديلات</a></li>
+                        <li><a href="#" class="text-miata-blue hover:underline">محول رموز المحرك</a></li>
+                        <li><a href="#" class="text-miata-blue hover:underline">دليل التعريف</a></li>
+                        <li><a href="#" class="text-miata-blue hover:underline">حاسبة الأداء</a></li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4 flex items-center">
+                        <i class="fas fa-database text-miata-red ml-3"></i>
+                        قواعد البيانات
+                    </h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-miata-blue hover:underline">سجل الإنتاج</a></li>
+                        <li><a href="#" class="text-miata-blue hover:underline">الأرقام التسلسلية</a></li>
+                        <li><a href="#" class="text-miata-blue hover:underline">الألوان الرسمية</a></li>
+                        <li><a href="#" class="text-miata-blue hover:underline">خيارات المصنع</a></li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4 flex items-center">
+                        <i class="fas fa-graduation-cap text-miata-red ml-3"></i>
+                        التعليم
+                    </h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-miata-blue hover:underline">دروس تطبيقية</a></li>
+                        <li><a href="#" class="text-miata-blue hover:underline">فيديوهات تقنية</a></li>
+                        <li><a href="#" class="text-miata-blue hover:underline">دورات الميكانيكا</a></li>
+                        <li><a href="#" class="text-miata-blue hover:underline">ندوات متخصصة</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-16 bg-miata-gray text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">ابق مطلعاً</h2>
+            <p class="text-xl mb-8 opacity-90">
+                احصل على آخر الأخبار، الموارد الجديدة وتحديثات مجتمع MX-5
+            </p>
+            <div class="max-w-md mx-auto">
+                <div class="flex gap-2">
+                    <input
+                        type="email"
+                        placeholder="بريدك الإلكتروني..."
+                        class="flex-1 px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-miata-red"
+                    >
+                    <button class="bg-miata-red px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors">
+                        اشترك
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-car text-miata-red text-2xl"></i>
+                        <span class="text-xl font-bold">Miatapedia</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        أكبر مجموعة موارد لعشاق مازدا MX-5 في جميع أنحاء العالم.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube text-xl"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">الموارد</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#manuales" class="hover:text-white">الأدلة التقنية</a></li>
+                        <li><a href="#clubs" class="hover:text-white">الأندية والمجتمعات</a></li>
+                        <li><a href="#tiendas" class="hover:text-white">المتاجر المتخصصة</a></li>
+                        <li><a href="#foros" class="hover:text-white">منتديات MX-5</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">المجتمع</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">الأحداث</a></li>
+                        <li><a href="#" class="hover:text-white">الأخبار</a></li>
+                        <li><a href="#" class="hover:text-white">المدونة</a></li>
+                        <li><a href="#" class="hover:text-white">المعرض</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">الدعم</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">اتصل بنا</a></li>
+                        <li><a href="#" class="hover:text-white">الأسئلة الشائعة</a></li>
+                        <li><a href="#" class="hover:text-white">الشروط</a></li>
+                        <li><a href="#" class="hover:text-white">الخصوصية</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Miatapedia. جميع الحقوق محفوظة. | مازدا MX-5 علامة تجارية مسجلة لشركة مازدا موتور كوربوريشن.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.add('bg-opacity-95');
+            } else {
+                header.classList.remove('bg-opacity-95');
+            }
+        });
+    </script>
+</body>
+</html>

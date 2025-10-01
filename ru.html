@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miatapedia - Глобальные ресурсы Mazda MX-5 | Крупнейшее сообщество Miata</title>
+    <meta name="description" content="Откройте для себя крупнейшую коллекцию ресурсов для Mazda MX-5 Miata: технические руководства, мировые клубы, специализированные магазины, активные форумы и официальные спонсоры.">
+    <meta name="keywords" content="Mazda MX-5, Miata, технические руководства, клубы Miata, магазины MX-5, форумы Mazda, ресурсы Miata, сообщество MX-5">
+    <meta name="author" content="Miatapedia">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Miatapedia - Глобальные ресурсы Mazda MX-5">
+    <meta property="og:description" content="Крупнейшая коллекция ресурсов для Mazda MX-5 Miata: руководства, клубы, магазины и многое другое">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://miatapedia.com">
+    <meta property="og:image" content="https://miatapedia.com/images/og-image.jpg">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Miatapedia - Глобальные ресурсы Mazda MX-5">
+    <meta name="twitter:description" content="Крупнейшая коллекция ресурсов для Mazda MX-5 Miata">
+    <meta name="twitter:image" content="https://miatapedia.com/images/twitter-card.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://miatapedia.com">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'miata-red': '#C41E3A',
+                        'miata-blue': '#1E40AF',
+                        'miata-gray': '#374151'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Miatapedia",
+        "description": "Глобальные ресурсы Mazda MX-5",
+        "url": "https://miatapedia.com",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://miatapedia.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-car text-miata-red text-3xl"></i>
+                    <h1 class="text-2xl font-bold text-miata-gray">Miatapedia</h1>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#manuales" class="text-miata-gray hover:text-miata-red transition-colors">Руководства</a>
+                    <a href="#clubs" class="text-miata-gray hover:text-miata-red transition-colors">Клубы</a>
+                    <a href="#tiendas" class="text-miata-gray hover:text-miata-red transition-colors">Магазины</a>
+                    <a href="#foros" class="text-miata-gray hover:text-miata-red transition-colors">Форумы</a>
+                    <a href="#enlaces" class="text-miata-gray hover:text-miata-red transition-colors">Ссылки</a>
+                </div>
+                <button class="md:hidden text-miata-gray" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div class="md:hidden hidden mt-4" id="mobile-menu">
+                <div class="flex flex-col space-y-2">
+                    <a href="#manuales" class="text-miata-gray hover:text-miata-red transition-colors py-2">Руководства</a>
+                    <a href="#clubs" class="text-miata-gray hover:text-miata-red transition-colors py-2">Клубы</a>
+                    <a href="#tiendas" class="text-miata-gray hover:text-miata-red transition-colors py-2">Магазины</a>
+                    <a href="#foros" class="text-miata-gray hover:text-miata-red transition-colors py-2">Форумы</a>
+                    <a href="#enlaces" class="text-miata-gray hover:text-miata-red transition-colors py-2">Ссылки</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-miata-red to-red-600 text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl font-bold mb-6">Miatapedia</h1>
+            <h2 class="text-2xl mb-8 font-light">Глобальные ресурсы Mazda MX-5</h2>
+            <p class="text-xl mb-12 max-w-3xl mx-auto">
+                Крупнейшая коллекция ресурсов для энтузиастов Mazda MX-5 Miata.
+                Найдите технические руководства, мировые клубы, специализированные магазины и многое другое.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#manuales" class="bg-white text-miata-red px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                    <i class="fas fa-book mr-2"></i>Изучить руководства
+                </a>
+                <a href="#clubs" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-miata-red transition-colors">
+                    <i class="fas fa-users mr-2"></i>Присоединиться к сообществу
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Stats -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="text-3xl font-bold text-miata-red mb-2">500+</div>
+                    <div class="text-miata-gray">Технических руководств</div>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="text-3xl font-bold text-miata-red mb-2">200+</div>
+                    <div class="text-miata-gray">Мировых клубов</div>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="text-3xl font-bold text-miata-red mb-2">150+</div>
+                    <div class="text-miata-gray">Проверенных магазинов</div>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="text-3xl font-bold text-miata-red mb-2">50+</div>
+                    <div class="text-miata-gray">Активных форумов</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manuales Section -->
+    <section id="manuales" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-miata-gray mb-4">
+                    <i class="fas fa-book text-miata-red mr-3"></i>Технические руководства
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Получите доступ к самой полной библиотеке технических руководств, схем проводки,
+                    спецификаций и руководств по ремонту для всех поколений MX-5.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-wrench text-4xl text-miata-red mb-3"></i>
+                        <h3 class="text-xl font-semibold">Руководства по обслуживанию</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>NA (1989-1997)</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>NB (1998-2005)</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>NC (2006-2015)</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>ND (2016-настоящее время)</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-bolt text-4xl text-miata-red mb-3"></i>
+                        <h3 class="text-xl font-semibold">Электрические схемы</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Системы освещения</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Система впрыска</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Кондиционирование воздуха</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Аудиосистема</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-cogs text-4xl text-miata-red mb-3"></i>
+                        <h3 class="text-xl font-semibold">Спецификации</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Моменты затяжки</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Объемы жидкостей</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Допуски двигателя</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Размеры кузова</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clubs Section -->
+    <section id="clubs" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-miata-gray mb-4">
+                    <i class="fas fa-users text-miata-red mr-3"></i>Клубы и сообщества
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Свяжитесь с энтузиастами MX-5 по всему миру.
+                    Найдите местные клубы, мероприятия, встречи и поделитесь своей страстью к Miata.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="text-center">
+                    <div class="bg-red-100 p-4 rounded-full w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+                        <i class="fas fa-flag text-2xl text-miata-red"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Испания</h3>
+                    <p class="text-gray-600 text-sm">25+ активных клубов</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-red-100 p-4 rounded-full w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+                        <i class="fas fa-flag-usa text-2xl text-miata-red"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">США</h3>
+                    <p class="text-gray-600 text-sm">80+ региональных клубов</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-red-100 p-4 rounded-full w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+                        <i class="fas fa-torii-gate text-2xl text-miata-red"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Япония</h3>
+                    <p class="text-gray-600 text-sm">40+ официальных клубов</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-red-100 p-4 rounded-full w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+                        <i class="fas fa-globe text-2xl text-miata-red"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Международные</h3>
+                    <p class="text-gray-600 text-sm">50+ стран</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tiendas Section -->
+    <section id="tiendas" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-miata-gray mb-4">
+                    <i class="fas fa-store text-miata-red mr-3"></i>Специализированные магазины
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Полный каталог специализированных магазинов MX-5.
+                    Оригинальные запчасти, модификации, аксессуары и все необходимое для вашей Miata.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-tools text-2xl text-miata-red mr-3"></i>
+                        <h3 class="text-xl font-semibold">OEM запчасти</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Оригинальные запчасти Mazda и высококачественные аналоги</p>
+                    <div class="text-sm text-gray-500">
+                        <i class="fas fa-map-marker-alt mr-2"></i>Мировые дистрибьюторы
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-tachometer-alt text-2xl text-miata-red mr-3"></i>
+                        <h3 class="text-xl font-semibold">Производительность</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Модификации и апгрейды для улучшения производительности</p>
+                    <div class="text-sm text-gray-500">
+                        <i class="fas fa-map-marker-alt mr-2"></i>Сертифицированные специалисты
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-palette text-2xl text-miata-red mr-3"></i>
+                        <h3 class="text-xl font-semibold">Кузов и эстетика</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Аэродинамические комплекты, диски, покраска и кастомизация</p>
+                    <div class="text-sm text-gray-500">
+                        <i class="fas fa-map-marker-alt mr-2"></i>Специализированные мастерские
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Foros Section -->
+    <section id="foros" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-miata-gray mb-4">
+                    <i class="fas fa-comments text-miata-red mr-3"></i>Форумы MX-5
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Прямые ссылки на лучшие форумы MX-5 в мире.
+                    Подключитесь к сообществу и найдите ответы на все ваши вопросы.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-external-link-alt text-miata-red text-xl mr-3"></i>
+                        <h3 class="text-lg font-semibold">Miata.net</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">Крупнейший форум MX-5 с более чем 200,000 активных участников</p>
+                    <a href="#" class="inline-block bg-miata-red text-white px-4 py-2 rounded hover:bg-red-700 transition-colors text-sm">
+                        Посетить форум
+                    </a>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-external-link-alt text-miata-red text-xl mr-3"></i>
+                        <h3 class="text-lg font-semibold">Clubroadster.net</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">Наиболее активное испанское сообщество для MX-5 и родстеров</p>
+                    <a href="#" class="inline-block bg-miata-red text-white px-4 py-2 rounded hover:bg-red-700 transition-colors text-sm">
+                        Посетить форум
+                    </a>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-external-link-alt text-miata-red text-xl mr-3"></i>
+                        <h3 class="text-lg font-semibold">MX5 Owners Club</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">Официальный международный клуб со специализированными техническими форумами</p>
+                    <a href="#" class="inline-block bg-miata-red text-white px-4 py-2 rounded hover:bg-red-700 transition-colors text-sm">
+                        Посетить форум
+                    </a>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <i class="fab fa-reddit text-miata-red text-xl mr-3"></i>
+                        <h3 class="text-lg font-semibold">r/Miata</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">Сабреддит с более чем 400k участниками и ежедневным контентом</p>
+                    <a href="#" class="inline-block bg-miata-red text-white px-4 py-2 rounded hover:bg-red-700 transition-colors text-sm">
+                        Посетить Reddit
+                    </a>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <i class="fab fa-discord text-miata-red text-xl mr-3"></i>
+                        <h3 class="text-lg font-semibold">MX-5 Discord</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">Чат в реальном времени с энтузиастами со всего мира</p>
+                    <a href="#" class="inline-block bg-miata-red text-white px-4 py-2 rounded hover:bg-red-700 transition-colors text-sm">
+                        Присоединиться к Discord
+                    </a>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <i class="fab fa-facebook text-miata-red text-xl mr-3"></i>
+                        <h3 class="text-lg font-semibold">Группы Facebook</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">Более 100 специализированных групп по регионам и моделям</p>
+                    <a href="#" class="inline-block bg-miata-red text-white px-4 py-2 rounded hover:bg-red-700 transition-colors text-sm">
+                        Просмотреть группы
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Enlaces Section -->
+    <section id="enlaces" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-miata-gray mb-4">
+                    <i class="fas fa-link text-miata-red mr-3"></i>Полезные ссылки
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Дополнительные ресурсы, инструменты и важные веб-сайты
+                    для любого владельца или энтузиаста MX-5.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4 flex items-center">
+                        <i class="fas fa-calculator text-miata-red mr-3"></i>
+                        Инструменты
+                    </h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-miata-blue hover:underline">Калькулятор модификаций</a></li>
+                        <li><a href="#" class="text-miata-blue hover:underline">Конвертер кодов двигателей</a></li>
+                        <li><a href="#" class="text-miata-blue hover:underline">Руководство по идентификации</a></li>
+                        <li><a href="#" class="text-miata-blue hover:underline">Калькулятор производительности</a></li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4 flex items-center">
+                        <i class="fas fa-database text-miata-red mr-3"></i>
+                        Базы данных
+                    </h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-miata-blue hover:underline">Реестр производства</a></li>
+                        <li><a href="#" class="text-miata-blue hover:underline">Серийные номера</a></li>
+                        <li><a href="#" class="text-miata-blue hover:underline">Официальные цвета</a></li>
+                        <li><a href="#" class="text-miata-blue hover:underline">Заводские опции</a></li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4 flex items-center">
+                        <i class="fas fa-graduation-cap text-miata-red mr-3"></i>
+                        Образование
+                    </h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-miata-blue hover:underline">Пошаговые туториалы</a></li>
+                        <li><a href="#" class="text-miata-blue hover:underline">Технические видео</a></li>
+                        <li><a href="#" class="text-miata-blue hover:underline">Курсы механики</a></li>
+                        <li><a href="#" class="text-miata-blue hover:underline">Специализированные вебинары</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-16 bg-miata-gray text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">Будьте в курсе</h2>
+            <p class="text-xl mb-8 opacity-90">
+                Получайте последние новости, новые ресурсы и обновления сообщества MX-5
+            </p>
+            <div class="max-w-md mx-auto">
+                <div class="flex gap-2">
+                    <input
+                        type="email"
+                        placeholder="Ваш email..."
+                        class="flex-1 px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-miata-red"
+                    >
+                    <button class="bg-miata-red px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors">
+                        Подписаться
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-car text-miata-red text-2xl"></i>
+                        <span class="text-xl font-bold">Miatapedia</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Крупнейшая коллекция ресурсов для энтузиастов Mazda MX-5 по всему миру.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube text-xl"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Ресурсы</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#manuales" class="hover:text-white">Технические руководства</a></li>
+                        <li><a href="#clubs" class="hover:text-white">Клубы и сообщества</a></li>
+                        <li><a href="#tiendas" class="hover:text-white">Специализированные магазины</a></li>
+                        <li><a href="#foros" class="hover:text-white">Форумы MX-5</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Сообщество</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Мероприятия</a></li>
+                        <li><a href="#" class="hover:text-white">Новости</a></li>
+                        <li><a href="#" class="hover:text-white">Блог</a></li>
+                        <li><a href="#" class="hover:text-white">Галерея</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Поддержка</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Контакты</a></li>
+                        <li><a href="#" class="hover:text-white">FAQ</a></li>
+                        <li><a href="#" class="hover:text-white">Условия</a></li>
+                        <li><a href="#" class="hover:text-white">Конфиденциальность</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Miatapedia. Все права защищены. | Mazda MX-5 является зарегистрированной торговой маркой Mazda Motor Corporation.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.add('bg-opacity-95');
+            } else {
+                header.classList.remove('bg-opacity-95');
+            }
+        });
+    </script>
+</body>
+</html>

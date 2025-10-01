@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miatapedia - मज़्दा MX-5 वैश्विक संसाधन | सबसे बड़ा Miata समुदाय</title>
+    <meta name="description" content="मज़्दा MX-5 Miata संसाधनों का सबसे बड़ा संग्रह खोजें: तकनीकी मैनुअल, विश्वव्यापी क्लब, विशेष दुकानें, सक्रिय फोरम और आधिकारिक प्रायोजक।">
+    <meta name="keywords" content="मज़्दा MX-5, Miata, तकनीकी मैनुअल, Miata क्लब, MX-5 दुकानें, मज़्दा फोरम, Miata संसाधन, MX-5 समुदाय">
+    <meta name="author" content="Miatapedia">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Miatapedia - मज़्दा MX-5 वैश्विक संसाधन">
+    <meta property="og:description" content="मज़्दा MX-5 Miata संसाधनों का सबसे बड़ा संग्रह: मैनुअल, क्लब, दुकानें और अधिक">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://miatapedia.com">
+    <meta property="og:image" content="https://miatapedia.com/images/og-image.jpg">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Miatapedia - मज़्दा MX-5 वैश्विक संसाधन">
+    <meta name="twitter:description" content="मज़्दा MX-5 Miata संसाधनों का सबसे बड़ा संग्रह">
+    <meta name="twitter:image" content="https://miatapedia.com/images/twitter-card.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://miatapedia.com">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'miata-red': '#C41E3A',
+                        'miata-blue': '#1E40AF',
+                        'miata-gray': '#374151'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Miatapedia",
+        "description": "मज़्दा MX-5 वैश्विक संसाधन",
+        "url": "https://miatapedia.com",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://miatapedia.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-car text-miata-red text-3xl"></i>
+                    <h1 class="text-2xl font-bold text-miata-gray">Miatapedia</h1>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#manuales" class="text-miata-gray hover:text-miata-red transition-colors">मैनुअल</a>
+                    <a href="#clubs" class="text-miata-gray hover:text-miata-red transition-colors">क्लब</a>
+                    <a href="#tiendas" class="text-miata-gray hover:text-miata-red transition-colors">दुकानें</a>
+                    <a href="#foros" class="text-miata-gray hover:text-miata-red transition-colors">फोरम</a>
+                    <a href="#enlaces" class="text-miata-gray hover:text-miata-red transition-colors">लिंक</a>
+                </div>
+                <button class="md:hidden text-miata-gray" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div class="md:hidden hidden mt-4" id="mobile-menu">
+                <div class="flex flex-col space-y-2">
+                    <a href="#manuales" class="text-miata-gray hover:text-miata-red transition-colors py-2">मैनुअल</a>
+                    <a href="#clubs" class="text-miata-gray hover:text-miata-red transition-colors py-2">क्लब</a>
+                    <a href="#tiendas" class="text-miata-gray hover:text-miata-red transition-colors py-2">दुकानें</a>
+                    <a href="#foros" class="text-miata-gray hover:text-miata-red transition-colors py-2">फोरम</a>
+                    <a href="#enlaces" class="text-miata-gray hover:text-miata-red transition-colors py-2">लिंक</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-miata-red to-red-600 text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl font-bold mb-6">Miatapedia</h1>
+            <h2 class="text-2xl mb-8 font-light">मज़्दा MX-5 वैश्विक संसाधन</h2>
+            <p class="text-xl mb-12 max-w-3xl mx-auto">
+                मज़्दा MX-5 Miata उत्साही लोगों के लिए संसाधनों का सबसे बड़ा संग्रह।
+                तकनीकी मैनुअल, विश्वव्यापी क्लब, विशेष दुकानें और बहुत कुछ खोजें।
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#manuales" class="bg-white text-miata-red px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                    <i class="fas fa-book mr-2"></i>मैनुअल देखें
+                </a>
+                <a href="#clubs" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-miata-red transition-colors">
+                    <i class="fas fa-users mr-2"></i>समुदाय में शामिल हों
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Stats -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="text-3xl font-bold text-miata-red mb-2">500+</div>
+                    <div class="text-miata-gray">तकनीकी मैनुअल</div>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="text-3xl font-bold text-miata-red mb-2">200+</div>
+                    <div class="text-miata-gray">विश्वव्यापी क्लब</div>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="text-3xl font-bold text-miata-red mb-2">150+</div>
+                    <div class="text-miata-gray">सत्यापित दुकानें</div>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="text-3xl font-bold text-miata-red mb-2">50+</div>
+                    <div class="text-miata-gray">सक्रिय फोरम</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manuales Section -->
+    <section id="manuales" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-miata-gray mb-4">
+                    <i class="fas fa-book text-miata-red mr-3"></i>तकनीकी मैनुअल
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    तकनीकी मैनुअल, वायरिंग आरेख,
+                    विशिष्टताओं और सभी MX-5 पीढ़ियों के लिए मरम्मत गाइड के सबसे पूर्ण पुस्तकालय तक पहुंचें।
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-wrench text-4xl text-miata-red mb-3"></i>
+                        <h3 class="text-xl font-semibold">सर्विस मैनुअल</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>NA (1989-1997)</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>NB (1998-2005)</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>NC (2006-2015)</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>ND (2016-वर्तमान)</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-bolt text-4xl text-miata-red mb-3"></i>
+                        <h3 class="text-xl font-semibold">वायरिंग आरेख</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>प्रकाश व्यवस्था</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>इंजेक्शन सिस्टम</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>एयर कंडीशनिंग</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>ऑडियो सिस्टम</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-cogs text-4xl text-miata-red mb-3"></i>
+                        <h3 class="text-xl font-semibold">विशिष्टताएं</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>टॉर्क विशिष्टताएं</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>तरल क्षमता</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>इंजन सहनशीलता</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>बॉडी आयाम</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clubs Section -->
+    <section id="clubs" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-miata-gray mb-4">
+                    <i class="fas fa-users text-miata-red mr-3"></i>क्लब और समुदाय
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    दुनिया भर के MX-5 उत्साही लोगों से जुड़ें।
+                    स्थानीय क्लब, इवेंट्स, मीटअप खोजें और Miata के लिए अपना जुनून साझा करें।
+                </p>
+            </div>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="text-center">
+                    <div class="bg-red-100 p-4 rounded-full w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+                        <i class="fas fa-flag text-2xl text-miata-red"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">स्पेन</h3>
+                    <p class="text-gray-600 text-sm">25+ सक्रिय क्लब</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-red-100 p-4 rounded-full w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+                        <i class="fas fa-flag-usa text-2xl text-miata-red"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">संयुक्त राज्य अमेरिका</h3>
+                    <p class="text-gray-600 text-sm">80+ क्षेत्रीय क्लब</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-red-100 p-4 rounded-full w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+                        <i class="fas fa-torii-gate text-2xl text-miata-red"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">जापान</h3>
+                    <p class="text-gray-600 text-sm">40+ आधिकारिक क्लब</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-red-100 p-4 rounded-full w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+                        <i class="fas fa-globe text-2xl text-miata-red"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">अंतर्राष्ट्रीय</h3>
+                    <p class="text-gray-600 text-sm">50+ देश</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tiendas Section -->
+    <section id="tiendas" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-miata-gray mb-4">
+                    <i class="fas fa-store text-miata-red mr-3"></i>विशेष दुकानें
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    MX-5 विशेष दुकानों की पूर्ण निर्देशिका।
+                    मूल पुर्जे, संशोधन, सहायक उपकरण और आपके Miata के लिए आवश्यक सब कुछ।
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-tools text-2xl text-miata-red mr-3"></i>
+                        <h3 class="text-xl font-semibold">OEM पुर्जे</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">मूल मज़्दा पुर्जे और उच्च गुणवत्ता समकक्ष</p>
+                    <div class="text-sm text-gray-500">
+                        <i class="fas fa-map-marker-alt mr-2"></i>विश्वव्यापी वितरक
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-tachometer-alt text-2xl text-miata-red mr-3"></i>
+                        <h3 class="text-xl font-semibold">प्रदर्शन</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">प्रदर्शन सुधार के लिए संशोधन और अपग्रेड</p>
+                    <div class="text-sm text-gray-500">
+                        <i class="fas fa-map-marker-alt mr-2"></i>प्रमाणित विशेषज्ञ
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-palette text-2xl text-miata-red mr-3"></i>
+                        <h3 class="text-xl font-semibold">बॉडी और सौंदर्य</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">एरोडायनामिक किट, व्हील्स, पेंट और कस्टमाइज़ेशन</p>
+                    <div class="text-sm text-gray-500">
+                        <i class="fas fa-map-marker-alt mr-2"></i>विशेष कार्यशालाएं
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Foros Section -->
+    <section id="foros" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-miata-gray mb-4">
+                    <i class="fas fa-comments text-miata-red mr-3"></i>MX-5 फोरम
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    दुनिया के सबसे अच्छे MX-5 फोरम के लिए सीधे लिंक।
+                    समुदाय से जुड़ें और अपने सभी प्रश्नों के उत्तर खोजें।
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-external-link-alt text-miata-red text-xl mr-3"></i>
+                        <h3 class="text-lg font-semibold">Miata.net</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">200,000+ सक्रिय सदस्यों के साथ सबसे बड़ा MX-5 फोरम</p>
+                    <a href="#" class="inline-block bg-miata-red text-white px-4 py-2 rounded hover:bg-red-700 transition-colors text-sm">
+                        फोरम देखें
+                    </a>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-external-link-alt text-miata-red text-xl mr-3"></i>
+                        <h3 class="text-lg font-semibold">Clubroadster.net</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">MX-5 और रोडस्टर के लिए सबसे सक्रिय स्पेनिश समुदाय</p>
+                    <a href="#" class="inline-block bg-miata-red text-white px-4 py-2 rounded hover:bg-red-700 transition-colors text-sm">
+                        फोरम देखें
+                    </a>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-external-link-alt text-miata-red text-xl mr-3"></i>
+                        <h3 class="text-lg font-semibold">MX5 Owners Club</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">विशेष तकनीकी फोरम के साथ आधिकारिक अंतर्राष्ट्रीय क्लब</p>
+                    <a href="#" class="inline-block bg-miata-red text-white px-4 py-2 rounded hover:bg-red-700 transition-colors text-sm">
+                        फोरम देखें
+                    </a>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <i class="fab fa-reddit text-miata-red text-xl mr-3"></i>
+                        <h3 class="text-lg font-semibold">r/Miata</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">400k+ सदस्यों और दैनिक सामग्री के साथ सबरेडिट</p>
+                    <a href="#" class="inline-block bg-miata-red text-white px-4 py-2 rounded hover:bg-red-700 transition-colors text-sm">
+                        Reddit देखें
+                    </a>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <i class="fab fa-discord text-miata-red text-xl mr-3"></i>
+                        <h3 class="text-lg font-semibold">MX-5 Discord</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">दुनिया भर के उत्साही लोगों के साथ रियल-टाइम चैट</p>
+                    <a href="#" class="inline-block bg-miata-red text-white px-4 py-2 rounded hover:bg-red-700 transition-colors text-sm">
+                        Discord जॉइन करें
+                    </a>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <i class="fab fa-facebook text-miata-red text-xl mr-3"></i>
+                        <h3 class="text-lg font-semibold">Facebook समूह</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">क्षेत्र और मॉडल द्वारा 100+ विशेष समूह</p>
+                    <a href="#" class="inline-block bg-miata-red text-white px-4 py-2 rounded hover:bg-red-700 transition-colors text-sm">
+                        समूह देखें
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Enlaces Section -->
+    <section id="enlaces" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-miata-gray mb-4">
+                    <i class="fas fa-link text-miata-red mr-3"></i>उपयोगी लिंक
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    अतिरिक्त संसाधन, उपकरण और आवश्यक वेबसाइटें
+                    किसी भी MX-5 मालिक या उत्साही के लिए।
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4 flex items-center">
+                        <i class="fas fa-calculator text-miata-red mr-3"></i>
+                        उपकरण
+                    </h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-miata-blue hover:underline">संशोधन कैलकुलेटर</a></li>
+                        <li><a href="#" class="text-miata-blue hover:underline">इंजन कोड कन्वर्टर</a></li>
+                        <li><a href="#" class="text-miata-blue hover:underline">पहचान गाइड</a></li>
+                        <li><a href="#" class="text-miata-blue hover:underline">प्रदर्शन कैलकुलेटर</a></li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4 flex items-center">
+                        <i class="fas fa-database text-miata-red mr-3"></i>
+                        डेटाबेस
+                    </h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-miata-blue hover:underline">उत्पादन रजिस्ट्री</a></li>
+                        <li><a href="#" class="text-miata-blue hover:underline">सीरियल नंबर</a></li>
+                        <li><a href="#" class="text-miata-blue hover:underline">आधिकारिक रंग</a></li>
+                        <li><a href="#" class="text-miata-blue hover:underline">फैक्ट्री विकल्प</a></li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4 flex items-center">
+                        <i class="fas fa-graduation-cap text-miata-red mr-3"></i>
+                        शिक्षा
+                    </h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-miata-blue hover:underline">चरणबद्ध ट्यूटोरियल</a></li>
+                        <li><a href="#" class="text-miata-blue hover:underline">तकनीकी वीडियो</a></li>
+                        <li><a href="#" class="text-miata-blue hover:underline">मैकेनिक्स कोर्स</a></li>
+                        <li><a href="#" class="text-miata-blue hover:underline">विशेष वेबिनार</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-16 bg-miata-gray text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">अपडेट रहें</h2>
+            <p class="text-xl mb-8 opacity-90">
+                नवीनतम समाचार, नए संसाधन और MX-5 समुदाय अपडेट प्राप्त करें
+            </p>
+            <div class="max-w-md mx-auto">
+                <div class="flex gap-2">
+                    <input
+                        type="email"
+                        placeholder="आपका ईमेल..."
+                        class="flex-1 px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-miata-red"
+                    >
+                    <button class="bg-miata-red px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors">
+                        सदस्यता लें
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-car text-miata-red text-2xl"></i>
+                        <span class="text-xl font-bold">Miatapedia</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        विश्वव्यापी मज़्दा MX-5 उत्साही लोगों के लिए संसाधनों का सबसे बड़ा संग्रह।
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube text-xl"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">संसाधन</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#manuales" class="hover:text-white">तकनीकी मैनुअल</a></li>
+                        <li><a href="#clubs" class="hover:text-white">क्लब और समुदाय</a></li>
+                        <li><a href="#tiendas" class="hover:text-white">विशेष दुकानें</a></li>
+                        <li><a href="#foros" class="hover:text-white">MX-5 फोरम</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">समुदाय</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">इवेंट्स</a></li>
+                        <li><a href="#" class="hover:text-white">समाचार</a></li>
+                        <li><a href="#" class="hover:text-white">ब्लॉग</a></li>
+                        <li><a href="#" class="hover:text-white">गैलरी</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">सहायता</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">संपर्क</a></li>
+                        <li><a href="#" class="hover:text-white">FAQ</a></li>
+                        <li><a href="#" class="hover:text-white">शर्तें</a></li>
+                        <li><a href="#" class="hover:text-white">गोपनीयता</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Miatapedia. सभी अधिकार सुरक्षित। | मज़्दा MX-5 मज़्दा मोटर कॉर्पोरेशन का एक पंजीकृत ट्रेडमार्क है।</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.add('bg-opacity-95');
+            } else {
+                header.classList.remove('bg-opacity-95');
+            }
+        });
+    </script>
+</body>
+</html>
