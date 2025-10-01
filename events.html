@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MX-5 Events - Miatapedia | Global Mazda MX-5 Events Calendar</title>
+    <meta name="description" content="Complete calendar of MX-5 events, rallies and club gatherings worldwide. Find events in UK, USA, Australia and more.">
+    <meta name="keywords" content="MX-5 events, Miata rallies, club meetups, MX-5 calendar, Mazda events">
+
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'miata-red': '#C41E3A',
+                        'miata-gray': '#374151'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2 sm:space-x-4">
+                    <i class="fas fa-car text-miata-red text-2xl sm:text-3xl"></i>
+                    <h1 class="text-lg sm:text-2xl font-bold text-miata-gray">Miatapedia</h1>
+                </div>
+                <div class="hidden md:flex space-x-6 items-center">
+                    <a href="en.html" class="text-miata-gray hover:text-miata-red transition-colors">Home</a>
+                    <a href="en.html#manuals" class="text-miata-gray hover:text-miata-red transition-colors">Manuals</a>
+                    <a href="en.html#clubs" class="text-miata-gray hover:text-miata-red transition-colors">Clubs</a>
+                    <a href="en.html#shops" class="text-miata-gray hover:text-miata-red transition-colors">Shops</a>
+                    <a href="en.html#forums" class="text-miata-gray hover:text-miata-red transition-colors">Forums</a>
+                    <a href="events.html" class="text-miata-red font-semibold">Events</a>
+
+                    <!-- Language Selector -->
+                    <div class="relative" id="language-selector">
+                        <button class="flex items-center space-x-1 text-miata-gray hover:text-miata-red transition-colors" id="language-btn">
+                            <i class="fas fa-globe text-sm"></i>
+                            <span class="text-sm">EN</span>
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                        <div class="absolute right-0 top-full mt-2 bg-white rounded-lg shadow-lg border py-2 min-w-[120px] hidden" id="language-dropdown">
+                            <a href="eventos.html" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                <span class="mr-2">🇪🇸</span>Español
+                            </a>
+                            <a href="events.html" class="flex items-center px-4 py-2 text-sm text-miata-red font-medium">
+                                <span class="mr-2">🇺🇸</span>English
+                            </a>
+                            <a href="events-zh.html" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                <span class="mr-2">🇨🇳</span>中文
+                            </a>
+                            <a href="events-pt.html" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                <span class="mr-2">🇵🇹</span>Português
+                            </a>
+                            <a href="events-de.html" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                <span class="mr-2">🇩🇪</span>Deutsch
+                            </a>
+                            <a href="events-fr.html" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                <span class="mr-2">🇫🇷</span>Français
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <button class="md:hidden text-miata-gray" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div class="md:hidden hidden mt-4" id="mobile-menu">
+                <div class="flex flex-col space-y-2">
+                    <a href="en.html" class="text-miata-gray hover:text-miata-red transition-colors py-2">Home</a>
+                    <a href="en.html#manuals" class="text-miata-gray hover:text-miata-red transition-colors py-2">Manuals</a>
+                    <a href="en.html#clubs" class="text-miata-gray hover:text-miata-red transition-colors py-2">Clubs</a>
+                    <a href="en.html#shops" class="text-miata-gray hover:text-miata-red transition-colors py-2">Shops</a>
+                    <a href="en.html#forums" class="text-miata-gray hover:text-miata-red transition-colors py-2">Forums</a>
+                    <a href="events.html" class="text-miata-red font-semibold py-2">Events</a>
+
+                    <!-- Mobile Language Selector -->
+                    <div class="border-t border-gray-200 pt-2 mt-2">
+                        <div class="text-xs text-gray-500 mb-2 px-2">Language</div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <a href="eventos.html" class="flex items-center px-2 py-1 text-sm text-gray-600">
+                                <span class="mr-2">🇪🇸</span>Español
+                            </a>
+                            <a href="events.html" class="flex items-center px-2 py-1 text-sm text-miata-red font-medium">
+                                <span class="mr-2">🇺🇸</span>English
+                            </a>
+                            <a href="events-zh.html" class="flex items-center px-2 py-1 text-sm text-gray-600">
+                                <span class="mr-2">🇨🇳</span>中文
+                            </a>
+                            <a href="events-pt.html" class="flex items-center px-2 py-1 text-sm text-gray-600">
+                                <span class="mr-2">🇵🇹</span>Português
+                            </a>
+                            <a href="events-de.html" class="flex items-center px-2 py-1 text-sm text-gray-600">
+                                <span class="mr-2">🇩🇪</span>Deutsch
+                            </a>
+                            <a href="events-fr.html" class="flex items-center px-2 py-1 text-sm text-gray-600">
+                                <span class="mr-2">🇫🇷</span>Français
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Back to Home Link -->
+    <div class="bg-white border-b">
+        <div class="container mx-auto px-4 sm:px-6 py-3">
+            <a href="en.html" class="inline-flex items-center text-miata-gray hover:text-miata-red transition-colors">
+                <i class="fas fa-arrow-left mr-2"></i>
+                <span>Back to Home</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-miata-red to-red-700 text-white py-12 sm:py-16">
+        <div class="container mx-auto px-4 sm:px-6 text-center">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+                <i class="fas fa-calendar-alt mr-3"></i>MX-5 Events
+            </h1>
+            <p class="text-lg sm:text-xl md:text-2xl text-red-100 max-w-3xl mx-auto">
+                Calendar of events, rallies and MX-5 club gatherings around the world
+            </p>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="py-12 sm:py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6">
+            <!-- United Kingdom & Europe -->
+            <div class="mb-10 sm:mb-12">
+                <h2 class="text-xl sm:text-2xl font-bold text-miata-gray mb-6 flex items-center">
+                    <span class="mr-3">🇬🇧</span>United Kingdom & Europe
+                    <span class="ml-3 text-sm font-normal text-gray-500">(2 events)</span>
+                </h2>
+                <div class="grid sm:grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                    <!-- MX-5 Owners Club UK -->
+                    <div class="bg-white p-4 sm:p-5 rounded-lg shadow-lg border-l-4 border-blue-500">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="font-semibold text-miata-gray">MX-5 Owners Club (UK)</h3>
+                            <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">🇬🇧 United Kingdom</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-3">Regional events and gatherings from the official UK club</p>
+                        <a href="https://mx5oc.co.uk/areas-events/" target="_blank" class="bg-miata-red text-white px-3 py-2 rounded text-xs hover:bg-red-700 transition-colors inline-block">
+                            View Events <i class="fas fa-external-link-alt ml-1"></i>
+                        </a>
+                    </div>
+
+                    <!-- MX-5 National Rally UK -->
+                    <div class="bg-white p-4 sm:p-5 rounded-lg shadow-lg border-l-4 border-green-500">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="font-semibold text-miata-gray">MX-5 National Rally (UK)</h3>
+                            <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">🌍 International</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-3">Annual UK national rally with international participation</p>
+                        <a href="https://www.nationalrally.co.uk/" target="_blank" class="bg-miata-red text-white px-3 py-2 rounded text-xs hover:bg-red-700 transition-colors inline-block">
+                            View Events <i class="fas fa-external-link-alt ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- United States -->
+            <div class="mb-10 sm:mb-12">
+                <h2 class="text-xl sm:text-2xl font-bold text-miata-gray mb-6 flex items-center">
+                    <span class="mr-3">🇺🇸</span>United States
+                    <span class="ml-3 text-sm font-normal text-gray-500">(3 events)</span>
+                </h2>
+                <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                    <!-- MX-5 Cup IMSA -->
+                    <div class="bg-white p-4 sm:p-5 rounded-lg shadow-lg border-l-4 border-red-500">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="font-semibold text-miata-gray">MX-5 Cup (IMSA)</h3>
+                            <span class="text-xs bg-red-100 text-red-800 px-2 py-1 rounded-full">🏁 Professional</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-3">Professional IMSA MX-5 Cup championship</p>
+                        <a href="https://www.mx-5cup.com/schedule" target="_blank" class="bg-miata-red text-white px-3 py-2 rounded text-xs hover:bg-red-700 transition-colors inline-block">
+                            View Calendar <i class="fas fa-external-link-alt ml-1"></i>
+                        </a>
+                    </div>
+
+                    <!-- Puget Sound Miata Club -->
+                    <div class="bg-white p-4 sm:p-5 rounded-lg shadow-lg border-l-4 border-purple-500">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="font-semibold text-miata-gray">Puget Sound Miata Club</h3>
+                            <span class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded-full">🇺🇸 Washington</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-3">Events and gatherings from the Washington club</p>
+                        <a href="https://pugetsoundmiataclub.org/PSMCeventCalendar/" target="_blank" class="bg-miata-red text-white px-3 py-2 rounded text-xs hover:bg-red-700 transition-colors inline-block">
+                            View Calendar <i class="fas fa-external-link-alt ml-1"></i>
+                        </a>
+                    </div>
+
+                    <!-- MiataCon Lime Rock -->
+                    <div class="bg-white p-4 sm:p-5 rounded-lg shadow-lg border-l-4 border-orange-500">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="font-semibold text-miata-gray">MiataCon (Lime Rock)</h3>
+                            <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded-full">🌍 International</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-3">Annual Miata convention at Lime Rock Park</p>
+                        <a href="https://limerock.com/events/miatacon/" target="_blank" class="bg-miata-red text-white px-3 py-2 rounded text-xs hover:bg-red-700 transition-colors inline-block">
+                            View Event <i class="fas fa-external-link-alt ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Australia -->
+            <div class="mb-10 sm:mb-12">
+                <h2 class="text-xl sm:text-2xl font-bold text-miata-gray mb-6 flex items-center">
+                    <span class="mr-3">🇦🇺</span>Australia
+                    <span class="ml-3 text-sm font-normal text-gray-500">(2 events)</span>
+                </h2>
+                <div class="grid sm:grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                    <!-- MX-5 Club of Victoria & Tasmania -->
+                    <div class="bg-white p-4 sm:p-5 rounded-lg shadow-lg border-l-4 border-teal-500">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="font-semibold text-miata-gray">MX-5 Club of Victoria & Tasmania</h3>
+                            <span class="text-xs bg-teal-100 text-teal-800 px-2 py-1 rounded-full">🇦🇺 VIC/TAS</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-3">Social events and gatherings in Victoria and Tasmania</p>
+                        <a href="https://mx5vic.org.au/home/social-events/" target="_blank" class="bg-miata-red text-white px-3 py-2 rounded text-xs hover:bg-red-700 transition-colors inline-block">
+                            View Events <i class="fas fa-external-link-alt ml-1"></i>
+                        </a>
+                    </div>
+
+                    <!-- NSW MX-5 Club -->
+                    <div class="bg-white p-4 sm:p-5 rounded-lg shadow-lg border-l-4 border-indigo-500">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="font-semibold text-miata-gray">NSW MX-5 Club</h3>
+                            <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">🇦🇺 NSW</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-3">Events and activities from the New South Wales club</p>
+                        <a href="https://nsw.mx5.com.au/events" target="_blank" class="bg-miata-red text-white px-3 py-2 rounded text-xs hover:bg-red-700 transition-colors inline-block">
+                            View Events <i class="fas fa-external-link-alt ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-miata-gray text-white py-8 sm:py-12">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-2 mb-4">
+                    <i class="fas fa-car text-miata-red text-xl sm:text-2xl"></i>
+                    <span class="text-lg sm:text-xl font-bold">Miatapedia</span>
+                </div>
+                <p class="text-gray-400 mb-4 sm:mb-6 text-sm sm:text-base">
+                    The largest collection of resources for Mazda MX-5 enthusiasts.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4 sm:gap-6">
+                    <a href="en.html#manuals" class="text-gray-400 hover:text-white text-sm sm:text-base transition-colors">Manuals</a>
+                    <a href="en.html#clubs" class="text-gray-400 hover:text-white text-sm sm:text-base transition-colors">Clubs</a>
+                    <a href="en.html#shops" class="text-gray-400 hover:text-white text-sm sm:text-base transition-colors">Shops</a>
+                    <a href="en.html#forums" class="text-gray-400 hover:text-white text-sm sm:text-base transition-colors">Forums</a>
+                    <a href="events.html" class="text-white font-semibold text-sm sm:text-base">Events</a>
+                </div>
+                <div class="border-t border-gray-600 mt-6 sm:mt-8 pt-6 sm:pt-8 text-center text-gray-400">
+                    <p class="text-xs sm:text-sm">&copy; 2024 Miatapedia. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Language selector toggle
+        document.getElementById('language-btn').addEventListener('click', function(e) {
+            e.stopPropagation();
+            const dropdown = document.getElementById('language-dropdown');
+            dropdown.classList.toggle('hidden');
+        });
+
+        // Close language dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            const dropdown = document.getElementById('language-dropdown');
+            const selector = document.getElementById('language-selector');
+            if (!selector.contains(e.target)) {
+                dropdown.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
