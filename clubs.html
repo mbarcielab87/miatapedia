@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clubs y Comunidades MX-5 | Miatapedia</title>
+    <meta name="description" content="Directorio completo de clubes, comunidades y foros MX-5 de todo el mundo organizados por región. Conecta con entusiastas del Miata cerca de ti.">
+    <meta name="keywords" content="clubs MX-5, comunidades Miata, foros MX-5, clubes Mazda MX-5, grupos Miata, encuentros MX-5">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://miatapedia.com/clubs.html">
+    <meta property="og:title" content="Clubs y Comunidades MX-5 | Miatapedia">
+    <meta property="og:description" content="Directorio completo de clubes, comunidades y foros MX-5 de todo el mundo organizados por región.">
+    <meta property="og:image" content="https://miatapedia.com/images/clubs-og.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://miatapedia.com/clubs.html">
+    <meta property="twitter:title" content="Clubs y Comunidades MX-5 | Miatapedia">
+    <meta property="twitter:description" content="Directorio completo de clubes, comunidades y foros MX-5 de todo el mundo organizados por región.">
+    <meta property="twitter:image" content="https://miatapedia.com/images/clubs-og.jpg">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'miata-red': '#CC0000',
+                        'miata-gray': '#2D3748',
+                        'miata-blue': '#2B6CB0'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="flex justify-between items-center py-3 sm:py-4">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-car text-miata-red text-xl sm:text-2xl"></i>
+                    <a href="index.html" class="text-lg sm:text-xl font-bold text-miata-gray hover:text-miata-red transition-colors">
+                        Miatapedia
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-6 items-center">
+                    <a href="index.html" class="text-miata-gray hover:text-miata-red transition-colors">Inicio</a>
+                    <a href="index.html#manuales" class="text-miata-gray hover:text-miata-red transition-colors">Manuales</a>
+                    <a href="clubs.html" class="text-miata-red font-semibold">Clubs</a>
+                    <a href="index.html#tiendas" class="text-miata-gray hover:text-miata-red transition-colors">Tiendas</a>
+                    <a href="eventos.html" class="text-miata-gray hover:text-miata-red transition-colors">Eventos</a>
+
+                    <!-- Language Selector -->
+                    <div class="relative" id="language-selector">
+                        <button class="flex items-center space-x-1 text-miata-gray hover:text-miata-red transition-colors" id="language-btn">
+                            <span class="text-lg">🇪🇸</span>
+                            <span class="text-sm">ES</span>
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                        <div class="absolute right-0 mt-2 w-40 bg-white rounded-md shadow-lg py-1 hidden" id="language-dropdown">
+                            <a href="clubs-en.html" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                <span class="mr-2">🇺🇸</span>English
+                            </a>
+                            <a href="clubs-zh.html" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                <span class="mr-2">🇨🇳</span>中文
+                            </a>
+                            <a href="clubs-pt.html" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                <span class="mr-2">🇵🇹</span>Português
+                            </a>
+                            <a href="clubs-de.html" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                <span class="mr-2">🇩🇪</span>Deutsch
+                            </a>
+                            <a href="clubs-fr.html" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                <span class="mr-2">🇫🇷</span>Français
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <button class="md:hidden text-miata-gray hover:text-miata-red" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile menu -->
+            <div class="md:hidden hidden mt-4" id="mobile-menu">
+                <div class="flex flex-col space-y-2">
+                    <a href="index.html" class="text-miata-gray hover:text-miata-red transition-colors py-2">Inicio</a>
+                    <a href="index.html#manuales" class="text-miata-gray hover:text-miata-red transition-colors py-2">Manuales</a>
+                    <a href="clubs.html" class="text-miata-red font-semibold py-2">Clubs</a>
+                    <a href="index.html#tiendas" class="text-miata-gray hover:text-miata-red transition-colors py-2">Tiendas</a>
+                    <a href="eventos.html" class="text-miata-gray hover:text-miata-red transition-colors py-2">Eventos</a>
+
+                    <!-- Mobile Language Selector -->
+                    <div class="border-t pt-2 mt-2">
+                        <p class="text-sm text-gray-500 mb-2">Idioma:</p>
+                        <div class="flex flex-wrap gap-2">
+                            <a href="clubs-en.html" class="flex items-center text-sm text-gray-700 hover:text-miata-red">
+                                <span class="mr-1">🇺🇸</span>EN
+                            </a>
+                            <a href="clubs-zh.html" class="flex items-center text-sm text-gray-700 hover:text-miata-red">
+                                <span class="mr-1">🇨🇳</span>中文
+                            </a>
+                            <a href="clubs-pt.html" class="flex items-center text-sm text-gray-700 hover:text-miata-red">
+                                <span class="mr-1">🇵🇹</span>PT
+                            </a>
+                            <a href="clubs-de.html" class="flex items-center text-sm text-gray-700 hover:text-miata-red">
+                                <span class="mr-1">🇩🇪</span>DE
+                            </a>
+                            <a href="clubs-fr.html" class="flex items-center text-sm text-gray-700 hover:text-miata-red">
+                                <span class="mr-1">🇫🇷</span>FR
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-20 sm:pt-24 pb-12 sm:pb-16 bg-gradient-to-r from-miata-red to-red-700 text-white">
+        <div class="container mx-auto px-4 sm:px-6 text-center">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+                <i class="fas fa-users mr-3"></i>Clubs y Comunidades MX-5
+            </h1>
+            <p class="text-lg sm:text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
+                Conecta con entusiastas del MX-5 alrededor del mundo. Encuentra clubs locales, foros especializados y comunidades organizadas por región.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#europa" class="bg-white text-miata-red px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                    <i class="fas fa-globe-europe mr-2"></i>Europa
+                </a>
+                <a href="#americas" class="bg-white text-miata-red px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                    <i class="fas fa-globe-americas mr-2"></i>Américas
+                </a>
+                <a href="#asia-pacifico" class="bg-white text-miata-red px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                    <i class="fas fa-globe-asia mr-2"></i>Asia-Pacífico
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Home -->
+    <section class="py-4 bg-white border-b">
+        <div class="container mx-auto px-4 sm:px-6">
+            <a href="index.html" class="inline-flex items-center text-miata-gray hover:text-miata-red transition-colors">
+                <i class="fas fa-arrow-left mr-2"></i>
+                <span>Volver al inicio</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="py-12 sm:py-16">
+        <div class="container mx-auto px-4 sm:px-6">
+
+            <!-- Europa -->
+            <div class="mb-16" id="europa">
+                <h2 class="text-2xl sm:text-3xl font-bold text-miata-gray mb-8 text-center">
+                    <i class="fas fa-globe-europe text-miata-red mr-2"></i>Europa
+                </h2>
+                <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- España -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-miata-red">
+                        <div class="flex items-center mb-4">
+                            <span class="text-2xl mr-3">🇪🇸</span>
+                            <h3 class="text-xl font-semibold text-miata-gray">España</h3>
+                        </div>
+                        <div class="space-y-3">
+                            <div>
+                                <a href="https://www.mx5forum.es/" target="_blank" class="text-miata-red hover:text-red-700 font-medium">Foro del Club Mazda MX-5 de España</a>
+                                <p class="text-sm text-gray-600">Foro oficial del club español</p>
+                            </div>
+                            <div>
+                                <a href="https://www.miatapasion.com/foros/" target="_blank" class="text-miata-red hover:text-red-700 font-medium">Miatapasion Foros</a>
+                                <p class="text-sm text-gray-600">Comunidad española activa</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reino Unido -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-blue-500">
+                        <div class="flex items-center mb-4">
+                            <span class="text-2xl mr-3">🇬🇧</span>
+                            <h3 class="text-xl font-semibold text-miata-gray">Reino Unido</h3>
+                        </div>
+                        <div class="space-y-3">
+                            <div>
+                                <a href="https://www.mx5life.com/" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">MX-5 Life</a>
+                                <p class="text-sm text-gray-600">Comunidad UK muy activa</p>
+                            </div>
+                            <div>
+                                <a href="https://www.mx5nutz.com/" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">MX-5 Nutz</a>
+                                <p class="text-sm text-gray-600">Foro técnico especializado</p>
+                            </div>
+                            <div>
+                                <a href="https://forum.mx5oc.co.uk/" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">MX-5 Owners Club Forum (UK)</a>
+                                <p class="text-sm text-gray-600">Club oficial del Reino Unido</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Alemania -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-yellow-500">
+                        <div class="flex items-center mb-4">
+                            <span class="text-2xl mr-3">🇩🇪</span>
+                            <h3 class="text-xl font-semibold text-miata-gray">Alemania</h3>
+                        </div>
+                        <div class="space-y-3">
+                            <div>
+                                <a href="https://www.mx-5.de/" target="_blank" class="text-yellow-600 hover:text-yellow-800 font-medium">mx-5.de Forum</a>
+                                <p class="text-sm text-gray-600">Principal foro alemán</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Francia -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-blue-400">
+                        <div class="flex items-center mb-4">
+                            <span class="text-2xl mr-3">🇫🇷</span>
+                            <h3 class="text-xl font-semibold text-miata-gray">Francia</h3>
+                        </div>
+                        <div class="space-y-3">
+                            <div>
+                                <a href="https://www.mx5passion.com/" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">MX-5 Passion (Forum)</a>
+                                <p class="text-sm text-gray-600">Comunidad francesa activa</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Portugal -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-green-600">
+                        <div class="flex items-center mb-4">
+                            <span class="text-2xl mr-3">🇵🇹</span>
+                            <h3 class="text-xl font-semibold text-miata-gray">Portugal</h3>
+                        </div>
+                        <div class="space-y-3">
+                            <div>
+                                <a href="https://www.clubmx-5.com/" target="_blank" class="text-green-600 hover:text-green-800 font-medium">Clube MX-5 Portugal</a>
+                                <p class="text-sm text-gray-600">Club oficial portugués</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Países Bajos -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-orange-500">
+                        <div class="flex items-center mb-4">
+                            <span class="text-2xl mr-3">🇳🇱</span>
+                            <h3 class="text-xl font-semibold text-miata-gray">Países Bajos</h3>
+                        </div>
+                        <div class="space-y-3">
+                            <div>
+                                <a href="https://www.mx5owners.nl/" target="_blank" class="text-orange-600 hover:text-orange-800 font-medium">MX-5 Owners NL Forum</a>
+                                <p class="text-sm text-gray-600">Comunidad holandesa</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- República Checa -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-blue-500">
+                        <div class="flex items-center mb-4">
+                            <span class="text-2xl mr-3">🇨🇿</span>
+                            <h3 class="text-xl font-semibold text-miata-gray">República Checa</h3>
+                        </div>
+                        <div class="space-y-3">
+                            <div>
+                                <a href="https://www.mx-5.biz/" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">MX-5 Klub ČR Forum</a>
+                                <p class="text-sm text-gray-600">Club checo oficial</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dinamarca -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-red-500">
+                        <div class="flex items-center mb-4">
+                            <span class="text-2xl mr-3">🇩🇰</span>
+                            <h3 class="text-xl font-semibold text-miata-gray">Dinamarca</h3>
+                        </div>
+                        <div class="space-y-3">
+                            <div>
+                                <a href="https://www.mx5club.dk/" target="_blank" class="text-red-600 hover:text-red-800 font-medium">MX-5 Club Danmark (Forum)</a>
+                                <p class="text-sm text-gray-600">Club oficial danés</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Otros países europeos -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-gray-400">
+                        <div class="flex items-center mb-4">
+                            <span class="text-2xl mr-3">🌍</span>
+                            <h3 class="text-xl font-semibold text-miata-gray">Otros países</h3>
+                        </div>
+                        <div class="space-y-2 text-sm">
+                            <div>
+                                <span class="font-medium">🇬🇷 Grecia:</span>
+                                <a href="https://www.mymx5.gr/" target="_blank" class="text-blue-600 hover:text-blue-800 ml-1">MyMX5.gr Forum</a>
+                            </div>
+                            <div>
+                                <span class="font-medium">🇮🇪 Irlanda:</span>
+                                <a href="https://www.mx5ireland.com/" target="_blank" class="text-green-600 hover:text-green-800 ml-1">MX-5 Ireland Forum</a>
+                            </div>
+                            <div>
+                                <span class="font-medium">🇳🇴 Noruega:</span>
+                                <a href="https://www.mx5-miata.no/forum/" target="_blank" class="text-blue-600 hover:text-blue-800 ml-1">MX-5 Miata Club Norway</a>
+                            </div>
+                            <div>
+                                <span class="font-medium">🇸🇰 Eslovaquia:</span>
+                                <a href="https://www.mx-5.sk/forum/" target="_blank" class="text-blue-600 hover:text-blue-800 ml-1">MX-5 Klub Slovensko</a>
+                            </div>
+                            <div>
+                                <span class="font-medium">🇸🇮 Eslovenia:</span>
+                                <a href="https://www.mazda-si.net/" target="_blank" class="text-green-600 hover:text-green-800 ml-1">Mazda-si.net</a>
+                            </div>
+                            <div>
+                                <span class="font-medium">🇸🇪 Suecia:</span>
+                                <a href="https://www.mx-5.se/" target="_blank" class="text-yellow-600 hover:text-yellow-800 ml-1">Miata Club of Sweden</a>
+                            </div>
+                            <div>
+                                <span class="font-medium">🇹🇷 Turquía:</span>
+                                <a href="https://www.mazdaclubtr.com/forums/forum/204-mazda-mx-5/" target="_blank" class="text-red-600 hover:text-red-800 ml-1">MazdaClubTR</a>
+                            </div>
+                            <div>
+                                <span class="font-medium">🇺🇦 Ucrania:</span>
+                                <a href="https://www.instagram.com/miata.ukraine/" target="_blank" class="text-yellow-600 hover:text-yellow-800 ml-1">Miata Club Ukraine (IG)</a>
+                            </div>
+                            <div>
+                                <span class="font-medium">🇷🇸 Serbia:</span>
+                                <a href="https://bjbikers.com/forum/index.php?/topic/102606-mazda-mx-5/page/2/" target="_blank" class="text-blue-600 hover:text-blue-800 ml-1">BJBikers MX-5</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Américas -->
+            <div class="mb-16" id="americas">
+                <h2 class="text-2xl sm:text-3xl font-bold text-miata-gray mb-8 text-center">
+                    <i class="fas fa-globe-americas text-miata-red mr-2"></i>Américas
+                </h2>
+                <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Estados Unidos -->
+                    <div class="bg-gradient-to-r from-blue-500 to-blue-600 p-6 rounded-lg shadow-lg text-white">
+                        <div class="flex items-center mb-4">
+                            <span class="text-2xl mr-3">🇺🇸</span>
+                            <h3 class="text-xl font-semibold">Estados Unidos</h3>
+                            <i class="fas fa-star ml-2 text-yellow-300"></i>
+                        </div>
+                        <div class="space-y-3">
+                            <div>
+                                <a href="https://www.clubroadster.net/" target="_blank" class="text-blue-100 hover:text-white font-medium">ClubRoadster Forum</a>
+                                <p class="text-xs text-blue-200">Foro principal de EE.UU.</p>
+                            </div>
+                            <div>
+                                <a href="https://www.dfwmiata.com/" target="_blank" class="text-blue-100 hover:text-white font-medium">DFW Miata (Dallas/Fort Worth)</a>
+                                <p class="text-xs text-blue-200">Club regional de Texas</p>
+                            </div>
+                            <div>
+                                <a href="https://houstonmiataclub.com/" target="_blank" class="text-blue-100 hover:text-white font-medium">Houston Miata Club</a>
+                                <p class="text-xs text-blue-200">Club de Houston</p>
+                            </div>
+                            <div>
+                                <a href="https://massmiata.net/" target="_blank" class="text-blue-100 hover:text-white font-medium">Mass Miata Club</a>
+                                <p class="text-xs text-blue-200">Club de Massachusetts</p>
+                            </div>
+                            <div>
+                                <a href="https://www.sandiegomiataclub.org/" target="_blank" class="text-blue-100 hover:text-white font-medium">San Diego Miata Club</a>
+                                <p class="text-xs text-blue-200">Club de California</p>
+                            </div>
+                            <div>
+                                <a href="https://www.windycitymiataclub.com/" target="_blank" class="text-blue-100 hover:text-white font-medium">Windy City Miata Club (Chicago)</a>
+                                <p class="text-xs text-blue-200">Club de Illinois</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Canadá -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-red-500">
+                        <div class="flex items-center mb-4">
+                            <span class="text-2xl mr-3">🇨🇦</span>
+                            <h3 class="text-xl font-semibold text-miata-gray">Canadá</h3>
+                        </div>
+                        <div class="space-y-3">
+                            <div>
+                                <a href="https://clubmiata.net/" target="_blank" class="text-red-600 hover:text-red-800 font-medium">Club Miata Vancouver Island</a>
+                                <p class="text-sm text-gray-600">Club de Columbia Británica</p>
+                            </div>
+                            <div>
+                                <a href="https://www.maritimemiataclub.ca/" target="_blank" class="text-red-600 hover:text-red-800 font-medium">Maritime Miata Club</a>
+                                <p class="text-sm text-gray-600">Canadá Atlántico</p>
+                            </div>
+                            <div>
+                                <a href="https://www.okmiataclub.com/" target="_blank" class="text-red-600 hover:text-red-800 font-medium">Okanagan Valley Miata Club</a>
+                                <p class="text-sm text-gray-600">Valle de Okanagan, BC</p>
+                            </div>
+                            <div>
+                                <a href="https://seatoskymiataclub.ca/" target="_blank" class="text-red-600 hover:text-red-800 font-medium">Sea to Sky Miata Club</a>
+                                <p class="text-sm text-gray-600">Columbia Británica</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Latinoamérica -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-green-500">
+                        <div class="flex items-center mb-4">
+                            <span class="text-2xl mr-3">🌎</span>
+                            <h3 class="text-xl font-semibold text-miata-gray">Latinoamérica</h3>
+                        </div>
+                        <div class="space-y-2 text-sm">
+                            <div>
+                                <span class="font-medium">🇦🇷 Argentina:</span>
+                                <a href="https://www.facebook.com/groups/2073823302935046/" target="_blank" class="text-blue-600 hover:text-blue-800 ml-1">Miata Club Argentina (FB)</a>
+                            </div>
+                            <div>
+                                <span class="font-medium">🇲🇽 México:</span>
+                                <a href="https://www.facebook.com/clubmiatamexico/" target="_blank" class="text-green-600 hover:text-green-800 ml-1">Club Miata México (FB)</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Asia-Pacífico -->
+            <div class="mb-16" id="asia-pacifico">
+                <h2 class="text-2xl sm:text-3xl font-bold text-miata-gray mb-8 text-center">
+                    <i class="fas fa-globe-asia text-miata-red mr-2"></i>Asia-Pacífico
+                </h2>
+                <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Australia -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-yellow-400">
+                        <div class="flex items-center mb-4">
+                            <span class="text-2xl mr-3">🇦🇺</span>
+                            <h3 class="text-xl font-semibold text-miata-gray">Australia</h3>
+                        </div>
+                        <div class="space-y-3">
+                            <div>
+                                <a href="https://mx5.net.au/" target="_blank" class="text-yellow-600 hover:text-yellow-800 font-medium">MX5Cartalk (AU/NZ forum)</a>
+                                <p class="text-sm text-gray-600">Foro principal AU/NZ</p>
+                            </div>
+                            <div>
+                                <a href="https://nsw.mx5.com.au/" target="_blank" class="text-yellow-600 hover:text-yellow-800 font-medium">MX-5 Club of NSW</a>
+                                <p class="text-sm text-gray-600">Nueva Gales del Sur</p>
+                            </div>
+                            <div>
+                                <a href="https://www.mx5clubqld.com.au/" target="_blank" class="text-yellow-600 hover:text-yellow-800 font-medium">MX-5 Club of Queensland</a>
+                                <p class="text-sm text-gray-600">Queensland</p>
+                            </div>
+                            <div>
+                                <a href="https://mx5vic.org.au/" target="_blank" class="text-yellow-600 hover:text-yellow-800 font-medium">MX-5 Club of Victoria & Tasmania</a>
+                                <p class="text-sm text-gray-600">Victoria y Tasmania</p>
+                            </div>
+                            <div>
+                                <a href="https://www.mx5club.com.au/" target="_blank" class="text-yellow-600 hover:text-yellow-800 font-medium">MX-5 Club of Western Australia</a>
+                                <p class="text-sm text-gray-600">Australia Occidental</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Nueva Zelanda -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-blue-500">
+                        <div class="flex items-center mb-4">
+                            <span class="text-2xl mr-3">🇳🇿</span>
+                            <h3 class="text-xl font-semibold text-miata-gray">Nueva Zelanda</h3>
+                        </div>
+                        <div class="space-y-3">
+                            <div>
+                                <a href="https://mx5club.co.nz/" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">MX-5 Club of New Zealand</a>
+                                <p class="text-sm text-gray-600">Club oficial de NZ</p>
+                            </div>
+                            <div>
+                                <a href="https://www.mx5forum.co.nz/" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">MX-5 Forum New Zealand</a>
+                                <p class="text-sm text-gray-600">Foro neozelandés</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Japón -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-red-500">
+                        <div class="flex items-center mb-4">
+                            <span class="text-2xl mr-3">🇯🇵</span>
+                            <h3 class="text-xl font-semibold text-miata-gray">Japón</h3>
+                        </div>
+                        <div class="space-y-3">
+                            <div>
+                                <a href="https://www.open-inc.co.jp/rcoj/" target="_blank" class="text-red-600 hover:text-red-800 font-medium">Roadster Club of Japan (RCOJ)</a>
+                                <p class="text-sm text-gray-600 font-semibold">🏠 Cuna del MX-5</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Otros países asiáticos -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-gray-400">
+                        <div class="flex items-center mb-4">
+                            <span class="text-2xl mr-3">🌏</span>
+                            <h3 class="text-xl font-semibold text-miata-gray">Otros países</h3>
+                        </div>
+                        <div class="space-y-2 text-sm">
+                            <div>
+                                <span class="font-medium">🇸🇬 Singapur:</span>
+                                <a href="https://www.facebook.com/groups/5736449818/" target="_blank" class="text-red-600 hover:text-red-800 ml-1">Miata Club Singapore (FB)</a>
+                            </div>
+                            <div>
+                                <span class="font-medium">🇵🇭 Filipinas:</span>
+                                <a href="https://www.miataclub.ph/" target="_blank" class="text-blue-600 hover:text-blue-800 ml-1">Miata Club Philippines</a>
+                            </div>
+                            <div>
+                                <span class="font-medium">🇮🇩 Indonesia:</span>
+                                <a href="https://www.instagram.com/miata_roadster_club_indonesia/" target="_blank" class="text-red-600 hover:text-red-800 ml-1">Miata Roadster Club Indonesia (IG)</a>
+                            </div>
+                            <div>
+                                <span class="font-medium">🇹🇭 Tailandia:</span>
+                                <a href="https://www.facebook.com/groups/325044978488263/posts/1129171174742302/" target="_blank" class="text-red-600 hover:text-red-800 ml-1">Miata Roadster Club Thailand (FB)</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- África -->
+            <div class="mb-16" id="africa">
+                <h2 class="text-2xl sm:text-3xl font-bold text-miata-gray mb-8 text-center">
+                    <i class="fas fa-globe-africa text-miata-red mr-2"></i>África
+                </h2>
+                <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Sudáfrica -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-green-500">
+                        <div class="flex items-center mb-4">
+                            <span class="text-2xl mr-3">🇿🇦</span>
+                            <h3 class="text-xl font-semibold text-miata-gray">Sudáfrica</h3>
+                        </div>
+                        <div class="space-y-3">
+                            <div>
+                                <a href="https://www.facebook.com/groups/mx5ownersclubgauteng/" target="_blank" class="text-green-600 hover:text-green-800 font-medium">MX-5 Owners Club SA (FB)</a>
+                                <p class="text-sm text-gray-600">Grupo de Gauteng</p>
+                            </div>
+                            <div>
+                                <a href="https://www.mx5club.co.za/" target="_blank" class="text-green-600 hover:text-green-800 font-medium">MX-5 Owners Club South Africa</a>
+                                <p class="text-sm text-gray-600">Portal oficial</p>
+                            </div>
+                            <div>
+                                <a href="https://www.mx5wc.co.za/" target="_blank" class="text-green-600 hover:text-green-800 font-medium">MX-5 Owners Club Western Cape</a>
+                                <p class="text-sm text-gray-600">Cabo Occidental</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comunidad Global -->
+            <div class="bg-gradient-to-r from-miata-red to-red-600 rounded-lg p-8 text-center text-white">
+                <h2 class="text-2xl sm:text-3xl font-bold mb-4">
+                    <i class="fab fa-reddit mr-2"></i>Comunidad Global
+                </h2>
+                <p class="text-lg mb-6">Únete a la comunidad más grande de MX-5 en Reddit</p>
+                <a href="https://www.reddit.com/r/Miata/" target="_blank" class="bg-white text-miata-red px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-lg">
+                    r/Miata - 400k+ miembros activos
+                </a>
+                <p class="mt-4 text-sm opacity-90">Discusiones diarias, consejos técnicos, fotos de la comunidad y más</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-miata-gray text-white py-12">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-2 mb-4">
+                    <i class="fas fa-car text-miata-red text-2xl"></i>
+                    <span class="text-xl font-bold">Miatapedia</span>
+                </div>
+                <p class="text-gray-400 mb-6">
+                    La mayor colección de recursos para entusiastas del Mazda MX-5.
+                </p>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="index.html#manuales" class="text-gray-400 hover:text-white transition-colors">Manuales</a>
+                    <a href="clubs.html" class="text-white font-semibold">Clubs</a>
+                    <a href="index.html#tiendas" class="text-gray-400 hover:text-white transition-colors">Tiendas</a>
+                    <a href="eventos.html" class="text-gray-400 hover:text-white transition-colors">Eventos</a>
+                </div>
+                <div class="border-t border-gray-600 mt-8 pt-8 text-center text-gray-400">
+                    <p>&copy; 2024 Miatapedia. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Language selector toggle
+        document.getElementById('language-btn').addEventListener('click', function(e) {
+            e.stopPropagation();
+            const dropdown = document.getElementById('language-dropdown');
+            dropdown.classList.toggle('hidden');
+        });
+
+        // Close language dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            const languageSelector = document.getElementById('language-selector');
+            const dropdown = document.getElementById('language-dropdown');
+
+            if (!languageSelector.contains(e.target)) {
+                dropdown.classList.add('hidden');
+            }
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
