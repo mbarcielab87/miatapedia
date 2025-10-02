@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MX-5专业商店 | Miatapedia - 认证OEM供应商</title>
+    <meta name="description" content="马自达MX-5 Miata专业商店完整目录。17家全球认证OEM供应商，提供原装、二手和改装配件。">
+    <meta name="keywords" content="MX-5商店, Miata配件, OEM马自达, MX-5供应商, Miata商店, 原装配件">
+
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'miata-red': '#C41E3A',
+                        'miata-gray': '#374151'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-car text-miata-red text-3xl"></i>
+                    <h1 class="text-2xl font-bold text-miata-gray">Miatapedia</h1>
+                </div>
+                <div class="hidden md:flex space-x-6 items-center">
+                    <!-- Language Selector -->
+                    <div class="relative" id="language-selector">
+                        <button class="flex items-center space-x-1 text-miata-gray hover:text-miata-red transition-colors" id="language-btn">
+                            <i class="fas fa-globe text-sm"></i>
+                            <span class="text-sm">ZH</span>
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                        <div class="absolute right-0 top-full mt-2 bg-white rounded-lg shadow-lg border py-2 min-w-[120px] hidden" id="language-dropdown">
+                            <a href="tiendas.html" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                <span class="mr-2">🇪🇸</span>Español
+                            </a>
+                            <a href="shops.html" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                <span class="mr-2">🇺🇸</span>English
+                            </a>
+                            <a href="shops-zh.html" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 font-medium text-miata-red">
+                                <span class="mr-2">🇨🇳</span>中文
+                            </a>
+                            <a href="shops-pt.html" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                <span class="mr-2">🇵🇹</span>Português
+                            </a>
+                            <a href="shops-de.html" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                <span class="mr-2">🇩🇪</span>Deutsch
+                            </a>
+                            <a href="shops-fr.html" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                <span class="mr-2">🇫🇷</span>Français
+                            </a>
+                        </div>
+                    </div>
+                    <a href="zh.html" class="bg-miata-red text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">
+                        <i class="fas fa-home mr-2"></i>首页
+                    </a>
+                </div>
+                <button class="md:hidden text-miata-gray" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div class="md:hidden hidden mt-4" id="mobile-menu">
+                <div class="flex flex-col space-y-2">
+                    <!-- Mobile Language Selector -->
+                    <div class="border-t border-gray-200 pt-2 mt-2">
+                        <div class="text-xs text-gray-500 mb-2 px-2">语言</div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <a href="tiendas.html" class="flex items-center px-2 py-1 text-sm text-gray-600">
+                                <span class="mr-2">🇪🇸</span>Español
+                            </a>
+                            <a href="shops.html" class="flex items-center px-2 py-1 text-sm text-gray-600">
+                                <span class="mr-2">🇺🇸</span>English
+                            </a>
+                            <a href="shops-zh.html" class="flex items-center px-2 py-1 text-sm text-miata-red font-medium">
+                                <span class="mr-2">🇨🇳</span>中文
+                            </a>
+                            <a href="shops-pt.html" class="flex items-center px-2 py-1 text-sm text-gray-600">
+                                <span class="mr-2">🇵🇹</span>Português
+                            </a>
+                            <a href="shops-de.html" class="flex items-center px-2 py-1 text-sm text-gray-600">
+                                <span class="mr-2">🇩🇪</span>Deutsch
+                            </a>
+                            <a href="shops-fr.html" class="flex items-center px-2 py-1 text-sm text-gray-600">
+                                <span class="mr-2">🇫🇷</span>Français
+                            </a>
+                        </div>
+                    </div>
+                    <a href="zh.html" class="bg-miata-red text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors text-center">
+                        <i class="fas fa-home mr-2"></i>首页
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="bg-gradient-to-r from-miata-red to-red-600 text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl font-bold mb-6">
+                <i class="fas fa-store text-white mr-3"></i>专业商店
+            </h1>
+            <h2 class="text-2xl mb-8 font-light">认证OEM供应商 MX-5</h2>
+            <p class="text-xl mb-12 max-w-3xl mx-auto">
+                17家认证专业商店的完整目录，为您的马自达MX-5 Miata提供原装、二手和改装配件。
+            </p>
+        </div>
+    </section>
+
+    <!-- Shops Section -->
+    <section id="shops" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    MX-5专业商店目录，原厂配件和改装部件。
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg text-center">
+                    <i class="fas fa-tools text-3xl text-miata-red mb-3"></i>
+                    <h3 class="text-xl font-semibold mb-2">原厂配件</h3>
+                    <p class="text-gray-600">马自达原装配件</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg text-center">
+                    <i class="fas fa-tachometer-alt text-3xl text-miata-red mb-3"></i>
+                    <h3 class="text-xl font-semibold mb-2">性能</h3>
+                    <p class="text-gray-600">改装和升级</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg text-center">
+                    <i class="fas fa-palette text-3xl text-miata-red mb-3"></i>
+                    <h3 class="text-xl font-semibold mb-2">车身外观</h3>
+                    <p class="text-gray-600">空气套件和美学</p>
+                </div>
+            </div>
+
+            <!-- 认证OEM供应商 -->
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold text-miata-gray mb-8 text-center">
+                    <i class="fas fa-certificate text-miata-red mr-2"></i>认证OEM供应商
+                </h3>
+
+                <!-- 新OEM配件 -->
+                <div class="mb-10">
+                    <h4 class="text-xl font-semibold text-miata-gray mb-4 flex items-center">
+                        <i class="fas fa-star text-yellow-500 mr-2"></i>新OEM配件
+                    </h4>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- MegaZip -->
+                        <div class="bg-white p-5 rounded-lg shadow-lg border-l-4 border-red-500">
+                            <div class="flex items-center justify-between mb-3">
+                                <h5 class="font-semibold text-miata-gray">MegaZip</h5>
+                                <span class="text-xs bg-red-100 text-red-800 px-2 py-1 rounded-full">🇯🇵 日本</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-3">来自日本的新OEM配件</p>
+                            <div class="text-xs text-gray-500 mb-3">
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NA</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NB</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NC</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">ND</span>
+                            </div>
+                            <div class="text-xs text-blue-600 mb-3">🌍 全球配送</div>
+                            <a href="https://www.megazip.net" target="_blank" class="bg-miata-red text-white px-3 py-2 rounded text-xs hover:bg-red-700 transition-colors">
+                                访问商店
+                            </a>
+                        </div>
+
+                        <!-- Jim Ellis Mazda Parts -->
+                        <div class="bg-white p-5 rounded-lg shadow-lg border-l-4 border-blue-500">
+                            <div class="flex items-center justify-between mb-3">
+                                <h5 class="font-semibold text-miata-gray">Jim Ellis Mazda</h5>
+                                <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">🇺🇸 美国</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-3">官方马自达经销商</p>
+                            <div class="text-xs text-gray-500 mb-3">
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NA</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NB</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NC</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">ND</span>
+                            </div>
+                            <div class="text-xs text-blue-600 mb-3">🇺🇸 美国 + 部分国际配送</div>
+                            <a href="https://www.jimellismazdaparts.com/" target="_blank" class="bg-miata-red text-white px-3 py-2 rounded text-xs hover:bg-red-700 transition-colors">
+                                访问商店
+                            </a>
+                        </div>
+
+                        <!-- MazdaShop Canada -->
+                        <div class="bg-white p-5 rounded-lg shadow-lg border-l-4 border-red-600">
+                            <div class="flex items-center justify-between mb-3">
+                                <h5 class="font-semibold text-miata-gray">MazdaShop</h5>
+                                <span class="text-xs bg-red-100 text-red-800 px-2 py-1 rounded-full">🇨🇦 加拿大</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-3">官方马自达配件和零件</p>
+                            <div class="text-xs text-gray-500 mb-3">
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NA</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NB</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NC</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">ND</span>
+                            </div>
+                            <div class="text-xs text-blue-600 mb-3">🇨🇦 加拿大 + 国际配送</div>
+                            <a href="https://mazdashop.ca/collections/mazda-accessories" target="_blank" class="bg-miata-red text-white px-3 py-2 rounded text-xs hover:bg-red-700 transition-colors">
+                                访问商店
+                            </a>
+                        </div>
+
+                        <!-- MazdaParts.org -->
+                        <div class="bg-white p-5 rounded-lg shadow-lg border-l-4 border-blue-500">
+                            <div class="flex items-center justify-between mb-3">
+                                <h5 class="font-semibold text-miata-gray">MazdaParts.org</h5>
+                                <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">🇺🇸 美国</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-3">马自达经销商门户</p>
+                            <div class="text-xs text-gray-500 mb-3">
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NA</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NB</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NC</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">ND</span>
+                            </div>
+                            <a href="https://mazdaparts.org" target="_blank" class="bg-miata-red text-white px-3 py-2 rounded text-xs hover:bg-red-700 transition-colors">
+                                访问商店
+                            </a>
+                            <div class="text-xs text-green-600 mt-2">
+                                <i class="fas fa-shipping-fast mr-1"></i>全球配送
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 混合商店 -->
+                <div class="mb-10">
+                    <h4 class="text-xl font-semibold text-miata-gray mb-4 flex items-center">
+                        <i class="fas fa-balance-scale text-purple-600 mr-2"></i>混合商店 (OEM + 改装)
+                    </h4>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- MX5Parts -->
+                        <div class="bg-white p-5 rounded-lg shadow-lg border-l-4 border-purple-500">
+                            <div class="flex items-center justify-between mb-3">
+                                <h5 class="font-semibold text-miata-gray">MX5Parts</h5>
+                                <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">🇬🇧 英国</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-3">混合OEM + 改装配件</p>
+                            <div class="text-xs text-gray-500 mb-3">
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NA</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NB</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NC</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">ND</span>
+                            </div>
+                            <a href="https://www.mx5parts.co.uk" target="_blank" class="text-purple-600 hover:text-purple-800 text-sm font-medium">
+                                访问商店 <i class="fas fa-external-link-alt ml-1"></i>
+                            </a>
+                            <div class="text-xs text-green-600 mt-2">
+                                <i class="fas fa-shipping-fast mr-1"></i>欧洲 + 全球配送
+                            </div>
+                        </div>
+
+                        <!-- IL Motorsport -->
+                        <div class="bg-white p-5 rounded-lg shadow-lg border-l-4 border-purple-500">
+                            <div class="flex items-center justify-between mb-3">
+                                <h5 class="font-semibold text-miata-gray">IL Motorsport</h5>
+                                <span class="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full">🇩🇪 德国</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-3">混合OEM + 改装配件</p>
+                            <div class="text-xs text-gray-500 mb-3">
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NA</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NB</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NC</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">ND</span>
+                            </div>
+                            <a href="https://www.ilmotorsport.de" target="_blank" class="text-purple-600 hover:text-purple-800 text-sm font-medium">
+                                访问商店 <i class="fas fa-external-link-alt ml-1"></i>
+                            </a>
+                            <div class="text-xs text-green-600 mt-2">
+                                <i class="fas fa-shipping-fast mr-1"></i>欧洲 + 全球配送
+                            </div>
+                        </div>
+
+                        <!-- MX5 Mania -->
+                        <div class="bg-white p-5 rounded-lg shadow-lg border-l-4 border-purple-500">
+                            <div class="flex items-center justify-between mb-3">
+                                <h5 class="font-semibold text-miata-gray">MX5 Mania</h5>
+                                <span class="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full">🇦🇺 澳大利亚</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-3">混合OEM + 改装配件</p>
+                            <div class="text-xs text-gray-500 mb-3">
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NA</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NB</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NC</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">ND</span>
+                            </div>
+                            <a href="https://mx5mania.com.au" target="_blank" class="text-purple-600 hover:text-purple-800 text-sm font-medium">
+                                访问商店 <i class="fas fa-external-link-alt ml-1"></i>
+                            </a>
+                            <div class="text-xs text-green-600 mt-2">
+                                <i class="fas fa-shipping-fast mr-1"></i>澳大利亚 + 全球配送
+                            </div>
+                        </div>
+
+                        <!-- Garage 5 -->
+                        <div class="bg-white p-5 rounded-lg shadow-lg border-l-4 border-purple-500">
+                            <div class="flex items-center justify-between mb-3">
+                                <h5 class="font-semibold text-miata-gray">Garage 5</h5>
+                                <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">🇳🇿 新西兰</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-3">混合OEM、改装 + 二手配件</p>
+                            <div class="text-xs text-gray-500 mb-3">
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NA</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NB</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NC</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">ND</span>
+                            </div>
+                            <a href="https://www.garage5.net" target="_blank" class="text-purple-600 hover:text-purple-800 text-sm font-medium">
+                                访问商店 <i class="fas fa-external-link-alt ml-1"></i>
+                            </a>
+                            <div class="text-xs text-green-600 mt-2">
+                                <i class="fas fa-shipping-fast mr-1"></i>新西兰 + 全球配送
+                            </div>
+                        </div>
+
+                        <!-- Miata Parts NZ -->
+                        <div class="bg-white p-5 rounded-lg shadow-lg border-l-4 border-purple-500">
+                            <div class="flex items-center justify-between mb-3">
+                                <h5 class="font-semibold text-miata-gray">Miata Parts NZ</h5>
+                                <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">🇳🇿 新西兰</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-3">混合OEM + 改装配件</p>
+                            <div class="text-xs text-gray-500 mb-3">
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NA</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NB</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NC</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">ND</span>
+                            </div>
+                            <a href="https://miataparts.co.nz" target="_blank" class="text-purple-600 hover:text-purple-800 text-sm font-medium">
+                                访问商店 <i class="fas fa-external-link-alt ml-1"></i>
+                            </a>
+                            <div class="text-xs text-green-600 mt-2">
+                                <i class="fas fa-shipping-fast mr-1"></i>新西兰 + 区域 + 全球配送
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 二手OEM配件 -->
+                <div class="mb-10">
+                    <h4 class="text-xl font-semibold text-miata-gray mb-4 flex items-center">
+                        <i class="fas fa-recycle text-green-600 mr-2"></i>二手OEM配件
+                    </h4>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Autolink MX5 -->
+                        <div class="bg-white p-5 rounded-lg shadow-lg border-l-4 border-blue-500">
+                            <div class="flex items-center justify-between mb-3">
+                                <h5 class="font-semibold text-miata-gray">Autolink MX5</h5>
+                                <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">🇬🇧 英国</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-3">二手 + 新OEM配件</p>
+                            <div class="text-xs text-gray-500 mb-3">
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NA</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NB</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NC</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">ND</span>
+                            </div>
+                            <a href="https://autolinkmx5.com" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm font-medium">
+                                访问商店 <i class="fas fa-external-link-alt ml-1"></i>
+                            </a>
+                            <div class="text-xs text-green-600 mt-2">
+                                <i class="fas fa-shipping-fast mr-1"></i>欧洲 + 全球配送
+                            </div>
+                        </div>
+
+                        <!-- MX5 Heaven -->
+                        <div class="bg-white p-5 rounded-lg shadow-lg border-l-4 border-blue-500">
+                            <div class="flex items-center justify-between mb-3">
+                                <h5 class="font-semibold text-miata-gray">MX5 Heaven</h5>
+                                <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">🇬🇧 英国</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-3">二手 + 新OEM配件</p>
+                            <div class="text-xs text-gray-500 mb-3">
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NA</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NB</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NC</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">ND</span>
+                            </div>
+                            <a href="https://www.mx5heaven.co.uk" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm font-medium">
+                                访问商店 <i class="fas fa-external-link-alt ml-1"></i>
+                            </a>
+                            <div class="text-xs text-green-600 mt-2">
+                                <i class="fas fa-shipping-fast mr-1"></i>欧洲 + 全球配送
+                            </div>
+                        </div>
+
+                        <!-- MX5 City -->
+                        <div class="bg-white p-5 rounded-lg shadow-lg border-l-4 border-blue-500">
+                            <div class="flex items-center justify-between mb-3">
+                                <h5 class="font-semibold text-miata-gray">MX5 City</h5>
+                                <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">🇬🇧 英国</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-3">二手 + 翻新OEM配件</p>
+                            <div class="text-xs text-gray-500 mb-3">
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NA</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NB</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NC</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">ND</span>
+                            </div>
+                            <a href="https://www.mx5city.com" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm font-medium">
+                                访问商店 <i class="fas fa-external-link-alt ml-1"></i>
+                            </a>
+                            <div class="text-xs text-green-600 mt-2">
+                                <i class="fas fa-shipping-fast mr-1"></i>欧洲 + 全球配送
+                            </div>
+                        </div>
+
+                        <!-- Treasure Coast Miata -->
+                        <div class="bg-white p-5 rounded-lg shadow-lg border-l-4 border-blue-600">
+                            <div class="flex items-center justify-between mb-3">
+                                <h5 class="font-semibold text-miata-gray">Treasure Coast Miata</h5>
+                                <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">🇺🇸 美国</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-3">二手 + 新OEM配件</p>
+                            <div class="text-xs text-gray-500 mb-3">
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NA</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NB</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NC</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">ND</span>
+                            </div>
+                            <a href="https://treasurecoastmiata.com" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm font-medium">
+                                访问商店 <i class="fas fa-external-link-alt ml-1"></i>
+                            </a>
+                            <div class="text-xs text-green-600 mt-2">
+                                <i class="fas fa-shipping-fast mr-1"></i>美国 + 全球配送
+                            </div>
+                        </div>
+
+                        <!-- Redline Auto Parts -->
+                        <div class="bg-white p-5 rounded-lg shadow-lg border-l-4 border-blue-600">
+                            <div class="flex items-center justify-between mb-3">
+                                <h5 class="font-semibold text-miata-gray">Redline Auto Parts</h5>
+                                <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">🇺🇸 美国</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-3">测试过的二手OEM配件</p>
+                            <div class="text-xs text-gray-500 mb-3">
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NA</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NB</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NC</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">ND</span>
+                            </div>
+                            <a href="https://www.redlineautoparts.com/mazda-miata/" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm font-medium">
+                                访问商店 <i class="fas fa-external-link-alt ml-1"></i>
+                            </a>
+                            <div class="text-xs text-green-600 mt-2">
+                                <i class="fas fa-shipping-fast mr-1"></i>美国 + 全球配送
+                            </div>
+                        </div>
+
+                        <!-- Planet Miata -->
+                        <div class="bg-white p-5 rounded-lg shadow-lg border-l-4 border-blue-600">
+                            <div class="flex items-center justify-between mb-3">
+                                <h5 class="font-semibold text-miata-gray">Planet Miata</h5>
+                                <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">🇺🇸 美国</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-3">二手OEM + 性能配件</p>
+                            <div class="text-xs text-gray-500 mb-3">
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NA</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NB</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NC</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">ND</span>
+                            </div>
+                            <a href="https://planet-miata.com" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm font-medium">
+                                访问商店 <i class="fas fa-external-link-alt ml-1"></i>
+                            </a>
+                            <div class="text-xs text-green-600 mt-2">
+                                <i class="fas fa-shipping-fast mr-1"></i>美国 + 全球配送
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 日本市场 -->
+                <div class="mb-10">
+                    <h4 class="text-xl font-semibold text-miata-gray mb-4 flex items-center">
+                        <i class="fas fa-store-alt text-orange-600 mr-2"></i>日本市场
+                    </h4>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- UP GARAGE -->
+                        <div class="bg-white p-5 rounded-lg shadow-lg border-l-4 border-orange-500">
+                            <div class="flex items-center justify-between mb-3">
+                                <h5 class="font-semibold text-miata-gray">UP GARAGE</h5>
+                                <span class="text-xs bg-red-100 text-red-800 px-2 py-1 rounded-full">🇯🇵 日本</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-3">二手OEM/改装配件市场</p>
+                            <div class="text-xs text-gray-500 mb-3">
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NA</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NB</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NC</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">ND</span>
+                            </div>
+                            <a href="https://www.upgarage.com/en" target="_blank" class="text-orange-600 hover:text-orange-800 text-sm font-medium">
+                                访问市场 <i class="fas fa-external-link-alt ml-1"></i>
+                            </a>
+                            <div class="text-xs text-blue-600 mt-2">
+                                <i class="fas fa-info-circle mr-1"></i>日本 + 全球（通过转运）
+                            </div>
+                        </div>
+
+                        <!-- Yahoo! Auctions Japan -->
+                        <div class="bg-white p-5 rounded-lg shadow-lg border-l-4 border-orange-500">
+                            <div class="flex items-center justify-between mb-3">
+                                <h5 class="font-semibold text-miata-gray">Yahoo! Auctions Japan</h5>
+                                <span class="text-xs bg-red-100 text-red-800 px-2 py-1 rounded-full">🇯🇵 日本</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-3">拍卖市场OEM/改装配件</p>
+                            <div class="text-xs text-gray-500 mb-3">
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NA</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NB</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NC</span>
+                                <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">ND</span>
+                            </div>
+                            <a href="https://auctions.yahoo.co.jp/" target="_blank" class="text-orange-600 hover:text-orange-800 text-sm font-medium">
+                                访问市场 <i class="fas fa-external-link-alt ml-1"></i>
+                            </a>
+                            <div class="text-xs text-blue-600 mt-2">
+                                <i class="fas fa-info-circle mr-1"></i>日本 + 全球（通过转运）
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 信息提示 -->
+                <div class="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-lg mt-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-info-circle text-blue-400"></i>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-blue-700">
+                                <strong>注意：</strong> Buyee或BigInJapan等日本转运公司可以帮助您从日本市场购买并全球配送。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-miata-gray text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-2 mb-4">
+                    <i class="fas fa-car text-miata-red text-2xl"></i>
+                    <span class="text-xl font-bold">Miatapedia</span>
+                </div>
+                <p class="text-gray-400 mb-6">
+                    马自达MX-5爱好者的最大资源集合。
+                </p>
+                <div class="flex justify-center space-x-6">
+                    <a href="manuals-zh.html" class="text-gray-400 hover:text-white">手册</a>
+                    <a href="clubs-zh.html" class="text-gray-400 hover:text-white">俱乐部</a>
+                    <a href="shops-zh.html" class="text-gray-400 hover:text-white">商店</a>
+                    <a href="events-zh.html" class="text-gray-400 hover:text-white">活动</a>
+                </div>
+                <div class="border-t border-gray-600 mt-8 pt-8 text-center text-gray-400">
+                    <p>&copy; 2024 Miatapedia. 保留所有权利。</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Language selector toggle
+        document.getElementById('language-btn').addEventListener('click', function(e) {
+            e.stopPropagation();
+            const dropdown = document.getElementById('language-dropdown');
+            dropdown.classList.toggle('hidden');
+        });
+
+        // Close language dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            const languageSelector = document.getElementById('language-selector');
+            const dropdown = document.getElementById('language-dropdown');
+
+            if (!languageSelector.contains(e.target)) {
+                dropdown.classList.add('hidden');
+            }
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Manuals MX-5 | Miatapedia - Mazda MX-5 Resources</title>
+    <meta name="description" content="Access technical manuals, wiring diagrams, and specifications for all MX-5 generations. Download factory service manuals and electrical diagrams.">
+
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'miata-red': '#C41E3A',
+                        'miata-gray': '#374151'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2 sm:space-x-4">
+                    <i class="fas fa-car text-miata-red text-2xl sm:text-3xl"></i>
+                    <h1 class="text-lg sm:text-2xl font-bold text-miata-gray">Miatapedia</h1>
+                </div>
+                <div class="hidden md:flex space-x-6 items-center">
+                    <a href="manuals.html" class="text-miata-red font-medium transition-colors">Manuals</a>
+                    <a href="clubs-en.html" class="text-miata-gray hover:text-miata-red transition-colors">Clubs</a>
+                    <a href="shops.html" class="text-miata-gray hover:text-miata-red transition-colors">Shops</a>
+                    <a href="events.html" class="text-miata-gray hover:text-miata-red transition-colors">Events</a>
+
+                    <!-- Language Selector -->
+                    <div class="relative" id="language-selector">
+                        <button class="flex items-center space-x-1 text-miata-gray hover:text-miata-red transition-colors" id="language-btn">
+                            <i class="fas fa-globe text-sm"></i>
+                            <span class="text-sm">EN</span>
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                        <div class="absolute right-0 top-full mt-2 bg-white rounded-lg shadow-lg border py-2 min-w-[120px] hidden" id="language-dropdown">
+                            <a href="manuales.html" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                <span class="mr-2">🇪🇸</span>Español
+                            </a>
+                            <a href="manuals.html" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 font-medium text-miata-red">
+                                <span class="mr-2">🇺🇸</span>English
+                            </a>
+                            <a href="manuals-zh.html" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                <span class="mr-2">🇨🇳</span>中文
+                            </a>
+                            <a href="manuals-pt.html" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                <span class="mr-2">🇵🇹</span>Português
+                            </a>
+                            <a href="manuals-de.html" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                <span class="mr-2">🇩🇪</span>Deutsch
+                            </a>
+                            <a href="manuals-fr.html" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                <span class="mr-2">🇫🇷</span>Français
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <button class="md:hidden text-miata-gray" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div class="md:hidden hidden mt-4" id="mobile-menu">
+                <div class="flex flex-col space-y-2">
+                    <a href="manuals.html" class="text-miata-red font-medium transition-colors py-2">Manuals</a>
+                    <a href="clubs-en.html" class="text-miata-gray hover:text-miata-red transition-colors py-2">Clubs</a>
+                    <a href="shops.html" class="text-miata-gray hover:text-miata-red transition-colors py-2">Shops</a>
+                    <a href="events.html" class="text-miata-gray hover:text-miata-red transition-colors py-2">Events</a>
+
+                    <!-- Mobile Language Selector -->
+                    <div class="border-t border-gray-200 pt-2 mt-2">
+                        <div class="text-xs text-gray-500 mb-2 px-2">Language</div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <a href="manuales.html" class="flex items-center px-2 py-1 text-sm text-gray-600">
+                                <span class="mr-2">🇪🇸</span>Español
+                            </a>
+                            <a href="manuals.html" class="flex items-center px-2 py-1 text-sm text-miata-red font-medium">
+                                <span class="mr-2">🇺🇸</span>English
+                            </a>
+                            <a href="manuals-zh.html" class="flex items-center px-2 py-1 text-sm text-gray-600">
+                                <span class="mr-2">🇨🇳</span>中文
+                            </a>
+                            <a href="manuals-pt.html" class="flex items-center px-2 py-1 text-sm text-gray-600">
+                                <span class="mr-2">🇵🇹</span>Português
+                            </a>
+                            <a href="manuals-de.html" class="flex items-center px-2 py-1 text-sm text-gray-600">
+                                <span class="mr-2">🇩🇪</span>Deutsch
+                            </a>
+                            <a href="manuals-fr.html" class="flex items-center px-2 py-1 text-sm text-gray-600">
+                                <span class="mr-2">🇫🇷</span>Français
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Back to Home -->
+    <div class="bg-white border-b">
+        <div class="container mx-auto px-4 sm:px-6 py-3">
+            <a href="en.html" class="inline-flex items-center text-sm text-miata-gray hover:text-miata-red transition-colors">
+                <i class="fas fa-arrow-left mr-2"></i>
+                Back to Home
+            </a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-miata-red to-red-600 text-white py-12 sm:py-16 md:py-20">
+        <div class="container mx-auto px-4 sm:px-6 text-center">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
+                <i class="fas fa-book mr-3"></i>Technical Manuals
+            </h1>
+            <p class="text-base sm:text-lg md:text-xl mb-8 sm:mb-12 max-w-xs sm:max-w-2xl md:max-w-3xl mx-auto">
+                Access technical manuals, wiring diagrams, and specifications for all MX-5 generations.
+            </p>
+        </div>
+    </section>
+
+    <!-- Manuals Content -->
+    <section class="py-12 sm:py-16 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6">
+            <!-- Service Manuals -->
+            <div class="mb-12">
+                <h3 class="text-xl sm:text-2xl font-bold text-miata-gray mb-6 text-center">
+                    <i class="fas fa-wrench text-miata-red mr-2"></i>Complete Service Manuals
+                </h3>
+                <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                    <!-- Mellens Factory Service Manuals -->
+                    <div class="bg-white p-4 sm:p-5 rounded-lg shadow-lg border-l-4 border-miata-red">
+                        <div class="flex items-center justify-between mb-3">
+                            <h4 class="font-semibold text-miata-gray">Mellens - Factory Manuals</h4>
+                            <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">Verified</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-3">Historic repository with multiple PDFs, includes many electrical diagrams</p>
+                        <div class="text-xs text-gray-500 mb-3">
+                            <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NA</span>
+                            <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NB</span>
+                            <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NC</span>
+                        </div>
+                        <a href="https://www.mellens.net/mazda/" target="_blank" class="bg-miata-red text-white px-3 py-2 rounded text-xs hover:bg-red-700 transition-colors">
+                            View Manuals
+                        </a>
+                    </div>
+
+                    <!-- Archive.org 1990 Manual -->
+                    <div class="bg-white p-4 sm:p-5 rounded-lg shadow-lg border-l-4 border-blue-500">
+                        <div class="flex items-center justify-between mb-3">
+                            <h4 class="font-semibold text-miata-gray">1990 Workshop Manual</h4>
+                            <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">NA 1990</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-3">Complete original NA 1990 workshop manual</p>
+                        <div class="text-xs text-gray-500 mb-3">
+                            <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">NA</span>
+                        </div>
+                        <a href="https://archive.org/details/1990-mazda-mx-5-miata-workshop-manual" target="_blank" class="bg-blue-600 text-white px-3 py-2 rounded text-xs hover:bg-blue-700 transition-colors">
+                            Download PDF
+                        </a>
+                    </div>
+
+                    <!-- MX5Manual ND -->
+                    <div class="bg-white p-4 sm:p-5 rounded-lg shadow-lg border-l-4 border-purple-500">
+                        <div class="flex items-center justify-between mb-3">
+                            <h4 class="font-semibold text-miata-gray">MX5Manual (ND)</h4>
+                            <span class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded-full">ND 2015+</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-3">ND online manual with interactive wiring sections</p>
+                        <div class="text-xs text-gray-500 mb-3">
+                            <span class="inline-block bg-gray-100 px-2 py-1 rounded mr-1 mb-1">ND</span>
+                        </div>
+                        <a href="https://www.mx5manual.com/menu.html?p=wiring" target="_blank" class="bg-purple-600 text-white px-3 py-2 rounded text-xs hover:bg-purple-700 transition-colors">
+                            View Online Manual
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wiring Diagrams -->
+            <div class="mb-12">
+                <h3 class="text-xl sm:text-2xl font-bold text-miata-gray mb-6 text-center">
+                    <i class="fas fa-bolt text-miata-red mr-2"></i>Electrical Wiring Diagrams
+                </h3>
+                <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                    <!-- NA Wiring -->
+                    <div class="bg-white p-4 sm:p-5 rounded-lg shadow-lg border-l-4 border-green-500">
+                        <div class="flex items-center justify-between mb-3">
+                            <h4 class="font-semibold text-miata-gray">Mellens - NA 1991 Wiring</h4>
+                            <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">NA 1991-1993</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-3">Complete early NA electrical diagram</p>
+                        <a href="https://www.mellens.net/mazda/Mazda-Miata-1991-1993/1991_wiring.pdf" target="_blank" class="bg-green-600 text-white px-3 py-2 rounded text-xs hover:bg-green-700 transition-colors">
+                            Download PDF
+                        </a>
+                    </div>
+
+                    <!-- NB Wiring 2001 -->
+                    <div class="bg-white p-4 sm:p-5 rounded-lg shadow-lg border-l-4 border-blue-500">
+                        <div class="flex items-center justify-between mb-3">
+                            <h4 class="font-semibold text-miata-gray">Mellens - NB 2001 Wiring</h4>
+                            <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">NB 2001</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-3">NB electrical system (US spec)</p>
+                        <a href="https://www.mellens.net/mazda/mazda_miata_extra_manual/2001_wiring.pdf" target="_blank" class="bg-blue-600 text-white px-3 py-2 rounded text-xs hover:bg-blue-700 transition-colors">
+                            Download PDF
+                        </a>
+                    </div>
+
+                    <!-- NB Wiring 2005 -->
+                    <div class="bg-white p-4 sm:p-5 rounded-lg shadow-lg border-l-4 border-blue-600">
+                        <div class="flex items-center justify-between mb-3">
+                            <h4 class="font-semibold text-miata-gray">Mellens - NB 2005 Wiring</h4>
+                            <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">NB 2005</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-3">Latest NA/NB electrical diagrams</p>
+                        <a href="https://www.mellens.net/mazda/Mazda-Miata-2005/wiring.pdf" target="_blank" class="bg-blue-600 text-white px-3 py-2 rounded text-xs hover:bg-blue-700 transition-colors">
+                            Download PDF
+                        </a>
+                    </div>
+
+                    <!-- NC Wiring EU -->
+                    <div class="bg-white p-4 sm:p-5 rounded-lg shadow-lg border-l-4 border-purple-500">
+                        <div class="flex items-center justify-between mb-3">
+                            <h4 class="font-semibold text-miata-gray">NC 2009 Wiring (EU)</h4>
+                            <span class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded-full">NC 2009MY</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-3">PDF with European VIN coding (JMZ...)</p>
+                        <a href="https://static1.1.sqspcdn.com/static/f/341469/24622108/1395761779357/mazda_mx5_wiring_diagram_011020094.pdf" target="_blank" class="bg-purple-600 text-white px-3 py-2 rounded text-xs hover:bg-purple-700 transition-colors">
+                            Download PDF
+                        </a>
+                    </div>
+
+                    <!-- ND Wiring Specific -->
+                    <div class="bg-white p-4 sm:p-5 rounded-lg shadow-lg border-l-4 border-red-500">
+                        <div class="flex items-center justify-between mb-3">
+                            <h4 class="font-semibold text-miata-gray">MX5Manual - ND Wiring</h4>
+                            <span class="text-xs bg-red-100 text-red-800 px-2 py-1 rounded-full">ND 2015+</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-3">Specific wiring entry (one of several)</p>
+                        <a href="https://www.mx5manual.com/page.html?docid=SM356500&p=wiring&s=wr001" target="_blank" class="bg-red-600 text-white px-3 py-2 rounded text-xs hover:bg-red-700 transition-colors">
+                            View Online
+                        </a>
+                    </div>
+
+                    <!-- Comprehensive Wiring Collection -->
+                    <div class="bg-white p-4 sm:p-5 rounded-lg shadow-lg border-l-4 border-yellow-500">
+                        <div class="flex items-center justify-between mb-3">
+                            <h4 class="font-semibold text-miata-gray">MiataForumz - 1990-2002 Collection</h4>
+                            <span class="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full">NA/NB</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-3">Thread with links to multiple wiring PDFs</p>
+                        <a href="https://www.miataforumz.com/how-40/mazda-miata-wiring-diagrams-1990-2002-a-497/" target="_blank" class="bg-yellow-600 text-white px-3 py-2 rounded text-xs hover:bg-yellow-700 transition-colors">
+                            View Collection
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Online Resources -->
+            <div class="mb-8">
+                <h3 class="text-xl sm:text-2xl font-bold text-miata-gray mb-6 text-center">
+                    <i class="fas fa-globe text-miata-red mr-2"></i>Specialized Online Resources
+                </h3>
+                <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                    <!-- Mighty5s -->
+                    <div class="bg-white p-4 sm:p-5 rounded-lg shadow-lg border-l-4 border-orange-500">
+                        <div class="flex items-center justify-between mb-3">
+                            <h4 class="font-semibold text-miata-gray">Mighty5s - Compilation</h4>
+                            <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded-full">NA/NB/NC</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-3">Collaborative listing with multiple wiring resources</p>
+                        <a href="https://mighty5s.com/thread/3506/mx5-wiring-diagrams" target="_blank" class="bg-orange-600 text-white px-3 py-2 rounded text-xs hover:bg-orange-700 transition-colors">
+                            View Resources
+                        </a>
+                    </div>
+
+                    <!-- MX-5 OC Forum NC -->
+                    <div class="bg-white p-4 sm:p-5 rounded-lg shadow-lg border-l-4 border-blue-500">
+                        <div class="flex items-center justify-between mb-3">
+                            <h4 class="font-semibold text-miata-gray">MX-5 OC Forum - NC</h4>
+                            <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">NC</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-3">Discussion with links (includes Mellens and European Mazda portal)</p>
+                        <a href="https://forum.mx5oc.co.uk/t/nc-wiring-diagrams/88332" target="_blank" class="bg-blue-600 text-white px-3 py-2 rounded text-xs hover:bg-blue-700 transition-colors">
+                            View Discussion
+                        </a>
+                    </div>
+
+                    <!-- FixMyCarInfo NC -->
+                    <div class="bg-white p-4 sm:p-5 rounded-lg shadow-lg border-l-4 border-green-500">
+                        <div class="flex items-center justify-between mb-3">
+                            <h4 class="font-semibold text-miata-gray">FixMyCarInfo - NC 2009-2012</h4>
+                            <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">NC 2009-2012</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-3">Page with NC diagrams by specific years</p>
+                        <a href="https://fixmycarinfo.com/mazda/mx-5-nc/mazda-mx-5-nc-01-2009-08-2012-wiring-diagrams/" target="_blank" class="bg-green-600 text-white px-3 py-2 rounded text-xs hover:bg-green-700 transition-colors">
+                            View Diagrams
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Info note -->
+            <div class="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-lg">
+                <div class="flex">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-info-circle text-blue-400"></i>
+                    </div>
+                    <div class="ml-3">
+                        <p class="text-sm text-blue-700">
+                            <strong>Note:</strong> These resources are verified and actively used by the MX-5 community. PDFs are typically high quality and include detailed diagrams for professional repairs.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-miata-gray text-white py-8 sm:py-12">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-2 mb-4">
+                    <i class="fas fa-car text-miata-red text-xl sm:text-2xl"></i>
+                    <span class="text-lg sm:text-xl font-bold">Miatapedia</span>
+                </div>
+                <p class="text-gray-400 mb-4 sm:mb-6 text-sm sm:text-base">
+                    The largest collection of resources for Mazda MX-5 enthusiasts.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4 sm:gap-6">
+                    <a href="manuals.html" class="text-gray-400 hover:text-white text-sm sm:text-base transition-colors">Manuals</a>
+                    <a href="clubs-en.html" class="text-gray-400 hover:text-white text-sm sm:text-base transition-colors">Clubs</a>
+                    <a href="shops.html" class="text-gray-400 hover:text-white text-sm sm:text-base transition-colors">Shops</a>
+                    <a href="events.html" class="text-gray-400 hover:text-white text-sm sm:text-base transition-colors">Events</a>
+                    <a href="en.html" class="text-gray-400 hover:text-white text-sm sm:text-base transition-colors">Home</a>
+                </div>
+                <div class="border-t border-gray-600 mt-6 sm:mt-8 pt-6 sm:pt-8 text-center text-gray-400">
+                    <p class="text-xs sm:text-sm">&copy; 2024 Miatapedia. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Language selector toggle
+        document.getElementById('language-btn').addEventListener('click', function(e) {
+            e.stopPropagation();
+            const dropdown = document.getElementById('language-dropdown');
+            dropdown.classList.toggle('hidden');
+        });
+
+        // Close language dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            const languageSelector = document.getElementById('language-selector');
+            const dropdown = document.getElementById('language-dropdown');
+
+            if (!languageSelector.contains(e.target)) {
+                dropdown.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
