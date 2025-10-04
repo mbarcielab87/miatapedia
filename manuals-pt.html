@@ -29,13 +29,18 @@
     <header class="bg-white shadow-lg sticky top-0 z-50">
         <nav class="container mx-auto px-4 py-4">
             <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-4">
-                    <i class="fas fa-car text-miata-red text-3xl"></i>
-                    <h1 class="text-2xl font-bold text-miata-gray">Miatapedia</h1>
+                <div class="flex flex-col items-start space-y-1">
+                    <a href="pt.html" class="text-xs text-gray-500 hover:text-miata-red transition-colors flex items-center">
+                        <i class="fas fa-home mr-1"></i>Voltar ao Início
+                    </a>
+                    <div class="flex items-center space-x-4">
+                        <i class="fas fa-car text-miata-red text-3xl"></i>
+                        <h1 class="text-2xl font-bold text-miata-gray">Miatapedia</h1>
+                    </div>
                 </div>
                 <div class="hidden md:flex space-x-6 items-center">
                     <a href="manuals-pt.html" class="text-miata-red font-medium transition-colors">Manuais</a>
-                    <a href="#clubes" class="text-miata-gray hover:text-miata-red transition-colors">Clubes</a>
+                    <a href="clubs-pt.html" class="text-miata-gray hover:text-miata-red transition-colors">Clubes</a>
                     <a href="shops-pt.html" class="text-miata-gray hover:text-miata-red transition-colors">Lojas</a>
                     <a href="events-pt.html" class="text-miata-gray hover:text-miata-red transition-colors">Eventos</a>
 
@@ -71,6 +76,40 @@
                 <button class="md:hidden text-miata-gray" id="mobile-menu-btn">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div class="md:hidden hidden mt-4" id="mobile-menu">
+                <div class="flex flex-col space-y-2">
+                    <a href="manuals-pt.html" class="text-miata-red font-medium transition-colors py-2">Manuais</a>
+                    <a href="clubs-pt.html" class="text-miata-gray hover:text-miata-red transition-colors py-2">Clubes</a>
+                    <a href="shops-pt.html" class="text-miata-gray hover:text-miata-red transition-colors py-2">Lojas</a>
+                    <a href="events-pt.html" class="text-miata-gray hover:text-miata-red transition-colors py-2">Eventos</a>
+
+                    <!-- Mobile Language Selector -->
+                    <div class="border-t border-gray-200 pt-2 mt-2">
+                        <div class="text-xs text-gray-500 mb-2 px-2">Idioma</div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <a href="manuales.html" class="flex items-center px-2 py-1 text-sm text-gray-600">
+                                <span class="mr-2">🇪🇸</span>Español
+                            </a>
+                            <a href="manuals.html" class="flex items-center px-2 py-1 text-sm text-gray-600">
+                                <span class="mr-2">🇺🇸</span>English
+                            </a>
+                            <a href="manuals-zh.html" class="flex items-center px-2 py-1 text-sm text-gray-600">
+                                <span class="mr-2">🇨🇳</span>中文
+                            </a>
+                            <a href="manuals-pt.html" class="flex items-center px-2 py-1 text-sm text-miata-red font-medium">
+                                <span class="mr-2">🇵🇹</span>Português
+                            </a>
+                            <a href="manuals-de.html" class="flex items-center px-2 py-1 text-sm text-gray-600">
+                                <span class="mr-2">🇩🇪</span>Deutsch
+                            </a>
+                            <a href="manuals-fr.html" class="flex items-center px-2 py-1 text-sm text-gray-600">
+                                <span class="mr-2">🇫🇷</span>Français
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </nav>
     </header>

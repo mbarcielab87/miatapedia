@@ -30,11 +30,21 @@
     <header class="bg-white shadow-lg sticky top-0 z-50">
         <nav class="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
             <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-2 sm:space-x-4">
-                    <i class="fas fa-car text-miata-red text-2xl sm:text-3xl"></i>
-                    <h1 class="text-lg sm:text-2xl font-bold text-miata-gray">Miatapedia</h1>
+                <div class="flex flex-col items-start space-y-1">
+                    <a href="index.html" class="text-xs text-gray-500 hover:text-miata-red transition-colors flex items-center">
+                        <i class="fas fa-home mr-1"></i>Volver al Inicio
+                    </a>
+                    <div class="flex items-center space-x-2 sm:space-x-4">
+                        <i class="fas fa-car text-miata-red text-2xl sm:text-3xl"></i>
+                        <h1 class="text-lg sm:text-2xl font-bold text-miata-gray">Miatapedia</h1>
+                    </div>
                 </div>
                 <div class="hidden md:flex space-x-6 items-center">
+                    <a href="manuales.html" class="text-miata-gray hover:text-miata-red transition-colors">Manuales</a>
+                    <a href="clubs.html" class="text-miata-gray hover:text-miata-red transition-colors">Clubs</a>
+                    <a href="tiendas.html" class="text-miata-red font-medium">Tiendas</a>
+                    <a href="eventos.html" class="text-miata-gray hover:text-miata-red transition-colors">Eventos</a>
+
                     <!-- Language Selector -->
                     <div class="relative" id="language-selector">
                         <button class="flex items-center space-x-1 text-miata-gray hover:text-miata-red transition-colors" id="language-btn">
@@ -43,7 +53,7 @@
                             <i class="fas fa-chevron-down text-xs"></i>
                         </button>
                         <div class="absolute right-0 top-full mt-2 bg-white rounded-lg shadow-lg border py-2 min-w-[120px] hidden" id="language-dropdown">
-                            <a href="tiendas.html" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                            <a href="tiendas.html" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 font-medium text-miata-red">
                                 <span class="mr-2">🇪🇸</span>Español
                             </a>
                             <a href="shops.html" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
@@ -74,6 +84,11 @@
             <!-- Mobile Menu -->
             <div class="md:hidden hidden mt-4" id="mobile-menu">
                 <div class="flex flex-col space-y-2">
+                    <a href="manuales.html" class="text-miata-gray hover:text-miata-red transition-colors py-2">Manuales</a>
+                    <a href="clubs.html" class="text-miata-gray hover:text-miata-red transition-colors py-2">Clubs</a>
+                    <a href="tiendas.html" class="text-miata-red font-medium py-2">Tiendas</a>
+                    <a href="eventos.html" class="text-miata-gray hover:text-miata-red transition-colors py-2">Eventos</a>
+
                     <!-- Mobile Language Selector -->
                     <div class="border-t border-gray-200 pt-2 mt-2">
                         <div class="text-xs text-gray-500 mb-2 px-2">Idioma</div>
@@ -565,7 +580,7 @@
                 <div class="flex flex-wrap justify-center gap-4 sm:gap-6">
                     <a href="manuales.html" class="text-gray-400 hover:text-white text-sm sm:text-base transition-colors">Manuales</a>
                     <a href="clubs.html" class="text-gray-400 hover:text-white text-sm sm:text-base transition-colors">Clubs</a>
-                    <a href="tiendas.html" class="text-gray-400 hover:text-white text-sm sm:text-base transition-colors">Tiendas</a>
+                    <a href="tiendas.html" class="text-white font-medium text-sm sm:text-base transition-colors">Tiendas</a>
                     <a href="eventos.html" class="text-gray-400 hover:text-white text-sm sm:text-base transition-colors">Eventos</a>
                 </div>
                 <div class="border-t border-gray-600 mt-6 sm:mt-8 pt-6 sm:pt-8 text-center text-gray-400">
