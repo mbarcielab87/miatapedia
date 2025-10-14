@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miatapedia - Recursos globales del Mazda MX-5 | Conectado a API</title>
+
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'miata-red': '#C41E3A',
+                        'miata-gray': '#374151'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2 sm:space-x-4">
+                    <i class="fas fa-car text-miata-red text-2xl sm:text-3xl"></i>
+                    <h1 class="text-lg sm:text-2xl font-bold text-miata-gray">Miatapedia</h1>
+                    <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">API</span>
+                </div>
+                <div class="hidden md:flex space-x-6 items-center">
+                    <a href="#clubs" class="text-miata-gray hover:text-miata-red transition-colors">Clubs</a>
+                    <a href="#proveedores" class="text-miata-gray hover:text-miata-red transition-colors">Tiendas</a>
+                    <a href="#manuales" class="text-miata-gray hover:text-miata-red transition-colors">Manuales</a>
+                    <a href="#eventos" class="text-miata-gray hover:text-miata-red transition-colors">Eventos</a>
+                </div>
+                <button class="md:hidden">
+                    <i class="fas fa-bars text-miata-gray text-xl"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-miata-red to-red-600 text-white py-16 sm:py-20 md:py-24">
+        <div class="container mx-auto px-4 sm:px-6 text-center">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
+                <i class="fas fa-car mr-3"></i>Miatapedia
+            </h1>
+            <h2 class="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 font-light">Recursos globales del Mazda MX-5</h2>
+            <p class="text-base sm:text-lg md:text-xl mb-8 sm:mb-12 max-w-xs sm:max-w-2xl md:max-w-3xl mx-auto">
+                La mayor colección de recursos para entusiastas del Mazda MX-5 Miata.
+                Encuentra manuales técnicos, clubs mundiales, tiendas especializadas y eventos activos.
+            </p>
+
+            <!-- API Status -->
+            <div id="api-status" class="mb-8">
+                <div class="inline-flex items-center bg-white bg-opacity-20 rounded-lg px-4 py-2">
+                    <i id="api-icon" class="fas fa-spinner fa-spin mr-2"></i>
+                    <span id="api-text">Conectando con API...</span>
+                </div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-4xl mx-auto">
+                <div class="bg-white bg-opacity-20 p-4 sm:p-6 rounded-lg">
+                    <div class="text-2xl sm:text-3xl font-bold mb-2" id="foros-count">-</div>
+                    <div class="text-sm sm:text-base opacity-90">Foros Activos</div>
+                </div>
+                <div class="bg-white bg-opacity-20 p-4 sm:p-6 rounded-lg">
+                    <div class="text-2xl sm:text-3xl font-bold mb-2" id="proveedores-count">-</div>
+                    <div class="text-sm sm:text-base opacity-90">Proveedores</div>
+                </div>
+                <div class="bg-white bg-opacity-20 p-4 sm:p-6 rounded-lg">
+                    <div class="text-2xl sm:text-3xl font-bold mb-2" id="manuales-count">-</div>
+                    <div class="text-sm sm:text-base opacity-90">Manuales</div>
+                </div>
+                <div class="bg-white bg-opacity-20 p-4 sm:p-6 rounded-lg">
+                    <div class="text-2xl sm:text-3xl font-bold mb-2" id="eventos-count">-</div>
+                    <div class="text-sm sm:text-base opacity-90">Eventos</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clubs Section -->
+    <section id="clubs" class="py-12 sm:py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-8 sm:mb-12">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-miata-gray mb-4">
+                    <i class="fas fa-users text-miata-red mr-3"></i>Clubs y Comunidades
+                </h2>
+                <p class="text-base sm:text-lg md:text-xl text-gray-600 max-w-xs sm:max-w-2xl md:max-w-3xl mx-auto">
+                    Conecta con clubs y comunidades MX-5 alrededor del mundo. Comparte experiencias, conocimiento y pasión.
+                </p>
+            </div>
+
+            <!-- Loading indicator -->
+            <div id="clubs-loading" class="text-center py-8">
+                <i class="fas fa-spinner fa-spin text-miata-red text-2xl"></i>
+                <p class="mt-2 text-gray-600">Cargando clubs y foros...</p>
+            </div>
+
+            <!-- Dynamic content from API -->
+            <div id="clubs-content">
+                <!-- Se carga dinámicamente desde la API -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Proveedores Section -->
+    <section id="proveedores" class="py-12 sm:py-16 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-8 sm:mb-12">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-miata-gray mb-4">
+                    <i class="fas fa-store text-miata-red mr-3"></i>Tiendas Especializadas
+                </h2>
+                <p class="text-base sm:text-lg md:text-xl text-gray-600 max-w-xs sm:max-w-2xl md:max-w-3xl mx-auto">
+                    Directorio de tiendas especializadas en MX-5, repuestos originales y modificaciones.
+                </p>
+            </div>
+
+            <!-- Loading indicator -->
+            <div id="proveedores-loading" class="text-center py-8">
+                <i class="fas fa-spinner fa-spin text-miata-red text-2xl"></i>
+                <p class="mt-2 text-gray-600">Cargando proveedores...</p>
+            </div>
+
+            <!-- Dynamic content from API -->
+            <div id="proveedores-content">
+                <!-- Se carga dinámicamente desde la API -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Manuales Section -->
+    <section id="manuales" class="py-12 sm:py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-8 sm:mb-12">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-miata-gray mb-4">
+                    <i class="fas fa-book text-miata-red mr-3"></i>Manuales Técnicos
+                </h2>
+                <p class="text-base sm:text-lg md:text-xl text-gray-600 max-w-xs sm:max-w-2xl md:max-w-3xl mx-auto">
+                    Colección completa de manuales de servicio, diagramas eléctricos y recursos técnicos para todas las generaciones MX-5.
+                </p>
+            </div>
+
+            <!-- Loading indicator -->
+            <div id="manuales-loading" class="text-center py-8">
+                <i class="fas fa-spinner fa-spin text-miata-red text-2xl"></i>
+                <p class="mt-2 text-gray-600">Cargando manuales...</p>
+            </div>
+
+            <!-- Dynamic content from API -->
+            <div id="manuales-content">
+                <!-- Se carga dinámicamente desde la API -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Eventos Section -->
+    <section id="eventos" class="py-12 sm:py-16 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-8 sm:mb-12">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-miata-gray mb-4">
+                    <i class="fas fa-calendar-alt text-miata-red mr-3"></i>Eventos MX-5
+                </h2>
+                <p class="text-base sm:text-lg md:text-xl text-gray-600 max-w-xs sm:max-w-2xl md:max-w-3xl mx-auto">
+                    Calendario de eventos, rallies y encuentros de clubs MX-5 alrededor del mundo.
+                </p>
+            </div>
+
+            <!-- Loading indicator -->
+            <div id="eventos-loading" class="text-center py-8">
+                <i class="fas fa-spinner fa-spin text-miata-red text-2xl"></i>
+                <p class="mt-2 text-gray-600">Cargando eventos...</p>
+            </div>
+
+            <!-- Dynamic content from API -->
+            <div id="eventos-content">
+                <!-- Se carga dinámicamente desde la API -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-miata-gray text-white py-8 sm:py-12">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-2 sm:space-x-4 mb-4 sm:mb-6">
+                    <i class="fas fa-car text-miata-red text-2xl sm:text-3xl"></i>
+                    <h3 class="text-lg sm:text-2xl font-bold">Miatapedia</h3>
+                </div>
+                <p class="text-gray-400 mb-4 sm:mb-6 text-sm sm:text-base">
+                    La mayor colección de recursos para entusiastas del Mazda MX-5.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4 sm:gap-6">
+                    <a href="#clubs" class="text-gray-400 hover:text-white text-sm sm:text-base transition-colors">Clubs</a>
+                    <a href="#proveedores" class="text-gray-400 hover:text-white text-sm sm:text-base transition-colors">Tiendas</a>
+                    <a href="#manuales" class="text-gray-400 hover:text-white text-sm sm:text-base transition-colors">Manuales</a>
+                    <a href="#eventos" class="text-gray-400 hover:text-white text-sm sm:text-base transition-colors">Eventos</a>
+                </div>
+                <div class="border-t border-gray-600 mt-6 sm:mt-8 pt-6 sm:pt-8 text-center text-gray-400">
+                    <p class="text-xs sm:text-sm">&copy; 2024 Miatapedia. Datos dinámicos desde API local.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- API JavaScript -->
+    <script src="api.js"></script>
+
+    <!-- Additional JavaScript for loading states -->
+    <script>
+        // Función para actualizar el estado de la API
+        function actualizarEstadoAPI(estado) {
+            const iconElement = document.getElementById('api-icon');
+            const textElement = document.getElementById('api-text');
+
+            switch(estado) {
+                case 'loading':
+                    iconElement.className = 'fas fa-spinner fa-spin mr-2';
+                    textElement.textContent = 'Conectando con API...';
+                    break;
+                case 'success':
+                    iconElement.className = 'fas fa-check-circle mr-2';
+                    textElement.textContent = 'Conectado a API local';
+                    break;
+                case 'error':
+                    iconElement.className = 'fas fa-exclamation-triangle mr-2';
+                    textElement.textContent = 'Error de conexión';
+                    break;
+            }
+        }
+
+        // Función para ocultar indicadores de carga
+        function ocultarCarga(seccion) {
+            const loadingElement = document.getElementById(`${seccion}-loading`);
+            if (loadingElement) {
+                loadingElement.style.display = 'none';
+            }
+        }
+
+        // Verificar estado de API al cargar
+        document.addEventListener('DOMContentLoaded', async function() {
+            // Esperar un momento para que se cargue api.js
+            setTimeout(() => {
+                // Override de las funciones de carga para manejar indicadores
+                if (window.cargarClubsContenido) {
+                    const cargarClubsContenidoOriginal = window.cargarClubsContenido;
+                    window.cargarClubsContenido = async function() {
+                        try {
+                            await cargarClubsContenidoOriginal();
+                            ocultarCarga('clubs');
+                        } catch (error) {
+                            ocultarCarga('clubs');
+                            document.getElementById('clubs-content').innerHTML = '<p class="text-center text-red-600">Error cargando clubs</p>';
+                        }
+                    };
+                }
+
+                if (window.cargarProveedoresContenido) {
+                    const cargarProveedoresContenidoOriginal = window.cargarProveedoresContenido;
+                    window.cargarProveedoresContenido = async function() {
+                        try {
+                            await cargarProveedoresContenidoOriginal();
+                            ocultarCarga('proveedores');
+                        } catch (error) {
+                            ocultarCarga('proveedores');
+                            document.getElementById('proveedores-content').innerHTML = '<p class="text-center text-red-600">Error cargando proveedores</p>';
+                        }
+                    };
+                }
+
+                if (window.cargarManualesContenido) {
+                    const cargarManualesContenidoOriginal = window.cargarManualesContenido;
+                    window.cargarManualesContenido = async function() {
+                        try {
+                            await cargarManualesContenidoOriginal();
+                            ocultarCarga('manuales');
+                        } catch (error) {
+                            ocultarCarga('manuales');
+                            document.getElementById('manuales-content').innerHTML = '<p class="text-center text-red-600">Error cargando manuales</p>';
+                        }
+                    };
+                }
+
+                if (window.cargarEventosContenido) {
+                    const cargarEventosContenidoOriginal = window.cargarEventosContenido;
+                    window.cargarEventosContenido = async function() {
+                        try {
+                            await cargarEventosContenidoOriginal();
+                            ocultarCarga('eventos');
+                        } catch (error) {
+                            ocultarCarga('eventos');
+                            document.getElementById('eventos-content').innerHTML = '<p class="text-center text-red-600">Error cargando eventos</p>';
+                        }
+                    };
+                }
+            }, 100);
+
+            try {
+                await fetch('http://172.22.133.26:3000/api/test');
+                actualizarEstadoAPI('success');
+            } catch (error) {
+                actualizarEstadoAPI('error');
+            }
+        });
+    </script>
+</body>
+</html>

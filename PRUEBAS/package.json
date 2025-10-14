@@ -1,0 +1,15 @@
+{
+  "name": "pruebas",
+  "version": "1.0.0",
+  "description": "Este directorio contiene una versión completa de Miatapedia con backend API, frontend de prueba y frontend web conectado a la API.",
+  "main": "serve-frontend.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miatapedia - Frontend Limpio</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: #f5f5f5; }
+        .container { max-width: 1200px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; }
+        .status { padding: 10px; margin: 10px 0; border-radius: 4px; text-align: center; }
+        .status.loading { background: #e7f3ff; color: #0066cc; }
+        .status.error { background: #ffe7e7; color: #cc0000; }
+        .status.success { background: #e7ffe7; color: #006600; }
+        .section { margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 5px; }
+        table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background: #C41E3A; color: white; }
+        tr:nth-child(even) { background: #f9f9f9; }
+        .debug { background: #f8f9fa; padding: 10px; border-radius: 5px; margin: 10px 0; }
+        pre { background: #f0f0f0; padding: 10px; border-radius: 5px; overflow-x: auto; font-size: 12px; }
+        button { background: #C41E3A; color: white; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer; margin: 5px; }
+        button:hover { background: #a01729; }
+        .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin: 15px 0; }
+        .stat-card { background: #f8f9fa; padding: 15px; border-radius: 8px; text-align: center; border-left: 4px solid #C41E3A; }
+        .stat-number { font-size: 2em; font-weight: bold; color: #C41E3A; }
+        .stat-label { color: #666; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚗 Miatapedia - Frontend Limpio</h1>
+
+        <div class="debug">
+            <h3>🔧 Estado de Conexión</h3>
+            <div id="connection-status" class="status loading">Verificando...</div>
+            <button onclick="testConnection()">🔄 Probar Conexión</button>
+            <button onclick="loadAllData()">📊 Cargar Todos los Datos</button>
+        </div>
+
+        <div class="debug">
+            <h3>📋 Log de Consola</h3>
+            <pre id="console-log" style="height: 200px; overflow-y: auto;"></pre>
+            <button onclick="clearLog()">🗑️ Limpiar Log</button>
+        </div>
+
+        <div class="section">
+            <h2>📊 Estadísticas</h2>
+            <div id="stats-container" class="stats">
+                <div class="stat-card">
+                    <div class="stat-number" id="stat-foros">-</div>
+                    <div class="stat-label">Foros</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="stat-proveedores">-</div>
+                    <div class="stat-label">Proveedores</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="stat-manuales">-</div>
+                    <div class="stat-label">Manuales</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="stat-eventos">-</div>
+                    <div class="stat-label">Eventos</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>💬 Foros</h2>
+            <div id="foros-status" class="status loading">No cargados</div>
+            <button onclick="loadForos()">📥 Cargar Foros</button>
+            <table id="foros-table" style="display:none;">
+                <thead>
+                    <tr><th>Nombre</th><th>País</th><th>Descripción</th><th>URL</th></tr>
+                </thead>
+                <tbody id="foros-body"></tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>🛒 Proveedores</h2>
+            <div id="proveedores-status" class="status loading">No cargados</div>
+            <button onclick="loadProveedores()">📥 Cargar Proveedores</button>
+            <table id="proveedores-table" style="display:none;">
+                <thead>
+                    <tr><th>Nombre</th><th>País</th><th>Tipo</th><th>Generación</th><th>URL</th></tr>
+                </thead>
+                <tbody id="proveedores-body"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // Configuración de la API
+        const API_BASE = 'http://172.22.133.26:3000/api';
+
+        // Sistema de logging personalizado
+        const logElement = document.getElementById('console-log');
+        function log(message) {
+            const timestamp = new Date().toLocaleTimeString();
+            const logMessage = `[${timestamp}] ${message}`;
+            console.log(logMessage);
+            logElement.textContent += logMessage + '\n';
+            logElement.scrollTop = logElement.scrollHeight;
+        }
+
+        function clearLog() {
+            logElement.textContent = '';
+            log('🗑️ Log limpiado');
+        }
+
+        function updateStatus(elementId, message, type = 'loading') {
+            const element = document.getElementById(elementId);
+            element.textContent = message;
+            element.className = `status ${type}`;
+        }
+
+        // Función fetch simplificada
+        async function apiCall(endpoint) {
+            const url = `${API_BASE}${endpoint}`;
+            log(`📡 Llamando a: ${url}`);
+
+            try {
+                const response = await fetch(url);
+                log(`📨 Respuesta: ${response.status} ${response.statusText}`);
+
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+
+                const data = await response.json();
+                log(`📦 Datos recibidos: ${JSON.stringify(data).substring(0, 100)}...`);
+                return data;
+            } catch (error) {
+                log(`❌ Error: ${error.message}`);
+                throw error;
+            }
+        }
+
+        // Probar conexión
+        async function testConnection() {
+            log('🔍 Probando conexión con la API...');
+            updateStatus('connection-status', 'Probando conexión...', 'loading');
+
+            try {
+                const result = await apiCall('/test');
+                updateStatus('connection-status', '✅ Conectado correctamente', 'success');
+                log('✅ Conexión exitosa');
+                return true;
+            } catch (error) {
+                updateStatus('connection-status', `❌ Error: ${error.message}`, 'error');
+                log(`❌ Error de conexión: ${error.message}`);
+                return false;
+            }
+        }
+
+        // Cargar estadísticas
+        async function loadStats() {
+            log('📊 Cargando estadísticas...');
+            try {
+                const stats = await apiCall('/stats');
+                document.getElementById('stat-foros').textContent = stats.foros;
+                document.getElementById('stat-proveedores').textContent = stats.proveedores;
+                document.getElementById('stat-manuales').textContent = stats.manuales;
+                document.getElementById('stat-eventos').textContent = stats.eventos;
+                log('✅ Estadísticas cargadas');
+            } catch (error) {
+                log(`❌ Error cargando estadísticas: ${error.message}`);
+            }
+        }
+
+        // Cargar foros
+        async function loadForos() {
+            log('💬 Cargando foros...');
+            updateStatus('foros-status', 'Cargando foros...', 'loading');
+
+            try {
+                const foros = await apiCall('/foros');
+                const tbody = document.getElementById('foros-body');
+
+                tbody.innerHTML = foros.map(foro => `
+                    <tr>
+                        <td>${foro.nombre}</td>
+                        <td>${foro.pais}</td>
+                        <td>${foro.descripcion || '-'}</td>
+                        <td><a href="${foro.url}" target="_blank">Visitar</a></td>
+                    </tr>
+                `).join('');
+
+                document.getElementById('foros-table').style.display = 'table';
+                updateStatus('foros-status', `✅ ${foros.length} foros cargados`, 'success');
+                log(`✅ ${foros.length} foros cargados`);
+            } catch (error) {
+                updateStatus('foros-status', `❌ Error: ${error.message}`, 'error');
+                log(`❌ Error cargando foros: ${error.message}`);
+            }
+        }
+
+        // Cargar proveedores
+        async function loadProveedores() {
+            log('🛒 Cargando proveedores...');
+            updateStatus('proveedores-status', 'Cargando proveedores...', 'loading');
+
+            try {
+                const proveedores = await apiCall('/proveedores');
+                const tbody = document.getElementById('proveedores-body');
+
+                tbody.innerHTML = proveedores.map(proveedor => `
+                    <tr>
+                        <td>${proveedor.nombre}</td>
+                        <td>${proveedor.pais}</td>
+                        <td>${proveedor.tipo}</td>
+                        <td>${proveedor.generacion}</td>
+                        <td><a href="${proveedor.url}" target="_blank">Visitar</a></td>
+                    </tr>
+                `).join('');
+
+                document.getElementById('proveedores-table').style.display = 'table';
+                updateStatus('proveedores-status', `✅ ${proveedores.length} proveedores cargados`, 'success');
+                log(`✅ ${proveedores.length} proveedores cargados`);
+            } catch (error) {
+                updateStatus('proveedores-status', `❌ Error: ${error.message}`, 'error');
+                log(`❌ Error cargando proveedores: ${error.message}`);
+            }
+        }
+
+        // Cargar todos los datos
+        async function loadAllData() {
+            log('🚀 Cargando todos los datos...');
+            await loadStats();
+            await loadForos();
+            await loadProveedores();
+            log('🏁 Carga completa');
+        }
+
+        // Inicialización
+        document.addEventListener('DOMContentLoaded', function() {
+            log('🚀 Página cargada');
+            log('🔗 API configurada en: ' + API_BASE);
+
+            // Probar conexión automáticamente
+            setTimeout(testConnection, 500);
+        });
+
+        log('📄 Script inicializado');
+    </script>
+</body>
+</html>

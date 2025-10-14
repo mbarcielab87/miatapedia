@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Frontend - Miatapedia</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test { margin: 10px 0; padding: 10px; border: 1px solid #ccc; }
+        .success { background: #e7ffe7; }
+        .error { background: #ffe7e7; }
+    </style>
+</head>
+<body>
+    <h1>🔧 Debug Frontend - Miatapedia</h1>
+
+    <div id="test1" class="test">
+        <h3>Test 1: JavaScript básico</h3>
+        <p>Estado: <span id="js-status">❌ JavaScript no ejecutado</span></p>
+    </div>
+
+    <div id="test2" class="test">
+        <h3>Test 2: Fetch API disponible</h3>
+        <p>Estado: <span id="fetch-status">❌ No verificado</span></p>
+    </div>
+
+    <div id="test3" class="test">
+        <h3>Test 3: Conexión con API backend</h3>
+        <p>Estado: <span id="api-status">❌ No verificado</span></p>
+        <button onclick="testAPI()">Probar conexión</button>
+    </div>
+
+    <div id="test4" class="test">
+        <h3>Test 4: Obtener datos</h3>
+        <p>Estado: <span id="data-status">❌ No verificado</span></p>
+        <button onclick="testData()">Obtener estadísticas</button>
+        <div id="data-result"></div>
+    </div>
+
+    <div id="console-output" class="test">
+        <h3>Log de consola:</h3>
+        <pre id="console-log"></pre>
+    </div>
+
+    <script>
+        console.log('🚀 Debug script iniciado');
+
+        // Override console.log para mostrar en página
+        const originalLog = console.log;
+        const logElement = document.getElementById('console-log');
+        console.log = function(...args) {
+            originalLog.apply(console, args);
+            logElement.textContent += new Date().toLocaleTimeString() + ': ' + args.join(' ') + '\n';
+        };
+
+        // Test 1: JavaScript básico
+        document.getElementById('js-status').textContent = '✅ JavaScript funcionando';
+        document.getElementById('test1').classList.add('success');
+        console.log('✅ Test 1 completado - JavaScript básico');
+
+        // Test 2: Fetch API
+        if (typeof fetch !== 'undefined') {
+            document.getElementById('fetch-status').textContent = '✅ Fetch API disponible';
+            document.getElementById('test2').classList.add('success');
+            console.log('✅ Test 2 completado - Fetch API disponible');
+        } else {
+            document.getElementById('fetch-status').textContent = '❌ Fetch API no disponible';
+            document.getElementById('test2').classList.add('error');
+            console.log('❌ Test 2 falló - Fetch API no disponible');
+        }
+
+        // Test 3: Función para probar API
+        async function testAPI() {
+            console.log('🔍 Iniciando test de conexión API...');
+            try {
+                const url = 'http://172.22.133.26:3000/api/test';
+                console.log('📡 Haciendo fetch a:', url);
+
+                const response = await fetch(url);
+                console.log('📨 Respuesta recibida:', response.status, response.statusText);
+
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log('📦 Datos recibidos:', data);
+
+                    document.getElementById('api-status').textContent = '✅ Conexión exitosa';
+                    document.getElementById('test3').classList.add('success');
+                    console.log('✅ Test 3 completado - API conectada');
+                } else {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+            } catch (error) {
+                console.log('❌ Error en test API:', error);
+                document.getElementById('api-status').textContent = '❌ Error: ' + error.message;
+                document.getElementById('test3').classList.add('error');
+            }
+        }
+
+        // Test 4: Función para obtener datos
+        async function testData() {
+            console.log('🔍 Iniciando test de datos...');
+            try {
+                const url = 'http://172.22.133.26:3000/api/stats';
+                console.log('📡 Haciendo fetch a:', url);
+
+                const response = await fetch(url);
+                console.log('📨 Respuesta recibida:', response.status, response.statusText);
+
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log('📦 Estadísticas recibidas:', data);
+
+                    document.getElementById('data-status').textContent = '✅ Datos obtenidos';
+                    document.getElementById('test4').classList.add('success');
+                    document.getElementById('data-result').innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+                    console.log('✅ Test 4 completado - Datos obtenidos');
+                } else {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+            } catch (error) {
+                console.log('❌ Error en test de datos:', error);
+                document.getElementById('data-status').textContent = '❌ Error: ' + error.message;
+                document.getElementById('test4').classList.add('error');
+            }
+        }
+
+        // Auto-ejecutar test de API al cargar
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('📄 DOM cargado, ejecutando test automático de API...');
+            setTimeout(testAPI, 1000);
+        });
+
+        console.log('🏁 Debug script completado');
+    </script>
+</body>
+</html>

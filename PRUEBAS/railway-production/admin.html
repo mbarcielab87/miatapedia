@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - Miatapedia</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; background: #f5f5f5; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .header { background: #C41E3A; color: white; padding: 20px; border-radius: 8px; margin-bottom: 30px; }
+        .header h1 { display: flex; align-items: center; gap: 15px; }
+        .tabs { display: flex; gap: 10px; margin-bottom: 30px; }
+        .tab { padding: 12px 24px; background: white; border: 2px solid #ddd; border-radius: 8px 8px 0 0; cursor: pointer; transition: all 0.3s; }
+        .tab.active { background: #C41E3A; color: white; border-color: #C41E3A; }
+        .tab:hover:not(.active) { background: #f8f9fa; }
+        .form-container { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-bottom: 30px; }
+        .form-container.hidden { display: none; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: #555; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-size: 16px; transition: border-color 0.3s; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: #C41E3A; }
+        .form-group textarea { resize: vertical; min-height: 100px; }
+        .btn { background: #C41E3A; color: white; padding: 12px 30px; border: none; border-radius: 6px; font-size: 16px; cursor: pointer; transition: background 0.3s; }
+        .btn:hover { background: #a01729; }
+        .btn:disabled { background: #ccc; cursor: not-allowed; }
+        .status { padding: 15px; border-radius: 6px; margin: 20px 0; font-weight: 500; }
+        .status.success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .status.error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .recent-items { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .recent-items h3 { margin-bottom: 15px; color: #C41E3A; }
+        .item { padding: 10px; border-bottom: 1px solid #eee; }
+        .item:last-child { border-bottom: none; }
+        .item a { color: #C41E3A; text-decoration: none; }
+        .item a:hover { text-decoration: underline; }
+        .grid { display: grid; grid-template-columns: 1fr 300px; gap: 30px; }
+        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
+        .data-table { margin-bottom: 30px; }
+        .data-table.hidden { display: none; }
+        .table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        .table th, .table td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+        .table th { background: #f8f9fa; font-weight: 600; color: #555; }
+        .table tr:hover { background: #f8f9fa; }
+        .table a { color: #C41E3A; text-decoration: none; }
+        .table a:hover { text-decoration: underline; }
+        .table .actions { white-space: nowrap; }
+        .table .actions button { padding: 4px 8px; margin: 0 2px; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔧 Panel de Administración - Miatapedia</h1>
+            <p>Añade nuevos recursos a la base de datos</p>
+        </div>
+
+        <div class="grid">
+            <div>
+                <!-- Tabs -->
+                <div class="tabs">
+                    <div class="tab active" onclick="showTab('foros')">🏛️ Foros</div>
+                    <div class="tab" onclick="showTab('clubs')">👥 Clubs</div>
+                    <div class="tab" onclick="showTab('proveedores')">🏪 Proveedores</div>
+                    <div class="tab" onclick="showTab('manuales')">📚 Manuales</div>
+                    <div class="tab" onclick="showTab('eventos')">📅 Eventos</div>
+                    <div class="tab" onclick="showTab('datos')">📊 Ver Datos</div>
+                </div>
+
+                <!-- Formulario Foros -->
+                <div id="form-foros" class="form-container">
+                    <h2>Añadir Nuevo Foro</h2>
+                    <form onsubmit="submitForm(event, 'foros')">
+                        <div class="form-group">
+                            <label for="foro-nombre">Nombre del Foro *</label>
+                            <input type="text" id="foro-nombre" name="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="foro-url">URL *</label>
+                            <input type="url" id="foro-url" name="url" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="foro-pais">País *</label>
+                            <select id="foro-pais" name="pais" required>
+                                <option value="">Selecciona un país</option>
+                                <option value="España">España</option>
+                                <option value="Estados Unidos">Estados Unidos</option>
+                                <option value="Reino Unido">Reino Unido</option>
+                                <option value="Alemania">Alemania</option>
+                                <option value="Francia">Francia</option>
+                                <option value="Italia">Italia</option>
+                                <option value="Japón">Japón</option>
+                                <option value="Australia">Australia</option>
+                                <option value="Canadá">Canadá</option>
+                                <option value="México">México</option>
+                                <option value="Brasil">Brasil</option>
+                                <option value="Argentina">Argentina</option>
+                                <option value="Países Bajos">Países Bajos</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="foro-descripcion">Descripción</label>
+                            <textarea id="foro-descripcion" name="descripcion" placeholder="Descripción opcional del foro"></textarea>
+                        </div>
+                        <button type="submit" class="btn">Añadir Foro</button>
+                    </form>
+                </div>
+
+                <!-- Formulario Clubs -->
+                <div id="form-clubs" class="form-container hidden">
+                    <h2>Añadir Nuevo Club</h2>
+                    <form onsubmit="submitForm(event, 'clubs')">
+                        <div class="form-group">
+                            <label for="club-nombre">Nombre del Club *</label>
+                            <input type="text" id="club-nombre" name="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="club-url">URL *</label>
+                            <input type="url" id="club-url" name="url" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="club-pais">País *</label>
+                            <select id="club-pais" name="pais" required>
+                                <option value="">Selecciona un país</option>
+                                <option value="España">España</option>
+                                <option value="Estados Unidos">Estados Unidos</option>
+                                <option value="Reino Unido">Reino Unido</option>
+                                <option value="Alemania">Alemania</option>
+                                <option value="Francia">Francia</option>
+                                <option value="Italia">Italia</option>
+                                <option value="Japón">Japón</option>
+                                <option value="Australia">Australia</option>
+                                <option value="Canadá">Canadá</option>
+                                <option value="México">México</option>
+                                <option value="Brasil">Brasil</option>
+                                <option value="Argentina">Argentina</option>
+                                <option value="Países Bajos">Países Bajos</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="club-descripcion">Descripción</label>
+                            <textarea id="club-descripcion" name="descripcion" placeholder="Descripción opcional del club"></textarea>
+                        </div>
+                        <button type="submit" class="btn">Añadir Club</button>
+                    </form>
+                </div>
+
+                <!-- Formulario Proveedores -->
+                <div id="form-proveedores" class="form-container hidden">
+                    <h2>Añadir Nuevo Proveedor</h2>
+                    <form onsubmit="submitForm(event, 'proveedores')">
+                        <div class="form-group">
+                            <label for="prov-nombre">Nombre del Proveedor *</label>
+                            <input type="text" id="prov-nombre" name="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="prov-url">URL *</label>
+                            <input type="url" id="prov-url" name="url" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="prov-pais">País *</label>
+                            <select id="prov-pais" name="pais" required>
+                                <option value="">Selecciona un país</option>
+                                <option value="España">España</option>
+                                <option value="Estados Unidos">Estados Unidos</option>
+                                <option value="Reino Unido">Reino Unido</option>
+                                <option value="Alemania">Alemania</option>
+                                <option value="Francia">Francia</option>
+                                <option value="Italia">Italia</option>
+                                <option value="Japón">Japón</option>
+                                <option value="Australia">Australia</option>
+                                <option value="Canadá">Canadá</option>
+                                <option value="México">México</option>
+                                <option value="Brasil">Brasil</option>
+                                <option value="Argentina">Argentina</option>
+                                <option value="Países Bajos">Países Bajos</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="prov-generacion">Generaciones *</label>
+                            <select id="prov-generacion" name="generacion" required>
+                                <option value="">Selecciona generaciones</option>
+                                <option value="NA">NA (1989-1997)</option>
+                                <option value="NB">NB (1998-2005)</option>
+                                <option value="NC">NC (2006-2015)</option>
+                                <option value="ND">ND (2016-presente)</option>
+                                <option value="NA,NB">NA, NB</option>
+                                <option value="NC,ND">NC, ND</option>
+                                <option value="NA,NB,NC">NA, NB, NC</option>
+                                <option value="NB,NC,ND">NB, NC, ND</option>
+                                <option value="NA,NB,NC,ND">Todas las generaciones</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="prov-tipo">Tipo *</label>
+                            <select id="prov-tipo" name="tipo" required>
+                                <option value="">Selecciona tipo</option>
+                                <option value="OEM">OEM (Original)</option>
+                                <option value="nuevo">Aftermarket Nuevo</option>
+                                <option value="segunda mano">Segunda Mano</option>
+                                <option value="performance">Performance</option>
+                                <option value="restauracion">Restauración</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="prov-descripcion">Descripción</label>
+                            <textarea id="prov-descripcion" name="descripcion" placeholder="Descripción opcional del proveedor"></textarea>
+                        </div>
+                        <button type="submit" class="btn">Añadir Proveedor</button>
+                    </form>
+                </div>
+
+                <!-- Formulario Manuales -->
+                <div id="form-manuales" class="form-container hidden">
+                    <h2>Añadir Nuevo Manual</h2>
+                    <form onsubmit="submitForm(event, 'manuales')">
+                        <div class="form-group">
+                            <label for="man-nombre">Nombre del Manual *</label>
+                            <input type="text" id="man-nombre" name="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="man-url">URL *</label>
+                            <input type="url" id="man-url" name="url" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="man-generacion">Generación *</label>
+                            <select id="man-generacion" name="generacion" required>
+                                <option value="">Selecciona generación</option>
+                                <option value="NA">NA (1989-1997)</option>
+                                <option value="NB">NB (1998-2005)</option>
+                                <option value="NC">NC (2006-2015)</option>
+                                <option value="ND">ND (2016-presente)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="man-idioma">Idioma *</label>
+                            <select id="man-idioma" name="idioma" required>
+                                <option value="">Selecciona idioma</option>
+                                <option value="español">Español</option>
+                                <option value="inglés">Inglés</option>
+                                <option value="alemán">Alemán</option>
+                                <option value="francés">Francés</option>
+                                <option value="italiano">Italiano</option>
+                                <option value="japonés">Japonés</option>
+                                <option value="portugués">Portugués</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="man-descripcion">Descripción</label>
+                            <textarea id="man-descripcion" name="descripcion" placeholder="Descripción opcional del manual"></textarea>
+                        </div>
+                        <button type="submit" class="btn">Añadir Manual</button>
+                    </form>
+                </div>
+
+                <!-- Formulario Eventos -->
+                <div id="form-eventos" class="form-container hidden">
+                    <h2>Añadir Nuevo Evento</h2>
+                    <form onsubmit="submitForm(event, 'eventos')">
+                        <div class="form-group">
+                            <label for="evt-nombre">Nombre del Evento *</label>
+                            <input type="text" id="evt-nombre" name="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="evt-url">URL *</label>
+                            <input type="url" id="evt-url" name="url" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="evt-pais-region">País/Región *</label>
+                            <select id="evt-pais-region" name="pais_region" required>
+                                <option value="">Selecciona país/región</option>
+                                <option value="España">España</option>
+                                <option value="Estados Unidos">Estados Unidos</option>
+                                <option value="Reino Unido">Reino Unido</option>
+                                <option value="Alemania">Alemania</option>
+                                <option value="Francia">Francia</option>
+                                <option value="Italia">Italia</option>
+                                <option value="Japón">Japón</option>
+                                <option value="Australia">Australia</option>
+                                <option value="Canadá">Canadá</option>
+                                <option value="México">México</option>
+                                <option value="Brasil">Brasil</option>
+                                <option value="Argentina">Argentina</option>
+                                <option value="Europa">Europa</option>
+                                <option value="América del Norte">América del Norte</option>
+                                <option value="Asia-Pacífico">Asia-Pacífico</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="evt-fecha">Fecha (opcional)</label>
+                            <input type="date" id="evt-fecha" name="fecha">
+                        </div>
+                        <div class="form-group">
+                            <label for="evt-descripcion">Descripción</label>
+                            <textarea id="evt-descripcion" name="descripcion" placeholder="Descripción opcional del evento"></textarea>
+                        </div>
+                        <button type="submit" class="btn">Añadir Evento</button>
+                    </form>
+                </div>
+
+                <!-- Visualización de Datos -->
+                <div id="form-datos" class="form-container hidden">
+                    <h2>📊 Visualización de Datos</h2>
+
+                    <!-- Sub-tabs para cada tabla -->
+                    <div class="tabs" style="margin-bottom: 20px;">
+                        <div class="tab active" onclick="showDataTab('foros-data')" style="padding: 8px 16px; font-size: 14px;">Foros</div>
+                        <div class="tab" onclick="showDataTab('clubs-data')" style="padding: 8px 16px; font-size: 14px;">Clubs</div>
+                        <div class="tab" onclick="showDataTab('proveedores-data')" style="padding: 8px 16px; font-size: 14px;">Proveedores</div>
+                        <div class="tab" onclick="showDataTab('manuales-data')" style="padding: 8px 16px; font-size: 14px;">Manuales</div>
+                        <div class="tab" onclick="showDataTab('eventos-data')" style="padding: 8px 16px; font-size: 14px;">Eventos</div>
+                    </div>
+
+                    <!-- Tabla de Foros -->
+                    <div id="foros-data" class="data-table">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                            <h3>🏛️ Foros en la Base de Datos</h3>
+                            <button class="btn" onclick="loadTableData('foros')" style="padding: 8px 16px; font-size: 14px;">🔄 Actualizar</button>
+                        </div>
+                        <div id="foros-table-container">
+                            <p>Cargando datos...</p>
+                        </div>
+                    </div>
+
+                    <!-- Tabla de Clubs -->
+                    <div id="clubs-data" class="data-table hidden">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                            <h3>👥 Clubs en la Base de Datos</h3>
+                            <button class="btn" onclick="loadTableData('clubs')" style="padding: 8px 16px; font-size: 14px;">🔄 Actualizar</button>
+                        </div>
+                        <div id="clubs-table-container">
+                            <p>Cargando datos...</p>
+                        </div>
+                    </div>
+
+                    <!-- Tabla de Proveedores -->
+                    <div id="proveedores-data" class="data-table hidden">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                            <h3>🏪 Proveedores en la Base de Datos</h3>
+                            <button class="btn" onclick="loadTableData('proveedores')" style="padding: 8px 16px; font-size: 14px;">🔄 Actualizar</button>
+                        </div>
+                        <div id="proveedores-table-container">
+                            <p>Cargando datos...</p>
+                        </div>
+                    </div>
+
+                    <!-- Tabla de Manuales -->
+                    <div id="manuales-data" class="data-table hidden">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                            <h3>📚 Manuales en la Base de Datos</h3>
+                            <button class="btn" onclick="loadTableData('manuales')" style="padding: 8px 16px; font-size: 14px;">🔄 Actualizar</button>
+                        </div>
+                        <div id="manuales-table-container">
+                            <p>Cargando datos...</p>
+                        </div>
+                    </div>
+
+                    <!-- Tabla de Eventos -->
+                    <div id="eventos-data" class="data-table hidden">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                            <h3>📅 Eventos en la Base de Datos</h3>
+                            <button class="btn" onclick="loadTableData('eventos')" style="padding: 8px 16px; font-size: 14px;">🔄 Actualizar</button>
+                        </div>
+                        <div id="eventos-table-container">
+                            <p>Cargando datos...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Status messages -->
+                <div id="status-message"></div>
+            </div>
+
+            <!-- Sidebar con elementos recientes -->
+            <div class="recent-items">
+                <h3>📊 Estadísticas</h3>
+                <div id="stats-display">Cargando estadísticas...</div>
+
+                <h3 style="margin-top: 30px;">📝 Últimos añadidos</h3>
+                <div id="recent-display">Cargando elementos recientes...</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://172.22.133.26:3000/api';
+
+        // Cambiar entre tabs
+        function showTab(tabName) {
+            // Ocultar todos los formularios
+            document.querySelectorAll('.form-container').forEach(form => {
+                form.classList.add('hidden');
+            });
+
+            // Remover clase active de todos los tabs
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Mostrar formulario seleccionado
+            document.getElementById(`form-${tabName}`).classList.remove('hidden');
+
+            // Activar tab seleccionado
+            event.target.classList.add('active');
+        }
+
+        // Enviar formulario
+        async function submitForm(event, tipo) {
+            event.preventDefault();
+
+            const form = event.target;
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            // Deshabilitar botón
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Añadiendo...';
+
+            try {
+                const response = await fetch(`${API_BASE}/${tipo}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    showStatus(`✅ ${result.message}`, 'success');
+                    form.reset();
+                    loadStats();
+                    loadRecent();
+                } else {
+                    showStatus(`❌ Error: ${result.error}`, 'error');
+                }
+            } catch (error) {
+                showStatus(`❌ Error de conexión: ${error.message}`, 'error');
+            }
+
+            // Rehabilitar botón
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalText;
+        }
+
+        // Mostrar mensaje de estado
+        function showStatus(message, type) {
+            const statusDiv = document.getElementById('status-message');
+            statusDiv.innerHTML = `<div class="status ${type}">${message}</div>`;
+
+            setTimeout(() => {
+                statusDiv.innerHTML = '';
+            }, 5000);
+        }
+
+        // Cargar estadísticas
+        async function loadStats() {
+            try {
+                const response = await fetch(`${API_BASE}/stats`);
+                const stats = await response.json();
+
+                document.getElementById('stats-display').innerHTML = `
+                    <div class="item">🏛️ Foros: ${stats.foros}</div>
+                    <div class="item">🏪 Proveedores: ${stats.proveedores}</div>
+                    <div class="item">📚 Manuales: ${stats.manuales}</div>
+                    <div class="item">📅 Eventos: ${stats.eventos}</div>
+                `;
+            } catch (error) {
+                document.getElementById('stats-display').innerHTML = 'Error cargando estadísticas';
+            }
+        }
+
+        // Cargar elementos recientes (simulado)
+        async function loadRecent() {
+            document.getElementById('recent-display').innerHTML = `
+                <div class="item">Último foro añadido hace 2 min</div>
+                <div class="item">Último proveedor añadido hace 1 hora</div>
+                <div class="item">Último manual añadido ayer</div>
+            `;
+        }
+
+        // Cambiar entre sub-tabs de datos
+        function showDataTab(tabName) {
+            // Ocultar todas las tablas de datos
+            document.querySelectorAll('.data-table').forEach(table => {
+                table.classList.add('hidden');
+            });
+
+            // Remover clase active de todos los sub-tabs
+            document.querySelectorAll('#form-datos .tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Mostrar tabla seleccionada
+            document.getElementById(tabName).classList.remove('hidden');
+
+            // Activar sub-tab seleccionado
+            event.target.classList.add('active');
+
+            // Cargar datos de la tabla si no se han cargado
+            const tableType = tabName.replace('-data', '');
+            loadTableData(tableType);
+        }
+
+        // Cargar datos de una tabla específica
+        async function loadTableData(tipo) {
+            const container = document.getElementById(`${tipo}-table-container`);
+            container.innerHTML = '<p>Cargando datos...</p>';
+
+            try {
+                const response = await fetch(`${API_BASE}/${tipo}`);
+                const data = await response.json();
+
+                if (data.length === 0) {
+                    container.innerHTML = `<p>No hay ${tipo} en la base de datos.</p>`;
+                    return;
+                }
+
+                let tableHTML = '<table class="table"><thead><tr>';
+
+                // Generar encabezados basados en el primer elemento
+                const headers = Object.keys(data[0]);
+                headers.forEach(header => {
+                    if (header !== 'id') {
+                        tableHTML += `<th>${capitalizeFirst(header)}</th>`;
+                    }
+                });
+                tableHTML += '<th>Acciones</th></tr></thead><tbody>';
+
+                // Generar filas de datos
+                data.forEach(item => {
+                    tableHTML += '<tr>';
+                    headers.forEach(header => {
+                        if (header !== 'id') {
+                            let value = item[header];
+                            if (header === 'url') {
+                                value = `<a href="${value}" target="_blank">${truncateText(value, 40)}</a>`;
+                            } else if (header === 'descripcion') {
+                                value = truncateText(value || '-', 50);
+                            } else {
+                                value = value || '-';
+                            }
+                            tableHTML += `<td>${value}</td>`;
+                        }
+                    });
+                    tableHTML += `<td class="actions">
+                        <button class="btn" onclick="editItem('${tipo}', ${item.id})" style="background: #28a745;">✏️</button>
+                        <button class="btn" onclick="deleteItem('${tipo}', ${item.id})" style="background: #dc3545;">🗑️</button>
+                    </td></tr>`;
+                });
+
+                tableHTML += '</tbody></table>';
+                container.innerHTML = tableHTML;
+
+            } catch (error) {
+                container.innerHTML = `<p style="color: red;">Error cargando datos: ${error.message}</p>`;
+            }
+        }
+
+        // Funciones auxiliares
+        function capitalizeFirst(str) {
+            const translations = {
+                'nombre': 'Nombre',
+                'url': 'URL',
+                'pais': 'País',
+                'descripcion': 'Descripción',
+                'generacion': 'Generación',
+                'tipo': 'Tipo',
+                'idioma': 'Idioma',
+                'pais_region': 'País/Región',
+                'fecha': 'Fecha'
+            };
+            return translations[str] || str.charAt(0).toUpperCase() + str.slice(1);
+        }
+
+        function truncateText(text, maxLength) {
+            if (!text) return '-';
+            return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
+        }
+
+        // Función para eliminar un elemento
+        async function deleteItem(tipo, id) {
+            if (!confirm('¿Estás seguro de que quieres eliminar este elemento? Esta acción no se puede deshacer.')) {
+                return;
+            }
+
+            try {
+                const response = await fetch(`${API_BASE}/${tipo}/${id}`, {
+                    method: 'DELETE'
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    showStatus(`✅ ${result.message}`, 'success');
+                    // Recargar la tabla actual
+                    loadTableData(tipo);
+                    // Actualizar estadísticas
+                    loadStats();
+                } else {
+                    showStatus(`❌ Error: ${result.error}`, 'error');
+                }
+            } catch (error) {
+                showStatus(`❌ Error de conexión: ${error.message}`, 'error');
+            }
+        }
+
+        // Función para editar un elemento
+        function editItem(tipo, id) {
+            // Crear modal de edición
+            createEditModal(tipo, id);
+        }
+
+        // Crear modal de edición
+        async function createEditModal(tipo, id) {
+            try {
+                // Obtener datos actuales del elemento
+                const response = await fetch(`${API_BASE}/${tipo}`);
+                const allItems = await response.json();
+                const item = allItems.find(i => i.id === id);
+
+                if (!item) {
+                    showStatus('❌ Error: Elemento no encontrado', 'error');
+                    return;
+                }
+
+                // Crear modal
+                const modal = document.createElement('div');
+                modal.id = 'edit-modal';
+                modal.style.cssText = `
+                    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+                    background: rgba(0,0,0,0.5); z-index: 1000;
+                    display: flex; justify-content: center; align-items: center;
+                `;
+
+                const modalContent = document.createElement('div');
+                modalContent.style.cssText = `
+                    background: white; padding: 30px; border-radius: 8px;
+                    max-width: 500px; width: 90%; max-height: 90%; overflow-y: auto;
+                `;
+
+                modalContent.innerHTML = createEditForm(tipo, item);
+                modal.appendChild(modalContent);
+                document.body.appendChild(modal);
+
+                // Cerrar modal al hacer clic fuera
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        document.body.removeChild(modal);
+                    }
+                });
+
+            } catch (error) {
+                showStatus(`❌ Error cargando datos: ${error.message}`, 'error');
+            }
+        }
+
+        // Crear formulario de edición
+        function createEditForm(tipo, item) {
+            const fields = getFieldsForType(tipo);
+            let formHTML = `
+                <h2>✏️ Editar ${capitalizeFirst(tipo.slice(0, -1))}</h2>
+                <form id="edit-form">
+            `;
+
+            fields.forEach(field => {
+                const value = item[field.name] || '';
+                if (field.type === 'select') {
+                    formHTML += `
+                        <div class="form-group">
+                            <label>${field.label} *</label>
+                            <select name="${field.name}" required>
+                    `;
+                    field.options.forEach(option => {
+                        const selected = option.value === value ? 'selected' : '';
+                        formHTML += `<option value="${option.value}" ${selected}>${option.text}</option>`;
+                    });
+                    formHTML += `</select></div>`;
+                } else if (field.type === 'textarea') {
+                    formHTML += `
+                        <div class="form-group">
+                            <label>${field.label}</label>
+                            <textarea name="${field.name}">${value}</textarea>
+                        </div>
+                    `;
+                } else {
+                    const required = field.required ? 'required' : '';
+                    formHTML += `
+                        <div class="form-group">
+                            <label>${field.label} ${field.required ? '*' : ''}</label>
+                            <input type="${field.type}" name="${field.name}" value="${value}" ${required}>
+                        </div>
+                    `;
+                }
+            });
+
+            formHTML += `
+                    <div style="display: flex; gap: 10px; margin-top: 20px;">
+                        <button type="submit" class="btn">💾 Guardar Cambios</button>
+                        <button type="button" class="btn" onclick="closeEditModal()" style="background: #6c757d;">❌ Cancelar</button>
+                    </div>
+                </form>
+            `;
+
+            // Añadir event listener para el formulario
+            setTimeout(() => {
+                const form = document.getElementById('edit-form');
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    submitEditForm(tipo, item.id, form);
+                });
+            }, 100);
+
+            return formHTML;
+        }
+
+        // Obtener campos según el tipo
+        function getFieldsForType(tipo) {
+            const commonFields = {
+                foros: [
+                    { name: 'nombre', label: 'Nombre', type: 'text', required: true },
+                    { name: 'url', label: 'URL', type: 'url', required: true },
+                    { name: 'pais', label: 'País', type: 'select', required: true, options: [
+                        {value: '', text: 'Selecciona un país'},
+                        {value: 'España', text: 'España'},
+                        {value: 'Estados Unidos', text: 'Estados Unidos'},
+                        {value: 'Reino Unido', text: 'Reino Unido'},
+                        {value: 'Alemania', text: 'Alemania'},
+                        {value: 'Francia', text: 'Francia'},
+                        {value: 'Italia', text: 'Italia'},
+                        {value: 'Japón', text: 'Japón'},
+                        {value: 'Australia', text: 'Australia'},
+                        {value: 'Canadá', text: 'Canadá'},
+                        {value: 'México', text: 'México'},
+                        {value: 'Brasil', text: 'Brasil'},
+                        {value: 'Argentina', text: 'Argentina'},
+                        {value: 'Países Bajos', text: 'Países Bajos'},
+                        {value: 'Otro', text: 'Otro'}
+                    ]},
+                    { name: 'descripcion', label: 'Descripción', type: 'textarea', required: false }
+                ],
+                clubs: [
+                    { name: 'nombre', label: 'Nombre', type: 'text', required: true },
+                    { name: 'url', label: 'URL', type: 'url', required: true },
+                    { name: 'pais', label: 'País', type: 'select', required: true, options: [
+                        {value: '', text: 'Selecciona un país'},
+                        {value: 'España', text: 'España'},
+                        {value: 'Estados Unidos', text: 'Estados Unidos'},
+                        {value: 'Reino Unido', text: 'Reino Unido'},
+                        {value: 'Alemania', text: 'Alemania'},
+                        {value: 'Francia', text: 'Francia'},
+                        {value: 'Italia', text: 'Italia'},
+                        {value: 'Japón', text: 'Japón'},
+                        {value: 'Australia', text: 'Australia'},
+                        {value: 'Canadá', text: 'Canadá'},
+                        {value: 'México', text: 'México'},
+                        {value: 'Brasil', text: 'Brasil'},
+                        {value: 'Argentina', text: 'Argentina'},
+                        {value: 'Países Bajos', text: 'Países Bajos'},
+                        {value: 'Otro', text: 'Otro'}
+                    ]},
+                    { name: 'descripcion', label: 'Descripción', type: 'textarea', required: false }
+                ],
+                proveedores: [
+                    { name: 'nombre', label: 'Nombre', type: 'text', required: true },
+                    { name: 'url', label: 'URL', type: 'url', required: true },
+                    { name: 'pais', label: 'País', type: 'select', required: true, options: [
+                        {value: '', text: 'Selecciona un país'},
+                        {value: 'España', text: 'España'},
+                        {value: 'Estados Unidos', text: 'Estados Unidos'},
+                        {value: 'Reino Unido', text: 'Reino Unido'},
+                        {value: 'Alemania', text: 'Alemania'},
+                        {value: 'Francia', text: 'Francia'},
+                        {value: 'Italia', text: 'Italia'},
+                        {value: 'Japón', text: 'Japón'},
+                        {value: 'Australia', text: 'Australia'},
+                        {value: 'Canadá', text: 'Canadá'},
+                        {value: 'México', text: 'México'},
+                        {value: 'Brasil', text: 'Brasil'},
+                        {value: 'Argentina', text: 'Argentina'},
+                        {value: 'Países Bajos', text: 'Países Bajos'},
+                        {value: 'Otro', text: 'Otro'}
+                    ]},
+                    { name: 'generacion', label: 'Generaciones', type: 'select', required: true, options: [
+                        {value: '', text: 'Selecciona generaciones'},
+                        {value: 'NA', text: 'NA (1989-1997)'},
+                        {value: 'NB', text: 'NB (1998-2005)'},
+                        {value: 'NC', text: 'NC (2006-2015)'},
+                        {value: 'ND', text: 'ND (2016-presente)'},
+                        {value: 'NA,NB', text: 'NA, NB'},
+                        {value: 'NC,ND', text: 'NC, ND'},
+                        {value: 'NA,NB,NC', text: 'NA, NB, NC'},
+                        {value: 'NB,NC,ND', text: 'NB, NC, ND'},
+                        {value: 'NA,NB,NC,ND', text: 'Todas las generaciones'}
+                    ]},
+                    { name: 'tipo', label: 'Tipo', type: 'select', required: true, options: [
+                        {value: '', text: 'Selecciona tipo'},
+                        {value: 'OEM', text: 'OEM (Original)'},
+                        {value: 'nuevo', text: 'Aftermarket Nuevo'},
+                        {value: 'segunda mano', text: 'Segunda Mano'},
+                        {value: 'performance', text: 'Performance'},
+                        {value: 'restauracion', text: 'Restauración'}
+                    ]},
+                    { name: 'descripcion', label: 'Descripción', type: 'textarea', required: false }
+                ],
+                manuales: [
+                    { name: 'nombre', label: 'Nombre', type: 'text', required: true },
+                    { name: 'url', label: 'URL', type: 'url', required: true },
+                    { name: 'generacion', label: 'Generación', type: 'select', required: true, options: [
+                        {value: '', text: 'Selecciona generación'},
+                        {value: 'NA', text: 'NA (1989-1997)'},
+                        {value: 'NB', text: 'NB (1998-2005)'},
+                        {value: 'NC', text: 'NC (2006-2015)'},
+                        {value: 'ND', text: 'ND (2016-presente)'}
+                    ]},
+                    { name: 'idioma', label: 'Idioma', type: 'select', required: true, options: [
+                        {value: '', text: 'Selecciona idioma'},
+                        {value: 'español', text: 'Español'},
+                        {value: 'inglés', text: 'Inglés'},
+                        {value: 'alemán', text: 'Alemán'},
+                        {value: 'francés', text: 'Francés'},
+                        {value: 'italiano', text: 'Italiano'},
+                        {value: 'japonés', text: 'Japonés'},
+                        {value: 'portugués', text: 'Portugués'}
+                    ]},
+                    { name: 'descripcion', label: 'Descripción', type: 'textarea', required: false }
+                ],
+                eventos: [
+                    { name: 'nombre', label: 'Nombre', type: 'text', required: true },
+                    { name: 'url', label: 'URL', type: 'url', required: true },
+                    { name: 'pais_region', label: 'País/Región', type: 'select', required: true, options: [
+                        {value: '', text: 'Selecciona país/región'},
+                        {value: 'España', text: 'España'},
+                        {value: 'Estados Unidos', text: 'Estados Unidos'},
+                        {value: 'Reino Unido', text: 'Reino Unido'},
+                        {value: 'Alemania', text: 'Alemania'},
+                        {value: 'Francia', text: 'Francia'},
+                        {value: 'Italia', text: 'Italia'},
+                        {value: 'Japón', text: 'Japón'},
+                        {value: 'Australia', text: 'Australia'},
+                        {value: 'Canadá', text: 'Canadá'},
+                        {value: 'México', text: 'México'},
+                        {value: 'Brasil', text: 'Brasil'},
+                        {value: 'Argentina', text: 'Argentina'},
+                        {value: 'Europa', text: 'Europa'},
+                        {value: 'América del Norte', text: 'América del Norte'},
+                        {value: 'Asia-Pacífico', text: 'Asia-Pacífico'}
+                    ]},
+                    { name: 'fecha', label: 'Fecha', type: 'date', required: false },
+                    { name: 'descripcion', label: 'Descripción', type: 'textarea', required: false }
+                ]
+            };
+            return commonFields[tipo] || [];
+        }
+
+        // Enviar formulario de edición
+        async function submitEditForm(tipo, id, form) {
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                const response = await fetch(`${API_BASE}/${tipo}/${id}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    showStatus(`✅ ${result.message}`, 'success');
+                    closeEditModal();
+                    loadTableData(tipo);
+                    loadStats();
+                } else {
+                    showStatus(`❌ Error: ${result.error}`, 'error');
+                }
+            } catch (error) {
+                showStatus(`❌ Error de conexión: ${error.message}`, 'error');
+            }
+        }
+
+        // Cerrar modal de edición
+        function closeEditModal() {
+            const modal = document.getElementById('edit-modal');
+            if (modal) {
+                document.body.removeChild(modal);
+            }
+        }
+
+        // ==============================
+        // FUNCIONES DE SESIÓN Y SEGURIDAD
+        // ==============================
+
+        // Logout manual
+        async function logout() {
+            if (confirm('¿Estás seguro de que quieres cerrar sesión?')) {
+                try {
+                    const response = await fetch('/admin/api/logout', {
+                        method: 'POST'
+                    });
+
+                    if (response.ok) {
+                        showStatus('✅ Sesión cerrada correctamente', 'success');
+                        // Redirigir al login después de 1 segundo
+                        setTimeout(() => {
+                            window.location.href = '/admin/login';
+                        }, 1000);
+                    } else {
+                        showStatus('❌ Error cerrando sesión', 'error');
+                    }
+                } catch (error) {
+                    console.error('Error en logout:', error);
+                    // Redirigir al login incluso si hay error
+                    window.location.href = '/admin/login';
+                }
+            }
+        }
+
+        // Cierre automático de sesión al salir de la página
+        window.addEventListener('beforeunload', function(event) {
+            // Realizar logout silencioso al cerrar/salir de la página
+            navigator.sendBeacon('/admin/api/logout');
+        });
+
+        // Cierre automático cuando se cambia de pestaña por mucho tiempo
+        let tabHiddenTime = null;
+        const MAX_HIDDEN_TIME = 10 * 60 * 1000; // 10 minutos
+
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                tabHiddenTime = Date.now();
+            } else {
+                if (tabHiddenTime && (Date.now() - tabHiddenTime) > MAX_HIDDEN_TIME) {
+                    // Ha pasado mucho tiempo, cerrar sesión
+                    showStatus('⚠️ Sesión expirada por inactividad', 'error');
+                    setTimeout(() => {
+                        window.location.href = '/admin/login';
+                    }, 2000);
+                }
+                tabHiddenTime = null;
+            }
+        });
+
+        // Cierre automático por inactividad de mouse/teclado
+        let lastActivity = Date.now();
+        const INACTIVITY_TIMEOUT = 30 * 60 * 1000; // 30 minutos
+
+        function resetActivityTimer() {
+            lastActivity = Date.now();
+        }
+
+        // Detectar actividad del usuario
+        ['mousedown', 'mousemove', 'keypress', 'scroll', 'touchstart', 'click'].forEach(event => {
+            document.addEventListener(event, resetActivityTimer, true);
+        });
+
+        // Verificar inactividad cada minuto
+        setInterval(() => {
+            if (Date.now() - lastActivity > INACTIVITY_TIMEOUT) {
+                showStatus('⚠️ Sesión cerrada por inactividad', 'error');
+                navigator.sendBeacon('/admin/api/logout');
+                setTimeout(() => {
+                    window.location.href = '/admin/login';
+                }, 2000);
+            }
+        }, 60000); // Cada minuto
+
+        // Añadir botón de logout al header
+        function addLogoutButton() {
+            const header = document.querySelector('.header h1');
+            if (header) {
+                const logoutBtn = document.createElement('button');
+                logoutBtn.innerHTML = '🔓 Cerrar Sesión';
+                logoutBtn.className = 'btn';
+                logoutBtn.style.marginLeft = 'auto';
+                logoutBtn.style.fontSize = '14px';
+                logoutBtn.style.padding = '8px 16px';
+                logoutBtn.onclick = logout;
+
+                header.style.display = 'flex';
+                header.style.justifyContent = 'space-between';
+                header.style.alignItems = 'center';
+                header.appendChild(logoutBtn);
+            }
+        }
+
+        // Inicializar al cargar la página
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🔐 Panel de administración cargado con seguridad mejorada');
+            addLogoutButton();
+            loadStats();
+            loadRecent();
+
+            // Mostrar información de sesión
+            showStatus('✅ Sesión activa - Cierre automático al salir de la web', 'success');
+        });
+    </script>
+</body>
+</html>
