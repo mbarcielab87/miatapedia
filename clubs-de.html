@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,16 +21,15 @@
     <meta property="twitter:description" content="Complete directory of MX-5 clubs, communities and forums worldwide organized by region.">
     <meta property="twitter:image" content="https://miatapedia.com/images/clubs-og.jpg">
 
-    <!-- Tailwind CSS -->
+    <!-- TailwindCSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'miata-red': '#CC0000',
-                        'miata-gray': '#2D3748',
-                        'miata-blue': '#2B6CB0'
+                        'miata-red': '#C41E3A',
+                        'miata-gray': '#374151'
                     }
                 }
             }
@@ -42,31 +41,30 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
 <body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
-        <div class="container mx-auto px-4 sm:px-6">
-            <div class="flex justify-between items-center py-3 sm:py-4">
+    <!-- Header -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
+            <div class="flex items-center justify-between">
                 <div class="flex flex-col items-start space-y-1">
                     <a href="de.html" class="text-xs text-gray-500 hover:text-miata-red transition-colors flex items-center">
                         <i class="fas fa-home mr-1"></i>Zurück zur Startseite
                     </a>
-                    <div class="flex items-center space-x-2">
-                        <i class="fas fa-car text-miata-red text-xl sm:text-2xl"></i>
-                        <h1 class="text-lg sm:text-xl font-bold text-miata-gray">Miatapedia</h1>
+                    <div class="flex items-center space-x-2 sm:space-x-4">
+                        <i class="fas fa-car text-miata-red text-2xl sm:text-3xl"></i>
+                        <h1 class="text-lg sm:text-2xl font-bold text-miata-gray">Miatapedia</h1>
                     </div>
                 </div>
                 <div class="hidden md:flex space-x-6 items-center">
-                    <a href="en.html" class="text-miata-gray hover:text-miata-red transition-colors">Home</a>
                     <a href="manuals-de.html" class="text-miata-gray hover:text-miata-red transition-colors">Handbücher</a>
-                    <a href="clubs-en.html" class="text-miata-red font-semibold">Clubs</a>
+                    <a href="clubs-de.html" class="text-miata-red font-medium">Vereine</a>
                     <a href="shops-de.html" class="text-miata-gray hover:text-miata-red transition-colors">Geschäfte</a>
-                    <a href="events.html" class="text-miata-gray hover:text-miata-red transition-colors">Events</a>
+                    <a href="events-de.html" class="text-miata-gray hover:text-miata-red transition-colors">Veranstaltungen</a>
 
                     <!-- Language Selector -->
                     <div class="relative" id="language-selector">
                         <button class="flex items-center space-x-1 text-miata-gray hover:text-miata-red transition-colors" id="language-btn">
-                            <span class="text-lg">🇺🇸</span>
-                            <span class="text-sm">EN</span>
+                            <i class="fas fa-globe text-sm"></i>
+                            <span class="text-sm">DE</span>
                             <i class="fas fa-chevron-down text-xs"></i>
                         </button>
                         <div class="absolute right-0 mt-2 w-40 bg-white rounded-md shadow-lg py-1 hidden" id="language-dropdown">
@@ -96,11 +94,10 @@
             <!-- Mobile menu -->
             <div class="md:hidden hidden mt-4" id="mobile-menu">
                 <div class="flex flex-col space-y-2">
-                    <a href="en.html" class="text-miata-gray hover:text-miata-red transition-colors py-2">Home</a>
                     <a href="manuals-de.html" class="text-miata-gray hover:text-miata-red transition-colors py-2">Handbücher</a>
-                    <a href="clubs-en.html" class="text-miata-red font-semibold py-2">Clubs</a>
+                    <a href="clubs-de.html" class="text-miata-red font-medium py-2">Vereine</a>
                     <a href="shops-de.html" class="text-miata-gray hover:text-miata-red transition-colors py-2">Geschäfte</a>
-                    <a href="events.html" class="text-miata-gray hover:text-miata-red transition-colors py-2">Events</a>
+                    <a href="events-de.html" class="text-miata-gray hover:text-miata-red transition-colors py-2">Veranstaltungen</a>
 
                     <!-- Mobile Language Selector -->
                     <div class="border-t pt-2 mt-2">
