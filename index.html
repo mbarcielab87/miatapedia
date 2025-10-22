@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO Fundamental -->
-    <title>Miatapedia - Recursos MX-5 Miata | Manuales, Clubs y Tiendas</title>
-    <meta name="description" content="La mayor colección de recursos Mazda MX-5: 500+ manuales técnicos, 60+ clubs mundiales, tiendas especializadas y eventos para entusiastas Miata.">
+    <title>Miatapedia – Manuales, Clubs y Tiendas del Mazda MX-5 (Miata)</title>
+    <meta name="description" content="La mayor colección de recursos Mazda MX-5: manuales técnicos, clubs mundiales, tiendas especializadas y eventos para entusiastas Miata.">
     <meta name="keywords" content="Mazda MX-5, Miata, manuales técnicos, clubs MX-5, tiendas Miata, NA NB NC ND, diagramas eléctricos">
     <link rel="canonical" href="https://miatapedia.info/">
 
@@ -41,6 +41,32 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Miatapedia",
+      "url": "https://miatapedia.info/",
+      "description": "La mayor colección de recursos Mazda MX-5: manuales técnicos, clubs mundiales, tiendas especializadas y eventos para entusiastas Miata.",
+      "logo": "https://miatapedia.info/images/logo.png"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Miatapedia",
+      "url": "https://miatapedia.info/",
+      "description": "La mayor colección de recursos Mazda MX-5",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://miatapedia.info/search?q={query}",
+        "query-input": "required name=query"
+      }
+    }
+    </script>
 
     <!-- TailwindCSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -151,7 +177,7 @@
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-2 sm:space-x-4">
                     <i class="fas fa-car text-miata-red text-2xl sm:text-3xl"></i>
-                    <h1 class="text-lg sm:text-2xl font-bold text-miata-gray">Miatapedia</h1>
+                    <div class="text-lg sm:text-2xl font-bold text-miata-gray">Miatapedia</div>
                 </div>
                 <div class="hidden md:flex space-x-6 items-center">
                     <a href="manuales.html" class="text-miata-gray hover:text-miata-red transition-colors">Manuales</a>
@@ -242,18 +268,18 @@
     <section class="py-12 sm:py-16 bg-white">
         <div class="container mx-auto px-4 sm:px-6">
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 text-center">
-                <div class="bg-gray-50 p-4 sm:p-6 rounded-lg">
+                <a href="manuales.html" class="bg-gray-50 p-4 sm:p-6 rounded-lg hover:bg-gray-100 transition-colors block">
                     <div class="text-2xl sm:text-3xl font-bold text-miata-red mb-2">500+</div>
                     <div class="text-miata-gray text-sm sm:text-base">Manuales Técnicos</div>
-                </div>
-                <div class="bg-gray-50 p-4 sm:p-6 rounded-lg">
+                </a>
+                <a href="clubs.html" class="bg-gray-50 p-4 sm:p-6 rounded-lg hover:bg-gray-100 transition-colors block">
                     <div class="text-2xl sm:text-3xl font-bold text-miata-red mb-2">60+</div>
                     <div class="text-miata-gray text-sm sm:text-base">Clubs Mundiales</div>
-                </div>
-                <div class="bg-gray-50 p-4 sm:p-6 rounded-lg">
+                </a>
+                <a href="tiendas.html" class="bg-gray-50 p-4 sm:p-6 rounded-lg hover:bg-gray-100 transition-colors block">
                     <div class="text-2xl sm:text-3xl font-bold text-miata-red mb-2">17</div>
                     <div class="text-miata-gray text-sm sm:text-base">Tiendas Verificadas</div>
-                </div>
+                </a>
                 <div class="bg-gray-50 p-4 sm:p-6 rounded-lg">
                     <div class="text-2xl sm:text-3xl font-bold text-miata-red mb-2">60+</div>
                     <div class="text-miata-gray text-sm sm:text-base">Foros Activos</div>

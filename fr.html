@@ -3,8 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Miatapedia - Ressources Globales Mazda MX-5 | La Plus Grande Communauté Miata</title>
-    <meta name="description" content="Découvrez la plus grande collection de ressources pour Mazda MX-5 Miata : manuels techniques, clubs mondiaux, magasins spécialisés, forums actifs.">
+    <title>Miatapedia – Manuels, Clubs et Boutiques Mazda MX-5 (Miata)</title>
+    <meta name="description" content="La plus grande collection de ressources Mazda MX-5 : manuels techniques, clubs mondiaux, boutiques spécialisées et événements Miata.">
+    <link rel="canonical" href="https://miatapedia.info/fr.html">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Miatapedia",
+      "url": "https://miatapedia.info/",
+      "description": "La plus grande collection de ressources Mazda MX-5 : manuels techniques, clubs mondiaux, boutiques spécialisées et événements Miata.",
+      "logo": "https://miatapedia.info/images/logo.png"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Miatapedia",
+      "url": "https://miatapedia.info/",
+      "description": "La plus grande collection de ressources Mazda MX-5",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://miatapedia.info/search?q={query}",
+        "query-input": "required name=query"
+      }
+    }
+    </script>
 
     <!-- TailwindCSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -31,7 +58,7 @@
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-2 sm:space-x-4">
                     <i class="fas fa-car text-miata-red text-2xl sm:text-3xl"></i>
-                    <h1 class="text-lg sm:text-2xl font-bold text-miata-gray">Miatapedia</h1>
+                    <div class="text-lg sm:text-2xl font-bold text-miata-gray">Miatapedia</div>
                 </div>
                 <div class="hidden md:flex space-x-6 items-center">
                     <a href="manuals-fr.html" class="text-miata-gray hover:text-miata-red transition-colors">Manuels</a>

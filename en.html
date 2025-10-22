@@ -3,8 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Miatapedia - Global Mazda MX-5 Resources | The Largest Miata Community</title>
-    <meta name="description" content="Discover the largest collection of resources for Mazda MX-5 Miata: technical manuals, worldwide clubs, specialized shops, active forums.">
+    <title>Miatapedia – Manuals, Clubs and Shops for Mazda MX-5 (Miata)</title>
+    <meta name="description" content="The largest Mazda MX-5 resource collection: workshop manuals, global clubs, specialized stores and Miata events worldwide.">
+    <link rel="canonical" href="https://miatapedia.info/en.html">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Miatapedia",
+      "url": "https://miatapedia.info/",
+      "description": "The largest Mazda MX-5 resource collection: workshop manuals, global clubs, specialized stores and Miata events worldwide.",
+      "logo": "https://miatapedia.info/images/logo.png"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Miatapedia",
+      "url": "https://miatapedia.info/",
+      "description": "The largest Mazda MX-5 resource collection",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://miatapedia.info/search?q={query}",
+        "query-input": "required name=query"
+      }
+    }
+    </script>
 
     <!-- TailwindCSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -31,7 +58,7 @@
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-2 sm:space-x-4">
                     <i class="fas fa-car text-miata-red text-2xl sm:text-3xl"></i>
-                    <h1 class="text-lg sm:text-2xl font-bold text-miata-gray">Miatapedia</h1>
+                    <div class="text-lg sm:text-2xl font-bold text-miata-gray">Miatapedia</div>
                 </div>
                 <div class="hidden md:flex space-x-6 items-center">
                     <a href="manuals.html" class="text-miata-gray hover:text-miata-red transition-colors">Manuals</a>
@@ -122,18 +149,18 @@
     <section class="py-12 sm:py-16 bg-white">
         <div class="container mx-auto px-4 sm:px-6">
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 text-center">
-                <div class="bg-gray-50 p-4 sm:p-6 rounded-lg">
+                <a href="manuals.html" class="bg-gray-50 p-4 sm:p-6 rounded-lg hover:bg-gray-100 transition-colors block">
                     <div class="text-2xl sm:text-3xl font-bold text-miata-red mb-2">500+</div>
                     <div class="text-miata-gray text-sm sm:text-base">Technical Manuals</div>
-                </div>
-                <div class="bg-gray-50 p-4 sm:p-6 rounded-lg">
+                </a>
+                <a href="clubs-en.html" class="bg-gray-50 p-4 sm:p-6 rounded-lg hover:bg-gray-100 transition-colors block">
                     <div class="text-2xl sm:text-3xl font-bold text-miata-red mb-2">60+</div>
                     <div class="text-miata-gray text-sm sm:text-base">Worldwide Clubs</div>
-                </div>
-                <div class="bg-gray-50 p-4 sm:p-6 rounded-lg">
+                </a>
+                <a href="shops.html" class="bg-gray-50 p-4 sm:p-6 rounded-lg hover:bg-gray-100 transition-colors block">
                     <div class="text-2xl sm:text-3xl font-bold text-miata-red mb-2">17</div>
                     <div class="text-miata-gray text-sm sm:text-base">Verified Shops</div>
-                </div>
+                </a>
                 <div class="bg-gray-50 p-4 sm:p-6 rounded-lg">
                     <div class="text-2xl sm:text-3xl font-bold text-miata-red mb-2">60+</div>
                     <div class="text-miata-gray text-sm sm:text-base">Active Forums</div>

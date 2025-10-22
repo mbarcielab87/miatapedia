@@ -27,7 +27,6 @@ Crawl-delay: 1
 # Main pages in different languages
 Allow: /index.html
 Allow: /en.html
-Allow: /zh.html
 Allow: /pt.html
 Allow: /de.html
 Allow: /fr.html
