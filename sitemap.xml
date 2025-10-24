@@ -1,215 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-  <!-- Spanish (Main) -->
   <url>
     <loc>https://miatapedia.info/</loc>
-    <lastmod>2024-10-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://miatapedia.info/en.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://miatapedia.info/pt.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://miatapedia.info/de.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://miatapedia.info/fr.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://miatapedia.info/"/>
+    <lastmod>2025-10-23T16:54:25+00:00</lastmod>
+    <priority>1.00</priority>
   </url>
 
-  <!-- English -->
-  <url>
-    <loc>https://miatapedia.info/en.html</loc>
-    <lastmod>2024-10-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://miatapedia.info/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://miatapedia.info/pt.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://miatapedia.info/de.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://miatapedia.info/fr.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://miatapedia.info/en.html"/>
-  </url>
+  <!-- Español -->
+  <url><loc>https://miatapedia.info/manuales.html</loc></url>
+  <url><loc>https://miatapedia.info/clubs.html</loc></url>
+  <url><loc>https://miatapedia.info/tiendas.html</loc></url>
+  <url><loc>https://miatapedia.info/eventos.html</loc></url>
 
+  <!-- Idiomas -->
+  <url><loc>https://miatapedia.info/en.html</loc></url>
+  <url><loc>https://miatapedia.info/fr.html</loc></url>
+  <url><loc>https://miatapedia.info/pt.html</loc></url>
+  <url><loc>https://miatapedia.info/de.html</loc></url>
 
-  <!-- Portuguese -->
-  <url>
-    <loc>https://miatapedia.info/pt.html</loc>
-    <lastmod>2024-10-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://miatapedia.info/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://miatapedia.info/en.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://miatapedia.info/de.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://miatapedia.info/fr.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://miatapedia.info/pt.html"/>
-  </url>
+  <!-- Páginas por idioma -->
+  <url><loc>https://miatapedia.info/manuals.html</loc></url>
+  <url><loc>https://miatapedia.info/manuals-fr.html</loc></url>
+  <url><loc>https://miatapedia.info/manuals-pt.html</loc></url>
+  <url><loc>https://miatapedia.info/manuals-de.html</loc></url>
 
-  <!-- German -->
-  <url>
-    <loc>https://miatapedia.info/de.html</loc>
-    <lastmod>2024-10-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://miatapedia.info/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://miatapedia.info/en.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://miatapedia.info/pt.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://miatapedia.info/fr.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://miatapedia.info/de.html"/>
-  </url>
+  <url><loc>https://miatapedia.info/clubs-en.html</loc></url>
+  <url><loc>https://miatapedia.info/clubs-fr.html</loc></url>
+  <url><loc>https://miatapedia.info/clubs-pt.html</loc></url>
+  <url><loc>https://miatapedia.info/clubs-de.html</loc></url>
 
-  <!-- French -->
-  <url>
-    <loc>https://miatapedia.info/fr.html</loc>
-    <lastmod>2024-10-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://miatapedia.info/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://miatapedia.info/en.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://miatapedia.info/pt.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://miatapedia.info/de.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://miatapedia.info/fr.html"/>
-  </url>
+  <url><loc>https://miatapedia.info/shops.html</loc></url>
+  <url><loc>https://miatapedia.info/shops-fr.html</loc></url>
+  <url><loc>https://miatapedia.info/shops-pt.html</loc></url>
+  <url><loc>https://miatapedia.info/shops-de.html</loc></url>
 
-  <!-- Spanish Main Pages -->
-  <url>
-    <loc>https://miatapedia.info/manuales.html</loc>
-    <lastmod>2024-10-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://miatapedia.info/clubs.html</loc>
-    <lastmod>2024-10-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://miatapedia.info/tiendas.html</loc>
-    <lastmod>2024-10-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://miatapedia.info/eventos.html</loc>
-    <lastmod>2024-10-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- English Main Pages -->
-  <url>
-    <loc>https://miatapedia.info/manuals.html</loc>
-    <lastmod>2024-10-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://miatapedia.info/clubs-en.html</loc>
-    <lastmod>2024-10-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://miatapedia.info/shops.html</loc>
-    <lastmod>2024-10-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://miatapedia.info/events.html</loc>
-    <lastmod>2024-10-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Portuguese Main Pages -->
-  <url>
-    <loc>https://miatapedia.info/manuals-pt.html</loc>
-    <lastmod>2024-10-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://miatapedia.info/clubs-pt.html</loc>
-    <lastmod>2024-10-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://miatapedia.info/shops-pt.html</loc>
-    <lastmod>2024-10-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://miatapedia.info/events-pt.html</loc>
-    <lastmod>2024-10-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- German Main Pages -->
-  <url>
-    <loc>https://miatapedia.info/manuals-de.html</loc>
-    <lastmod>2024-10-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://miatapedia.info/clubs-de.html</loc>
-    <lastmod>2024-10-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://miatapedia.info/shops-de.html</loc>
-    <lastmod>2024-10-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://miatapedia.info/events-de.html</loc>
-    <lastmod>2024-10-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- French Main Pages -->
-  <url>
-    <loc>https://miatapedia.info/manuals-fr.html</loc>
-    <lastmod>2024-10-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://miatapedia.info/clubs-fr.html</loc>
-    <lastmod>2024-10-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://miatapedia.info/shops-fr.html</loc>
-    <lastmod>2024-10-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://miatapedia.info/events-fr.html</loc>
-    <lastmod>2024-10-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  <url><loc>https://miatapedia.info/events.html</loc></url>
+  <url><loc>https://miatapedia.info/events-fr.html</loc></url>
+  <url><loc>https://miatapedia.info/events-pt.html</loc></url>
+  <url><loc>https://miatapedia.info/events-de.html</loc></url>
 
 </urlset>

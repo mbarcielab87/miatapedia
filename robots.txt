@@ -1,32 +1,4 @@
 User-agent: *
 Allow: /
 
-# Sitemaps
 Sitemap: https://miatapedia.info/sitemap.xml
-
-# Allow all search engines to crawl the site
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Slurp
-Allow: /
-
-User-agent: DuckDuckBot
-Allow: /
-
-User-agent: Baiduspider
-Allow: /
-
-# Crawl-delay for polite crawling
-Crawl-delay: 1
-
-# Priority pages for crawlers
-# Main pages in different languages
-Allow: /index.html
-Allow: /en.html
-Allow: /pt.html
-Allow: /de.html
-Allow: /fr.html
