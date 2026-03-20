@@ -11,7 +11,7 @@ export default function ShopsPage() {
 
   const shopsByCategory = getShopsByCategory();
   const categories = Object.keys(shopsByCategory).sort();
-  const countries = [...new Set(shops.map(s => s.country))].sort();
+  const countries = Array.from(new Set(shops.map(s => s.country))).sort();
 
   const filteredShops = shops.filter(shop => {
     const matchesCategory = filterCategory === 'all' || shop.category === filterCategory;

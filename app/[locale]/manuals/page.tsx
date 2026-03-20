@@ -9,7 +9,7 @@ export default function ManualsPage() {
   const [filterType, setFilterType] = useState<string>('all');
   const [filterGen, setFilterGen] = useState<string>('all');
 
-  const types = [...new Set(manuals.map(m => m.type))].sort();
+  const types = Array.from(new Set(manuals.map(m => m.type))).sort();
   const gens = ['NA', 'NB', 'NC', 'ND'];
 
   const filteredManuals = manuals.filter(manual => {

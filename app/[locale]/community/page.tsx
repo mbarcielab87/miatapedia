@@ -8,7 +8,7 @@ import type { Locale } from '@/lib/i18n/config';
 export default function CommunityPage() {
   const [filterPlatform, setFilterPlatform] = useState<string>('all');
 
-  const platforms = [...new Set(communities.map(c => c.platform))].sort();
+  const platforms = Array.from(new Set(communities.map(c => c.platform))).sort();
 
   const filteredCommunities = communities.filter(community => {
     return filterPlatform === 'all' || community.platform === filterPlatform;

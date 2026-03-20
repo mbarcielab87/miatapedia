@@ -8,7 +8,7 @@ import type { Locale } from '@/lib/i18n/config';
 export default function EventsPage() {
   const [filterType, setFilterType] = useState<string>('all');
 
-  const types = [...new Set(events.map(e => e.type))].sort();
+  const types = Array.from(new Set(events.map(e => e.type))).sort();
 
   const filteredEvents = events.filter(event => {
     return filterType === 'all' || event.type === filterType;
