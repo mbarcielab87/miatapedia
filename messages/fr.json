@@ -1,0 +1,92 @@
+{
+  "nav": {
+    "generations": "Générations",
+    "special_editions": "Éditions Spéciales",
+    "buying_guide": "Guide d'Achat",
+    "mods": "Modifications",
+    "maintenance": "Entretien",
+    "manuals": "Manuels",
+    "shops": "Boutiques",
+    "clubs": "Clubs",
+    "community": "Communauté",
+    "events": "Événements",
+    "about": "À propos",
+    "search": "Rechercher"
+  },
+  "hero": {
+    "label": "L'Encyclopédie Définitive du MX-5",
+    "title_part1": "Tous les",
+    "title_part2": "Miata",
+    "title_part3": "jamais fabriqués.",
+    "subtitle": "Quatre générations. Des centaines d'éditions spéciales. Une obsession. La ressource la plus complète sur le roadster le plus vendu au monde.",
+    "stats": {
+      "generations": "Générations",
+      "units": "Unités Produites",
+      "years": "Années de Production",
+      "editions": "Éditions Spéciales"
+    }
+  },
+  "sections": {
+    "generations": "Générations",
+    "special_editions": "Éditions Spéciales et Limitées",
+    "explore": "Explorer",
+    "community": "Communauté",
+    "view_all": "Voir la base de données complète",
+    "view_all_groups": "Voir tous les groupes"
+  },
+  "content_cards": {
+    "buying_guide": {
+      "title": "Guide d'Achat",
+      "desc": "Quoi rechercher, problèmes courants par génération, gammes de prix et la liste définitive avant d'acheter votre premier (ou prochain) MX-5.",
+      "count": "4 guides · Mis à jour mensuellement"
+    },
+    "mods": {
+      "title": "Modifications",
+      "desc": "Des coilovers aux kits turbo. Chaque modification populaire documentée avec des résultats réels, coûts et difficulté d'installation.",
+      "count": "150+ modifications documentées"
+    },
+    "maintenance": {
+      "title": "Entretien",
+      "desc": "Intervalles d'entretien, points de défaillance courants, guides DIY et références de pièces. Tout pour garder votre roadster sur la route.",
+      "count": "Par génération · Étape par étape"
+    },
+    "motorsport": {
+      "title": "Motorsport",
+      "desc": "Spec Miata, Global MX-5 Cup, préparations autocross et track day. L'héritage racing du MX-5 documenté.",
+      "count": "Séries de course · Guides de préparation"
+    }
+  },
+  "search": {
+    "heading": "Trouvez tout sur le MX-5",
+    "subtitle": "Recherchez dans toutes les générations, éditions, modifications et guides",
+    "placeholder": "Rechercher Miatapedia... (ex. 'rapports de pont NA8', 'specs 30th Anniversary')",
+    "hints": {
+      "na_vs_nb": "Différences NA vs NB",
+      "torsen": "LSD Torsen",
+      "mazdaspeed": "Turbo Mazdaspeed",
+      "coilovers": "Guide coilovers",
+      "engine": "1.6 vs 1.8",
+      "vin": "Décodeur VIN"
+    }
+  },
+  "footer": {
+    "tagline": "L'Encyclopédie du MX-5 — Non affilié avec Mazda Motor Corporation",
+    "subtitle": "Construit avec obsession, pas par obligation",
+    "legal": "Légal",
+    "privacy": "Confidentialité",
+    "contact": "Contact",
+    "support": "Soutenez-nous"
+  },
+  "generation_codes": {
+    "first": "Première Génération",
+    "second": "Deuxième Génération",
+    "third": "Troisième Génération",
+    "fourth": "Quatrième Génération"
+  },
+  "specs": {
+    "engine": "Moteur",
+    "power": "Puissance",
+    "weight": "Poids",
+    "acceleration": "0-100"
+  }
+}
