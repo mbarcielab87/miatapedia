@@ -119,23 +119,45 @@ export default async function GenerationsPage({ params }: GenerationsPageProps) 
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="mt-16 text-center">
-          <h2 className="font-display text-2xl font-bold mb-4">
-            Ready to find your perfect MX-5?
-          </h2>
-          <p className="text-text-secondary mb-6">
-            Check out our comprehensive buying guides for each generation
-          </p>
-          <Link
-            href={`/${params.locale}/buying-guide`}
-            className="inline-flex items-center gap-2 bg-accent-red hover:bg-accent-red/80 text-white px-6 py-3 rounded font-semibold transition-colors no-underline"
-          >
-            View Buying Guides
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </Link>
+        {/* Bottom CTAs */}
+        <div className="mt-16 space-y-12">
+          {/* Buying Guide CTA */}
+          <div className="text-center">
+            <h2 className="font-display text-2xl font-bold mb-4">
+              Ready to find your perfect MX-5?
+            </h2>
+            <p className="text-text-secondary mb-6">
+              Check out our comprehensive buying guides for each generation
+            </p>
+            <Link
+              href={`/${params.locale}/buying-guide`}
+              className="inline-flex items-center gap-2 bg-accent-red hover:bg-accent-red/80 text-white px-6 py-3 rounded font-semibold transition-colors no-underline"
+            >
+              View Buying Guides
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </div>
+
+          {/* Maintenance CTA */}
+          <div className="text-center">
+            <h2 className="font-display text-2xl font-bold mb-4">
+              Want to keep your MX-5 running perfectly?
+            </h2>
+            <p className="text-text-secondary mb-6">
+              Learn proper maintenance with our generation-specific guides
+            </p>
+            <Link
+              href={`/${params.locale}/maintenance`}
+              className="inline-flex items-center gap-2 bg-accent-gold hover:bg-accent-gold/80 text-black px-6 py-3 rounded font-semibold transition-colors no-underline"
+            >
+              View Maintenance Guides
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
