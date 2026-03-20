@@ -1,0 +1,43 @@
+[build]
+  command = "npm run build"
+  publish = "out"
+
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
+
+# i18n redirects - redirect root to default language
+[[redirects]]
+  from = "/"
+  to = "/en/"
+  status = 302
+
+# Handle SPA routing for each locale
+[[redirects]]
+  from = "/en/*"
+  to = "/en/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/es/*"
+  to = "/es/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/pt/*"
+  to = "/pt/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/de/*"
+  to = "/de/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/fr/*"
+  to = "/fr/index.html"
+  status = 200
+
+[build.environment]
+  NODE_VERSION = "18"
