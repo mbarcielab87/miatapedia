@@ -52,6 +52,14 @@ export default function Navbar({ locale, dict }: NavbarProps) {
         </li>
         <li>
           <Link
+            href={`/${locale}/manuals`}
+            className="text-text-secondary no-underline text-sm font-semibold tracking-wider uppercase transition-colors hover:text-text-primary"
+          >
+            {dict.nav.manuals}
+          </Link>
+        </li>
+        <li>
+          <Link
             href={`/${locale}/shops`}
             className="text-text-secondary no-underline text-sm font-semibold tracking-wider uppercase transition-colors hover:text-text-primary"
           >
