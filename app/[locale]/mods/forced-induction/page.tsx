@@ -105,7 +105,7 @@ export default async function ForcedInductionModsPage({ params }: ForcedInductio
               <div className="bg-accent-blue/10 rounded p-4">
                 <h5 className="text-accent-blue font-medium mb-1">Best For:</h5>
                 <p className="text-text-secondary text-xs">
-                  Maximum power builds, track cars, those who don't mind complexity
+                  Maximum power builds, track cars, those who don&apos;t mind complexity
                 </p>
               </div>
             </div>
@@ -159,7 +159,7 @@ export default async function ForcedInductionModsPage({ params }: ForcedInductio
               <h3 className="font-display text-2xl font-bold mb-4 text-accent-blue">Turbocharger Kits</h3>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-bg-card border border-border rounded-lg p-6">
-                  <h4 className="font-display text-lg font-bold mb-3 text-accent-blue">Flyin' Miata FM2 Turbo</h4>
+                  <h4 className="font-display text-lg font-bold mb-3 text-accent-blue">Flyin&apos; Miata FM2 Turbo</h4>
                   <div className="space-y-3 text-sm">
                     <div>
                       <strong className="text-text-primary">Power:</strong>
@@ -247,7 +247,7 @@ export default async function ForcedInductionModsPage({ params }: ForcedInductio
                   <div className="space-y-3 text-sm">
                     <div>
                       <strong className="text-text-primary">Power:</strong>
-                      <span className="text-text-secondary"> 200-400HP+ (sky's the limit)</span>
+                      <span className="text-text-secondary"> 200-400HP+ (sky&apos;s the limit)</span>
                     </div>
                     <div>
                       <strong className="text-text-primary">Price:</strong>
@@ -277,7 +277,7 @@ export default async function ForcedInductionModsPage({ params }: ForcedInductio
               <h3 className="font-display text-2xl font-bold mb-4 text-accent-gold">Supercharger Kits</h3>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-bg-card border border-border rounded-lg p-6">
-                  <h4 className="font-display text-lg font-bold mb-3 text-accent-gold">Flyin' Miata CARB Legal SC</h4>
+                  <h4 className="font-display text-lg font-bold mb-3 text-accent-gold">Flyin&apos; Miata CARB Legal SC</h4>
                   <div className="space-y-3 text-sm">
                     <div>
                       <strong className="text-text-primary">Power:</strong>
@@ -610,7 +610,7 @@ export default async function ForcedInductionModsPage({ params }: ForcedInductio
                 <li className="flex gap-3">
                   <span className="text-accent-red font-bold">⚠</span>
                   <div>
-                    <strong className="text-text-primary">Cheap ECU tune</strong> - Generic maps don't work for FI
+                    <strong className="text-text-primary">Cheap ECU tune</strong> - Generic maps don&apos;t work for FI
                   </div>
                 </li>
                 <li className="flex gap-3">

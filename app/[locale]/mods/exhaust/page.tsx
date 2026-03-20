@@ -505,7 +505,7 @@ export default async function ExhaustModsPage({ params }: ExhaustModsPageProps) 
                   Sound can vary significantly between generations due to engine differences.
                 </p>
                 <div className="text-xs text-accent-blue font-medium">
-                  Popular search terms: "[Brand] [Generation] exhaust sound"
+                  Popular search terms: &quot;[Brand] [Generation] exhaust sound&quot;
                 </div>
               </div>
             </div>

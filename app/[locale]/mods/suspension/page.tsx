@@ -32,7 +32,7 @@ export default async function SuspensionModsPage({ params }: SuspensionModsPageP
           </div>
           <p className="text-text-secondary text-lg max-w-3xl leading-relaxed">
             The foundation of any good MX-5 build starts with suspension. From budget-friendly sway bars
-            to full coilover setups, discover how to transform your car's handling and cornering ability.
+            to full coilover setups, discover how to transform your car&apos;s handling and cornering ability.
           </p>
         </div>
 
@@ -72,7 +72,7 @@ export default async function SuspensionModsPage({ params }: SuspensionModsPageP
               <div className="space-y-2 text-xs">
                 <div><strong>Price:</strong> $150-400</div>
                 <div><strong>Install:</strong> 2-4 hours</div>
-                <div><strong>Brands:</strong> Flyin' Miata, Racing Beat, Whiteline</div>
+                <div><strong>Brands:</strong> Flyin&apos; Miata, Racing Beat, Whiteline</div>
               </div>
             </div>
 
@@ -414,10 +414,10 @@ export default async function SuspensionModsPage({ params }: SuspensionModsPageP
         {/* Bottom CTA */}
         <div className="text-center">
           <h2 className="font-display text-2xl font-bold mb-4">
-            Transform Your MX-5's Handling
+            Transform Your MX-5&apos;s Handling
           </h2>
           <p className="text-text-secondary mb-6 max-w-2xl mx-auto">
-            Suspension modifications provide the biggest improvement to your MX-5's driving experience.
+            Suspension modifications provide the biggest improvement to your MX-5&apos;s driving experience.
             Start with sway bars and work your way up to a full coilover setup.
           </p>
           <div className="flex flex-wrap justify-center gap-4">

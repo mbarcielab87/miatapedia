@@ -32,7 +32,7 @@ export default async function EngineSwapsModsPage({ params }: EngineSwapsModsPag
           </div>
           <p className="text-text-secondary text-lg max-w-3xl leading-relaxed">
             The ultimate MX-5 modification. From Honda K-series to American V8s, engine swaps
-            completely transform your car's character and capability. Here's your guide to the most popular swaps.
+            completely transform your car&apos;s character and capability. Here&apos;s your guide to the most popular swaps.
           </p>
         </div>
 
@@ -165,7 +165,7 @@ export default async function EngineSwapsModsPage({ params }: EngineSwapsModsPag
                 <h4 className="font-medium text-text-primary mb-3">Kit Providers</h4>
                 <div className="grid md:grid-cols-3 gap-4 text-sm">
                   <div className="bg-bg-primary rounded p-3">
-                    <h5 className="text-accent-red font-medium">Flyin' Miata</h5>
+                    <h5 className="text-accent-red font-medium">Flyin&apos; Miata</h5>
                     <p className="text-text-secondary text-xs">Complete LS swap packages, excellent support</p>
                   </div>
                   <div className="bg-bg-primary rounded p-3">
@@ -249,7 +249,7 @@ export default async function EngineSwapsModsPage({ params }: EngineSwapsModsPag
                 <span className="text-4xl">🔺</span>
                 <div>
                   <h3 className="font-display text-2xl font-bold text-accent-gold">Rotary Swaps</h3>
-                  <p className="text-text-secondary">Mazda's rotary heritage meets the MX-5 platform</p>
+                  <p className="text-text-secondary">Mazda&apos;s rotary heritage meets the MX-5 platform</p>
                 </div>
               </div>
 
@@ -423,7 +423,7 @@ export default async function EngineSwapsModsPage({ params }: EngineSwapsModsPag
                 <li className="flex gap-3">
                   <span className="text-accent-red font-bold">⚠</span>
                   <div>
-                    <strong className="text-text-primary">Scope creep</strong> - "While I'm at it..." syndrome
+                    <strong className="text-text-primary">Scope creep</strong> - &quot;While I&apos;m at it...&quot; syndrome
                   </div>
                 </li>
               </ul>
@@ -537,7 +537,7 @@ export default async function EngineSwapsModsPage({ params }: EngineSwapsModsPag
                 <div>
                   <strong className="text-text-primary">Emissions Compliance:</strong>
                   <p className="text-text-secondary text-xs mt-1">
-                    Many swaps won't pass emissions testing. Research local laws carefully.
+                    Many swaps won&apos;t pass emissions testing. Research local laws carefully.
                     Some states are more restrictive than others.
                   </p>
                 </div>
@@ -592,7 +592,7 @@ export default async function EngineSwapsModsPage({ params }: EngineSwapsModsPag
                 <div>
                   <strong className="text-text-primary">Support:</strong>
                   <p className="text-text-secondary text-xs mt-1">
-                    Join communities specific to your swap. Having others who've
+                    Join communities specific to your swap. Having others who&apos;ve
                     done the same conversion is invaluable for troubleshooting.
                   </p>
                 </div>
@@ -609,7 +609,7 @@ export default async function EngineSwapsModsPage({ params }: EngineSwapsModsPag
             <div className="bg-bg-card border border-border rounded-lg p-6">
               <h3 className="font-display text-lg font-bold mb-4 text-accent-red">LS Swap Resources</h3>
               <ul className="space-y-2 text-text-secondary text-sm">
-                <li>• <strong>Flyin' Miata Forum:</strong> LS swap section</li>
+                <li>• <strong>Flyin&apos; Miata Forum:</strong> LS swap section</li>
                 <li>• <strong>V8Miata.net:</strong> Dedicated community</li>
                 <li>• <strong>LS1Tech.com:</strong> General LS knowledge</li>
                 <li>• <strong>Facebook groups:</strong> Many regional groups</li>
@@ -644,7 +644,7 @@ export default async function EngineSwapsModsPage({ params }: EngineSwapsModsPag
             Ready for the Ultimate MX-5?
           </h2>
           <p className="text-text-secondary mb-6 max-w-2xl mx-auto">
-            Engine swaps represent the pinnacle of MX-5 modification. They're challenging, expensive,
+            Engine swaps represent the pinnacle of MX-5 modification. They&apos;re challenging, expensive,
             and time-consuming - but the results can be absolutely transformative.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
