@@ -1,6 +1,6 @@
 import type { Locale } from './config';
 
-const dictionaries = {
+const dictionaries: Record<Locale, () => Promise<any>> = {
   en: () => import('@/messages/en.json').then((module) => module.default),
   es: () => import('@/messages/es.json').then((module) => module.default),
   pt: () => import('@/messages/pt.json').then((module) => module.default),
@@ -9,5 +9,10 @@ const dictionaries = {
 };
 
 export const getDictionary = async (locale: Locale) => {
-  return dictionaries[locale]();
+  const dictFn = dictionaries[locale];
+  if (!dictFn) {
+    console.error(`Dictionary for locale ${locale} not found, falling back to en`);
+    return dictionaries.en();
+  }
+  return dictFn();
 };
