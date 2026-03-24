@@ -93,7 +93,7 @@ export default async function BuyingGuidePage({ params }: BuyingGuidePageProps) 
               Detailed Content Coming Soon
             </h2>
             <p className="text-text-secondary mb-6">
-              We're working on comprehensive buying guides for each generation with detailed information about what to look for, common issues, pricing, and inspection checklists.
+              We&apos;re working on comprehensive buying guides for each generation with detailed information about what to look for, common issues, pricing, and inspection checklists.
             </p>
             <div className="text-sm text-text-muted">
               In the meantime, visit our main buying guide page for general MX-5 buying advice.

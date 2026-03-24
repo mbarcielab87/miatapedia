@@ -87,7 +87,7 @@
     "engine": "Motor",
     "power": "Potência",
     "weight": "Peso",
-    "acceleration": "0-100"
+    "production": "Produção"
   },
   "specialEditions": {
     "title": "Edições Especiais MX-5",

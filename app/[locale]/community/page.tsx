@@ -23,7 +23,7 @@ export default async function CommunityPage({ params }: CommunityPageProps) {
     communities.find(c => c.name === 'r/Miata'),
     communities.find(c => c.name === 'Miata.net Forum'),
     communities.find(c => c.name === 'MiataTurbo.net')
-  ].filter(Boolean);
+  ].filter((community): community is NonNullable<typeof community> => Boolean(community));
 
   return (
     <div className="min-h-screen px-6 lg:px-12 py-12">
@@ -119,7 +119,7 @@ export default async function CommunityPage({ params }: CommunityPageProps) {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-accent-blue mt-1">•</span>
-                  <span><strong>Buying Advice:</strong> Regional forums or r/Miata's weekly threads</span>
+                  <span><strong>Buying Advice:</strong> Regional forums or r/Miata&apos;s weekly threads</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-accent-blue mt-1">•</span>
@@ -193,7 +193,7 @@ export default async function CommunityPage({ params }: CommunityPageProps) {
                 <ul className="space-y-2 text-text-secondary text-sm">
                   <li className="flex items-start gap-2">
                     <span className="text-accent-red">•</span>
-                    <span><strong>Vague titles:</strong> "Help!" or "Question about my Miata"</span>
+                    <span><strong>Vague titles:</strong> &quot;Help!&quot; or &quot;Question about my Miata&quot;</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-accent-red">•</span>

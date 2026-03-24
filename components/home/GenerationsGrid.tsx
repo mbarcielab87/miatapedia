@@ -45,19 +45,19 @@ export default function GenerationsGrid({ locale, dict }: GenerationsGridProps) 
               <div className="flex flex-col gap-1.5">
                 <div className="flex justify-between text-sm text-text-secondary py-1.5 border-b border-border">
                   <span>{dict.specs.engine}</span>
-                  <span className="text-text-primary font-semibold">{gen.engine}</span>
+                  <span className="text-text-primary font-semibold">{gen.specs.engine}</span>
                 </div>
                 <div className="flex justify-between text-sm text-text-secondary py-1.5 border-b border-border">
                   <span>{dict.specs.power}</span>
-                  <span className="text-text-primary font-semibold">{gen.power}</span>
+                  <span className="text-text-primary font-semibold">{gen.specs.power}</span>
                 </div>
                 <div className="flex justify-between text-sm text-text-secondary py-1.5 border-b border-border">
                   <span>{dict.specs.weight}</span>
-                  <span className="text-text-primary font-semibold">{gen.weight}</span>
+                  <span className="text-text-primary font-semibold">{gen.specs.weight}</span>
                 </div>
                 <div className="flex justify-between text-sm text-text-secondary py-1.5 border-b border-border">
-                  <span>{dict.specs.acceleration}</span>
-                  <span className="text-text-primary font-semibold">{gen.acceleration}</span>
+                  <span>{dict.specs.production}</span>
+                  <span className="text-text-primary font-semibold">{gen.specs.production}</span>
                 </div>
               </div>
             </Link>

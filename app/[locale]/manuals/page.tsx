@@ -23,7 +23,7 @@ export default async function ManualsPage({ params }: ManualsPageProps) {
     manuals.find(m => m.title === 'Mellens - Factory Manuals'),
     manuals.find(m => m.title === 'MX5Manual (ND)'),
     manuals.find(m => m.title === '1990 Workshop Manual')
-  ].filter(Boolean);
+  ].filter((manual): manual is NonNullable<typeof manual> => Boolean(manual));
 
   return (
     <div className="min-h-screen px-6 lg:px-12 py-12">

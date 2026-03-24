@@ -39,11 +39,11 @@ function buildSearchIndex(): SearchResult[] {
   specialEditions.forEach(edition => {
     searchData.push({
       id: `edition-${edition.slug}`,
-      title: `${edition.name} (${edition.year})`,
-      description: `${edition.name} special edition MX-5 from ${edition.year}. ${edition.generation} generation limited production model.`,
+      title: `${edition.title.en} (${edition.year})`,
+      description: `${edition.title.en} special edition MX-5 from ${edition.year}. ${edition.generation} generation limited production model.`,
       url: `/en/special-editions/${edition.slug}`,
       category: 'Special Edition',
-      tags: [edition.name, edition.year.toString(), edition.generation, 'special', 'limited', 'edition'],
+      tags: [edition.title.en, edition.year.toString(), edition.generation, 'special', 'limited', 'edition'],
       generation: edition.generation
     });
   });

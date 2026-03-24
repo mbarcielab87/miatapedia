@@ -30,7 +30,7 @@ export default async function SearchPage({ params, searchParams }: SearchPagePro
           </h1>
           {query ? (
             <p className="text-text-secondary text-lg">
-              Showing results for <span className="text-accent-gold font-semibold">"{query}"</span>
+              Showing results for <span className="text-accent-gold font-semibold">&quot;{query}&quot;</span>
             </p>
           ) : (
             <p className="text-text-secondary text-lg max-w-3xl leading-relaxed">

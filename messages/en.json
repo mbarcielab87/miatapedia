@@ -87,7 +87,7 @@
     "engine": "Engine",
     "power": "Power",
     "weight": "Weight",
-    "acceleration": "0-100"
+    "production": "Production"
   },
   "specialEditions": {
     "title": "MX-5 Special Editions",
