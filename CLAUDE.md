@@ -9,8 +9,40 @@
 Build "Miatapedia" — a multilingual encyclopedia website about the Mazda MX-5 / Miata / Eunos Roadster.
 This is a COMPLETE REBUILD of miatapedia.info. The previous version had critical i18n routing issues, no original content, inflated stats, no SEO, and no monetization infrastructure.
 
-**Stack:** Next.js 14+ (App Router), TypeScript, Tailwind CSS, MDX for content, deployed to Cloudflare Pages.
+**Stack:** Next.js 14+ (App Router), TypeScript, Tailwind CSS, MDX for content, deployed to Netlify.
 **Domain:** miatapedia.info (existing)
+
+---
+
+## ⚠️ IMPORTANT: GIT BRANCH MANAGEMENT
+
+**CRITICAL:** All development work must be done on the `master` branch.
+
+**Deployment Configuration:**
+- **Platform:** Netlify (not Cloudflare Pages)
+- **Deploy Branch:** `master`
+- **Build Command:** `npm run build`
+- **Publish Directory:** `out`
+
+**Branch Rules:**
+- ✅ **Work on:** `master` branch
+- ✅ **Push to:** `origin master`
+- ✅ **Netlify deploys from:** `master`
+- ❌ **DO NOT use:** `main` branch (causes deployment issues)
+
+**Git Commands:**
+```bash
+# Always work on master
+git checkout master
+
+# Push changes to master
+git push origin master
+
+# If accidentally on main, sync to master:
+git push origin main:master
+```
+
+**Why this matters:** Netlify is configured to deploy from `master`. If you work on `main`, your changes won't be deployed, causing persistent build errors even if your local build passes.
 
 ---
 
@@ -780,3 +812,74 @@ Create these pages with REAL original content (not just links):
 - **Deployment Policy:** Only deploy when explicitly authorized with "subelo" command
 - **Local Testing:** All new features tested in local development environment
 - **Auto-deployment:** Some changes deployed automatically - will require explicit authorization going forward
+
+---
+
+## 🔧 CRITICAL ISSUE RESOLVED - March 24, 2026
+
+### 🚨 **Problem:** About Page 404 Error in Production
+
+**Symptom:** About page showed black screen/404 error in production despite working perfectly in local development.
+
+**Root Cause Discovery:**
+1. **Initial assumption:** ESLint quote escaping errors preventing build
+2. **Multiple failed attempts:** Fixed ESLint errors in multiple files
+3. **Build verification:** Local builds passed, but production still failed
+4. **ACTUAL ROOT CAUSE:** Branch mismatch between development and deployment
+
+### 🔍 **Technical Analysis:**
+
+**The Issue:**
+- **Local Development:** Working on `main` branch with all fixes
+- **Netlify Deployment:** Configured to deploy from `master` branch
+- **Result:** Production used old code without ESLint fixes, causing persistent build failures
+
+**Evidence:**
+```bash
+# Local main branch (latest)
+git log --oneline -3
+9460910 Clean up repository: Remove unnecessary files and dependencies
+4a36489 Remove problematic quotes to fix persistent ESLint build errors
+10cf5ab Fix remaining ESLint quote escaping errors with HTML entities
+
+# Remote master branch (outdated)
+git log --oneline -3 origin/master
+3c7b2f7 Complete Phase 2 Items #6-7: Community & Technical Manuals sections
+226fad0 Fix Shops page errors and add Shops to navigation menu
+25ef30b Enhance MX-5 Shops Directory with comprehensive features and content
+```
+
+### ✅ **Solution Applied:**
+
+**Branch Synchronization:**
+```bash
+git push origin main:master
+# Result: 3c7b2f7..9460910  main -> master
+```
+
+**Configuration Update:**
+- Updated CLAUDE.md to specify `master` as working branch
+- Added git branch management section
+- Documented Netlify deployment configuration
+
+### 📝 **Key Learnings:**
+
+1. **Always verify deployment branch configuration**
+2. **Local build success ≠ Production build success** if branches differ
+3. **ESLint errors were real but on wrong branch**
+4. **Branch naming conventions matter for CI/CD**
+
+### 🛠️ **Files Modified in Resolution:**
+- `app/[locale]/community/page.tsx` - Fixed ESLint quote errors
+- `app/[locale]/about/page.tsx` - Added deployment comments
+- `package.json` - Removed unused flexsearch dependency
+- `CLAUDE.md` - Added branch management documentation
+
+### 🎯 **Current Status:**
+- ✅ All ESLint errors resolved
+- ✅ Branch synchronization complete
+- ✅ Repository cleanup completed
+- ✅ Documentation updated
+- 🔄 Production deployment should now succeed
+
+**Future Development:** Always work on `master` branch to avoid this issue.
