@@ -10,6 +10,7 @@ interface AboutPageProps {
 export default async function AboutPage({ params }: AboutPageProps) {
   const { locale } = await params;
   const dict = await getDictionary(locale);
+  // Force rebuild for production deployment
 
   // Get current year for copyright
   const currentYear = new Date().getFullYear();
