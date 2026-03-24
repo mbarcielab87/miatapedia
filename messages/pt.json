@@ -9,7 +9,6 @@
     "shops": "Lojas",
     "clubs": "Clubes",
     "community": "Comunidade",
-    "events": "Eventos",
     "about": "Sobre",
     "search": "Buscar"
   },
@@ -83,10 +82,206 @@
     "third": "Terceira Geração",
     "fourth": "Quarta Geração"
   },
+  "generation_label": "Geração",
   "specs": {
     "engine": "Motor",
     "power": "Potência",
     "weight": "Peso",
     "acceleration": "0-100"
+  },
+  "specialEditions": {
+    "title": "Edições Especiais MX-5",
+    "description": "Do icônico British Racing Green ao ultra-raro 100° Aniversário, explore as edições especiais MX-5 mais cobiçadas que capturaram corações de entusiastas por mais de três décadas.",
+    "stats": {
+      "totalSpecialEditions": "Total Edições Especiais",
+      "yearsSpanning": "Anos Abrangendo",
+      "mostProduced": "Mais Produzida",
+      "rarestEdition": "Edição Mais Rara"
+    },
+    "iconicSpecialEditions": "Edições Especiais Icônicas",
+    "significanceAndValue": "Significado e Valor",
+    "examples": "Exemplos",
+    "editionCategories": "Categorias de Edição",
+    "collectorsGuide": "Guia do Colecionador",
+    "investmentPotential": "Potencial de Investimento",
+    "whatToLookFor": "O Que Procurar",
+    "investmentPoints": {
+      "ultraRare": "Edições ultra-raras: 100° Aniversário, Mazdaspeed apreciando rapidamente",
+      "conditionIsKing": "Condição é tudo: Exemplares de baixa quilometragem sem modificação comandam preços premium",
+      "documentationMatters": "Documentação importa: Adesivos de janela originais e certificados agregam valor"
+    },
+    "lookForPoints": {
+      "authenticity": "Autenticidade: Verificar VIN, folhas de construção e recursos de edição especial",
+      "originality": "Originalidade: Exemplares sem modificação com tinta e interior originais",
+      "serviceHistory": "Histórico de serviço: Registros completos de manutenção e cuidado regular"
+    },
+    "collectorTip": "Dica do Colecionador:",
+    "collectorTipText": "As edições especiais representam o pico da exclusividade e engenharia do MX-5. Cada uma conta uma história única da inovação da Mazda e o impacto cultural do MX-5. Escolha baseado em conexão pessoal, raridade e potencial de apreciação a longo prazo.",
+    "significance": "Significado",
+    "currentMarketValue": "Valor Atual de Mercado",
+    "pricingVaries": "O preço varia baseado na condição, quilometragem e originalidade",
+    "exploreMore": "Explorar Mais Edições Especiais",
+    "discoverComplete": "Descubra a história completa das edições especiais MX-5 e suas histórias únicas",
+    "viewAllSpecialEditions": "Ver Todas as Edições Especiais",
+    "historicalContext": {
+      "title": "O Legado das Edições Especiais",
+      "description": "As edições especiais representam a celebração da Mazda do apelo duradouro e significado cultural do MX-5. Cada edição conta uma história de inovação, comemoração ou orgulho regional, tornando-as altamente procuradas por colecionadores e entusiastas mundialmente."
+    }
+  },
+  "common": {
+    "units": "unidades",
+    "keyFeatures": "Características Principais",
+    "more": "mais",
+    "readMore": "Ler Mais",
+    "home": "Início"
+  },
+  "buyingGuide": {
+    "title": "Guia de Compra MX-5",
+    "subtitle": "Guias completos de compra para cada geração do MX-5. Aprenda o que procurar, problemas comuns, expectativas de preço e obtenha conselhos especializados para encontrar o seu Miata perfeito.",
+    "stats": {
+      "priceRange": "Faixa de Preços",
+      "generationGuides": "Guias por Geração",
+      "yearsCovered": "Anos Cobertos",
+      "carsToChoose": "Carros para Escolher"
+    },
+    "quickStart": {
+      "title": "Início Rápido: Qual Geração para Você?",
+      "firstTimeBuyer": "Comprador Iniciante?",
+      "priorities": "Prioridades?",
+      "universalTips": "Dicas Universais de Compra MX-5",
+      "essentialChecks": "Verificações Essenciais",
+      "redFlags": "Sinais de Alerta",
+      "bestValue": "Melhor Valor"
+    },
+    "budgetGuide": {
+      "under10k": "Orçamento abaixo de $10k:",
+      "na": "NA (1989-1997) - Charme clássico",
+      "budget1020k": "Orçamento $10-20k:",
+      "nb": "NB (1998-2005) - Confiabilidade moderna",
+      "budget2030k": "Orçamento $20-30k:",
+      "nc": "NC (2005-2015) - Conforto e teto rígido",
+      "budget30plus": "Orçamento $30k+:",
+      "nd": "ND (2015+) - O último e melhor"
+    },
+    "prioritiesGuide": {
+      "pureExperience": "Experiência de condução pura:",
+      "naManual": "NA com tudo manual",
+      "dailyDriver": "Conforto para uso diário:",
+      "ncNd": "NC ou ND com recursos modernos",
+      "trackAutocross": "Pista/autocross:",
+      "naNbWeight": "NA/NB pelo peso, ND pela rigidez",
+      "modPotential": "Potencial de modificação:",
+      "naNbAftermarket": "NA/NB enorme mercado de acessórios"
+    },
+    "checksList": {
+      "serviceHistory": "Documentação do histórico de serviço",
+      "rustInspection": "Inspeção de ferrugem (especialmente traseira)",
+      "softTopCondition": "Condição da capota mole",
+      "transmissionFeel": "Sensação da transmissão"
+    },
+    "redFlagsList": {
+      "missingRecords": "Registros de manutenção faltando",
+      "rustBubbles": "Bolhas de ferrugem ou remendos",
+      "harshShifting": "Mudanças bruscas ou rangido",
+      "extensiveMods": "Modificações extensas"
+    },
+    "bestValueList": {
+      "higherMileage": "Maior quilometragem com histórico de serviço",
+      "manualPreferred": "Transmissão manual preferida",
+      "avoidDamage": "Evitar danos de acidente",
+      "maintenanceCosts": "Considerar custos futuros de manutenção"
+    },
+    "generationSpecific": "Guias Específicos por Geração",
+    "marketInsights": "Perspectivas Atuais do Mercado",
+    "risingValues": {
+      "title": "Valores em Alta",
+      "description": "Exemplares limpos NA e NB estão se valorizando. Carros de baixa quilometragem e originais exigem preços premium.",
+      "trend": "+15% ano a ano"
+    },
+    "bestValues": {
+      "title": "Melhores Valores",
+      "description": "A geração NC oferece recursos modernos a preços razoáveis. Modelos PRHT são particularmente atraentes.",
+      "range": "Ponto doce $15-25k"
+    },
+    "avoid": {
+      "title": "Evitar",
+      "description": "Exemplares de alta quilometragem sem histórico de serviço, modificações extensas ou problemas de ferrugem.",
+      "advice": "Economize para melhores exemplares"
+    },
+    "readyToDive": "Pronto para mergulhar mais fundo?",
+    "eachGenerationUnique": "Cada geração tem características únicas, problemas comuns e considerações de preço. Escolha sua geração abaixo para conselhos detalhados de compra.",
+    "buyingGuideLabel": "Guia de Compra",
+    "guideLabel": "Guia",
+    "generationDescriptions": {
+      "NA": "O clássico. Perfeito para entusiastas que querem a experiência pura do roadster com faróis pop-up icônicos.",
+      "NB": "O ponto ideal. Mais refinado que o NA com conveniências modernas, excelente suporte de aftermarket.",
+      "NC": "A escolha prática. Segurança contemporânea, teto rígido opcional, confortável para uso diário.",
+      "ND": "A última evolução. Tecnologia moderna encontra o DNA clássico do MX-5 com excelente qualidade de construção."
+    },
+    "priceRanges": {
+      "NA": "$3K-$15K",
+      "NB": "$6K-$20K",
+      "NC": "$12K-$28K",
+      "ND": "$20K-$45K"
+    },
+    "bestFor": {
+      "NA": "Puristas",
+      "NB": "Iniciantes",
+      "NC": "Uso diário",
+      "ND": "Recursos modernos"
+    },
+    "priceRangeLabel": "Faixa de Preço",
+    "bestForLabel": "Melhor para",
+    "learnMore": "Saber Mais",
+    "generationGuideLabel": "Guia de Geração",
+    "completeInformation": "Informação completa do {generation}"
+  },
+  "mods": {
+    "title": "Modificações MX-5",
+    "subtitle": "Transforme o seu MX-5 com modificações comprovadas. De simples bolt-ons a swaps completos de motor, descubra as melhores melhorias para cada nível de habilidade e orçamento.",
+    "stats": {
+      "startingPrice": "Preço Inicial",
+      "mainCategories": "Categorias Principais",
+      "popularMods": "Mods Populares",
+      "maxPotential": "Potencial Máximo"
+    },
+    "whereToStart": "Por onde começar?",
+    "beginner": "Iniciante",
+    "intermediate": "Intermediário",
+    "advanced": "Avançado",
+    "modificationPlanning": "Dicas de Planejamento de Modificações",
+    "buildPhilosophy": "Filosofia de Construção",
+    "budgetWisely": "Orçamento Inteligente",
+    "installation": "Instalação",
+    "modificationCategories": "Categorias de Modificação",
+    "generationCompatibility": "Compatibilidade por Geração",
+    "popularBuilds": "Temas de Construção Populares",
+    "trackDayHero": "Herói do Track Day",
+    "streetWeapon": "Arma de Rua",
+    "ultimateBuild": "Construção Definitiva",
+    "readyToModify": "Pronto para modificar o seu MX-5?",
+    "chooseCategory": "Escolha sua categoria de modificação abaixo para guias detalhados, recomendações de peças e dicas de instalação da comunidade.",
+    "categories": {
+      "suspension": {
+        "title": "Modificações de Suspensão",
+        "description": "Coilovers, barras estabilizadoras, barras de torção e reforço de chassi para melhor manuseio e curvas.",
+        "difficulty": "Intermediário"
+      },
+      "exhaust": {
+        "title": "Sistemas de Escape",
+        "description": "Escapes cat-back, headers e sistemas completos para melhor som e ganhos de performance.",
+        "difficulty": "Iniciante"
+      },
+      "forcedInduction": {
+        "title": "Indução Forçada",
+        "description": "Kits turbocompressor e supercompressor para ganhos significativos de potência e performance aprimorada.",
+        "difficulty": "Especialista"
+      },
+      "engineSwaps": {
+        "title": "Swaps de Motor",
+        "description": "Swaps LS V8, Honda série-K e rotativo para máxima potência e caráter único.",
+        "difficulty": "Especialista"
+      }
+    }
   }
 }

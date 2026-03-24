@@ -268,10 +268,10 @@ export default async function CommunityPage({ params }: CommunityPageProps) {
                 </svg>
               </Link>
               <Link
-                href={`/${locale}/events`}
+                href={`/${locale}/shops`}
                 className="inline-flex items-center gap-2 bg-accent-gold hover:bg-accent-gold/80 text-black px-6 py-3 rounded font-semibold transition-colors no-underline"
               >
-                Browse Events
+                Browse Shops
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>

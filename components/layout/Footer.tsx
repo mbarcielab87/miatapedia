@@ -76,8 +76,8 @@ export default function Footer({ locale, dict }: FooterProps) {
                 </Link>
               </li>
               <li>
-                <Link href={`/${locale}/events`} className="text-text-secondary hover:text-accent-gold transition-colors">
-                  {dict.nav.events}
+                <Link href={`/${locale}/community`} className="text-text-secondary hover:text-accent-gold transition-colors">
+                  {dict.nav.community}
                 </Link>
               </li>
             </ul>

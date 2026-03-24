@@ -27,7 +27,7 @@ export default function EditionsTicker({ locale, dict }: EditionsTickerProps) {
             >
               <span className="font-mono text-xs text-accent-gold">{edition.year}</span>
               <span className="font-display text-base font-semibold text-text-primary">
-                {edition.name}
+                {edition.title[locale]}
               </span>
               <span className="font-mono text-[10px] text-text-muted uppercase tracking-wide">
                 {edition.generation}

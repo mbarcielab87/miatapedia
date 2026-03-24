@@ -13,10 +13,10 @@ export default async function ModsPage({ params }: ModsPageProps) {
   const modCategories = [
     {
       slug: 'suspension',
-      title: 'Suspension Mods',
-      description: 'Coilovers, sway bars, strut bars, and chassis reinforcement for improved handling and cornering.',
+      title: dict.mods.categories.suspension.title,
+      description: dict.mods.categories.suspension.description,
       icon: '🏁',
-      difficulty: 'Intermediate',
+      difficulty: dict.mods.categories.suspension.difficulty,
       priceRange: '$300-$3000',
       accentClass: 'bg-accent-blue',
       borderClass: 'border-accent-blue',
@@ -24,10 +24,10 @@ export default async function ModsPage({ params }: ModsPageProps) {
     },
     {
       slug: 'exhaust',
-      title: 'Exhaust Systems',
-      description: 'Cat-back exhausts, headers, and complete systems for improved sound and performance gains.',
+      title: dict.mods.categories.exhaust.title,
+      description: dict.mods.categories.exhaust.description,
       icon: '🔥',
-      difficulty: 'Beginner',
+      difficulty: dict.mods.categories.exhaust.difficulty,
       priceRange: '$200-$2000',
       accentClass: 'bg-accent-red',
       borderClass: 'border-accent-red',
@@ -35,10 +35,10 @@ export default async function ModsPage({ params }: ModsPageProps) {
     },
     {
       slug: 'forced-induction',
-      title: 'Forced Induction',
-      description: 'Turbocharger and supercharger kits for significant horsepower gains and enhanced performance.',
+      title: dict.mods.categories.forcedInduction.title,
+      description: dict.mods.categories.forcedInduction.description,
       icon: '⚡',
-      difficulty: 'Expert',
+      difficulty: dict.mods.categories.forcedInduction.difficulty,
       priceRange: '$3000-$8000',
       accentClass: 'bg-accent-gold',
       borderClass: 'border-accent-gold',
@@ -46,10 +46,10 @@ export default async function ModsPage({ params }: ModsPageProps) {
     },
     {
       slug: 'engine-swaps',
-      title: 'Engine Swaps',
-      description: 'LS V8, Honda K-series, and rotary swaps for maximum power and unique character.',
+      title: dict.mods.categories.engineSwaps.title,
+      description: dict.mods.categories.engineSwaps.description,
       icon: '🚀',
-      difficulty: 'Expert',
+      difficulty: dict.mods.categories.engineSwaps.difficulty,
       priceRange: '$5000-$20000',
       accentClass: 'bg-accent-green',
       borderClass: 'border-accent-green',
@@ -62,14 +62,13 @@ export default async function ModsPage({ params }: ModsPageProps) {
       <div className="max-w-7xl mx-auto">
         <Breadcrumbs
           locale={params.locale}
-          items={[{ label: 'Modifications', href: `/${params.locale}/mods` }]}
+          items={[{ label: dict.nav.mods, href: `/${params.locale}/mods` }]}
         />
 
         <div className="mb-12">
-          <h1 className="font-display text-6xl font-black mb-4">MX-5 Modifications</h1>
+          <h1 className="font-display text-6xl font-black mb-4">{dict.mods.title}</h1>
           <p className="text-text-secondary text-lg max-w-3xl leading-relaxed">
-            Transform your MX-5 with proven modifications. From simple bolt-ons to complete engine swaps,
-            discover the best upgrades for every skill level and budget.
+            {dict.mods.subtitle}
           </p>
         </div>
 
@@ -77,29 +76,29 @@ export default async function ModsPage({ params }: ModsPageProps) {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 pb-12 border-b border-border">
           <div className="text-center">
             <div className="font-display text-3xl font-bold text-accent-red">$200+</div>
-            <div className="font-mono text-xs text-text-muted uppercase tracking-wider">Starting Price</div>
+            <div className="font-mono text-xs text-text-muted uppercase tracking-wider">{dict.mods.stats.startingPrice}</div>
           </div>
           <div className="text-center">
             <div className="font-display text-3xl font-bold text-accent-gold">4</div>
-            <div className="font-mono text-xs text-text-muted uppercase tracking-wider">Main Categories</div>
+            <div className="font-mono text-xs text-text-muted uppercase tracking-wider">{dict.mods.stats.mainCategories}</div>
           </div>
           <div className="text-center">
             <div className="font-display text-3xl font-bold text-accent-blue">50+</div>
-            <div className="font-mono text-xs text-text-muted uppercase tracking-wider">Popular Mods</div>
+            <div className="font-mono text-xs text-text-muted uppercase tracking-wider">{dict.mods.stats.popularMods}</div>
           </div>
           <div className="text-center">
             <div className="font-display text-3xl font-bold text-accent-green">600HP</div>
-            <div className="font-mono text-xs text-text-muted uppercase tracking-wider">Max Potential</div>
+            <div className="font-mono text-xs text-text-muted uppercase tracking-wider">{dict.mods.stats.maxPotential}</div>
           </div>
         </div>
 
         {/* Quick Guide */}
         <section className="mb-12">
-          <h2 className="font-display text-3xl font-bold mb-6">Where to Start?</h2>
+          <h2 className="font-display text-3xl font-bold mb-6">{dict.mods.whereToStart}</h2>
 
           <div className="grid md:grid-cols-3 gap-6 mb-8">
             <div className="bg-bg-card border border-border rounded-lg p-6">
-              <h3 className="font-display text-xl font-bold mb-4 text-accent-blue">Beginner</h3>
+              <h3 className="font-display text-xl font-bold mb-4 text-accent-blue">{dict.mods.beginner}</h3>
               <ul className="space-y-2 text-text-secondary text-sm">
                 <li>• <strong>Cold Air Intake:</strong> $150-300, easy install</li>
                 <li>• <strong>Cat-back Exhaust:</strong> $400-800, bolt-on</li>
@@ -109,7 +108,7 @@ export default async function ModsPage({ params }: ModsPageProps) {
             </div>
 
             <div className="bg-bg-card border border-border rounded-lg p-6">
-              <h3 className="font-display text-xl font-bold mb-4 text-accent-gold">Intermediate</h3>
+              <h3 className="font-display text-xl font-bold mb-4 text-accent-gold">{dict.mods.intermediate}</h3>
               <ul className="space-y-2 text-text-secondary text-sm">
                 <li>• <strong>Coilovers:</strong> $800-2000, adjustable suspension</li>
                 <li>• <strong>Header + Tune:</strong> $600-1200, power gains</li>
@@ -119,7 +118,7 @@ export default async function ModsPage({ params }: ModsPageProps) {
             </div>
 
             <div className="bg-bg-card border border-border rounded-lg p-6">
-              <h3 className="font-display text-xl font-bold mb-4 text-accent-red">Advanced</h3>
+              <h3 className="font-display text-xl font-bold mb-4 text-accent-red">{dict.mods.advanced}</h3>
               <ul className="space-y-2 text-text-secondary text-sm">
                 <li>• <strong>Turbo Kit:</strong> $3000-6000, major power</li>
                 <li>• <strong>Engine Management:</strong> $1000-3000, tuning</li>
@@ -130,10 +129,10 @@ export default async function ModsPage({ params }: ModsPageProps) {
           </div>
 
           <div className="bg-accent-gold/10 border border-accent-gold/20 rounded-lg p-6">
-            <h3 className="font-display text-lg font-bold mb-4 text-accent-gold">Modification Planning Tips</h3>
+            <h3 className="font-display text-lg font-bold mb-4 text-accent-gold">{dict.mods.modificationPlanning}</h3>
             <div className="grid md:grid-cols-3 gap-6 text-sm">
               <div>
-                <h4 className="font-medium text-text-primary mb-2">Build Philosophy</h4>
+                <h4 className="font-medium text-text-primary mb-2">{dict.mods.buildPhilosophy}</h4>
                 <ul className="space-y-1 text-text-secondary">
                   <li>• Define your goals first (street, track, show)</li>
                   <li>• Start with suspension and brakes</li>
@@ -142,7 +141,7 @@ export default async function ModsPage({ params }: ModsPageProps) {
                 </ul>
               </div>
               <div>
-                <h4 className="font-medium text-text-primary mb-2">Budget Wisely</h4>
+                <h4 className="font-medium text-text-primary mb-2">{dict.mods.budgetWisely}</h4>
                 <ul className="space-y-1 text-text-secondary">
                   <li>• Buy once, cry once - quality parts</li>
                   <li>• Factor in installation costs</li>
@@ -151,7 +150,7 @@ export default async function ModsPage({ params }: ModsPageProps) {
                 </ul>
               </div>
               <div>
-                <h4 className="font-medium text-text-primary mb-2">Installation</h4>
+                <h4 className="font-medium text-text-primary mb-2">{dict.mods.installation}</h4>
                 <ul className="space-y-1 text-text-secondary">
                   <li>• Know your skill level honestly</li>
                   <li>• Invest in proper tools</li>
@@ -165,7 +164,7 @@ export default async function ModsPage({ params }: ModsPageProps) {
 
         {/* Modification Categories */}
         <section className="mb-12">
-          <h2 className="font-display text-3xl font-bold mb-6">Modification Categories</h2>
+          <h2 className="font-display text-3xl font-bold mb-6">{dict.mods.modificationCategories}</h2>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {modCategories.map((category) => (
@@ -215,7 +214,7 @@ export default async function ModsPage({ params }: ModsPageProps) {
 
         {/* Generation Compatibility */}
         <section className="mb-12">
-          <h2 className="font-display text-3xl font-bold mb-6">Generation Compatibility</h2>
+          <h2 className="font-display text-3xl font-bold mb-6">{dict.mods.generationCompatibility}</h2>
 
           <div className="grid md:grid-cols-4 gap-6">
             <div className="bg-bg-card border border-border rounded-lg p-6">
@@ -266,11 +265,11 @@ export default async function ModsPage({ params }: ModsPageProps) {
 
         {/* Popular Builds */}
         <section className="mb-12">
-          <h2 className="font-display text-3xl font-bold mb-6">Popular Build Themes</h2>
+          <h2 className="font-display text-3xl font-bold mb-6">{dict.mods.popularBuilds}</h2>
 
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-bg-card border border-accent-blue rounded-lg p-6">
-              <h3 className="font-display text-xl font-bold mb-4 text-accent-blue">Track Day Hero</h3>
+              <h3 className="font-display text-xl font-bold mb-4 text-accent-blue">{dict.mods.trackDayHero}</h3>
               <div className="space-y-3 text-sm">
                 <div>
                   <strong className="text-text-primary">Suspension:</strong>
@@ -295,7 +294,7 @@ export default async function ModsPage({ params }: ModsPageProps) {
             </div>
 
             <div className="bg-bg-card border border-accent-red rounded-lg p-6">
-              <h3 className="font-display text-xl font-bold mb-4 text-accent-red">Street Weapon</h3>
+              <h3 className="font-display text-xl font-bold mb-4 text-accent-red">{dict.mods.streetWeapon}</h3>
               <div className="space-y-3 text-sm">
                 <div>
                   <strong className="text-text-primary">Power:</strong>
@@ -320,7 +319,7 @@ export default async function ModsPage({ params }: ModsPageProps) {
             </div>
 
             <div className="bg-bg-card border border-accent-green rounded-lg p-6">
-              <h3 className="font-display text-xl font-bold mb-4 text-accent-green">Ultimate Build</h3>
+              <h3 className="font-display text-xl font-bold mb-4 text-accent-green">{dict.mods.ultimateBuild}</h3>
               <div className="space-y-3 text-sm">
                 <div>
                   <strong className="text-text-primary">Engine:</strong>
@@ -349,11 +348,10 @@ export default async function ModsPage({ params }: ModsPageProps) {
         {/* Bottom CTA */}
         <div className="text-center">
           <h2 className="font-display text-2xl font-bold mb-4">
-            Ready to modify your MX-5?
+            {dict.mods.readyToModify}
           </h2>
           <p className="text-text-secondary mb-6 max-w-2xl mx-auto">
-            Choose your modification category below for detailed guides, part recommendations,
-            and installation tips from the community.
+            {dict.mods.chooseCategory}
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             {modCategories.map((category) => (

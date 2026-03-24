@@ -37,7 +37,7 @@ export default function GenerationsGrid({ locale, dict }: GenerationsGridProps) 
               />
 
               <div className="font-mono text-xs text-text-muted tracking-wider uppercase mb-2">
-                {dict.generation_codes.first.replace('First', gen.code === 'NA' ? 'First' : gen.code === 'NB' ? 'Second' : gen.code === 'NC' ? 'Third' : 'Fourth')}
+                {gen.code === 'NA' ? dict.generation_codes.first : gen.code === 'NB' ? dict.generation_codes.second : gen.code === 'NC' ? dict.generation_codes.third : dict.generation_codes.fourth}
               </div>
               <div className="font-display text-3xl font-bold mb-3">{gen.name}</div>
               <div className="font-mono text-sm text-accent-gold mb-5">{gen.years}</div>
