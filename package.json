@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",
-    "flexsearch": "^0.7.43",
     "fuse.js": "^7.1.0",
     "gray-matter": "^4.0.3",
     "next": "^14.2.0",
