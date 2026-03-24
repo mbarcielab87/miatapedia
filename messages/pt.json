@@ -135,6 +135,113 @@
     "readMore": "Ler Mais",
     "home": "Início"
   },
+  "about": {
+    "title": "Sobre",
+    "subtitle": "A enciclopédia definitiva para entusiastas do Mazda MX-5 / Miata / Eunos Roadster",
+    "mission": {
+      "title": "Nossa Missão",
+      "description1": "Miatapedia existe para preservar, organizar e compartilhar o conhecimento coletivo da comunidade MX-5. Acreditamos que cada informação sobre o roadster mais vendido do mundo merece ser documentada e acessível para entusiastas mundialmente.",
+      "description2": "Desde a estreia do NA original em 1989 até as últimas inovações do ND, estamos construindo o recurso mais completo sobre cada geração, edição especial, modificação e detalhe técnico."
+    },
+    "whatWeCover": {
+      "title": "O Que Cobrimos",
+      "encyclopedia": {
+        "title": "📚 Enciclopédia",
+        "items": [
+          "Histórias completas de gerações (NA, NB, NC, ND)",
+          "Documentação de edições especiais e limitadas",
+          "Especificações técnicas e variantes",
+          "Números de produção e análise de mercado"
+        ]
+      },
+      "technical": {
+        "title": "🔧 Guias Técnicos",
+        "items": [
+          "Guias de compra específicos por geração",
+          "Cronogramas e procedimentos de manutenção",
+          "Guias de modificação e compatibilidade",
+          "Coleções de manuais de serviço de fábrica"
+        ]
+      },
+      "directory": {
+        "title": "🛒 Diretório",
+        "items": [
+          "Fornecedores de peças e oficinas de performance",
+          "Clubes regionais e organizações",
+          "Comunidades online e fóruns",
+          "Bibliotecas de documentação técnica"
+        ]
+      },
+      "search": {
+        "title": "🔍 Busca",
+        "items": [
+          "Busca de conteúdo abrangente",
+          "Filtrar por geração e categoria",
+          "Sugestões de tópicos populares",
+          "Informações com referência cruzada"
+        ]
+      }
+    },
+    "values": {
+      "title": "Nossos Valores",
+      "accuracy": {
+        "title": "Precisão em Primeiro",
+        "description": "Cada especificação, número de produção e detalhe técnico é pesquisado e verificado. Não publicamos estatísticas infladas ou informações não confirmadas."
+      },
+      "global": {
+        "title": "Comunidade Global",
+        "description": "A comunidade MX-5 abrange todos os continentes. Documentamos variações regionais, clubes locais e informações específicas do mercado para servir entusiastas mundialmente."
+      },
+      "evolving": {
+        "title": "Sempre Evoluindo",
+        "description": "Miatapedia cresce continuamente. Novas edições especiais, descobertas técnicas e recursos comunitários são adicionados regularmente para manter as informações atualizadas."
+      },
+      "community": {
+        "title": "Movido pela Comunidade",
+        "description": "Construído por entusiastas, para entusiastas. Agregamos o melhor conhecimento de fóruns, especialistas técnicos e proprietários apaixonados de todo o mundo."
+      }
+    },
+    "stats": {
+      "title": "Em Números",
+      "linesOfContent": "Linhas de Conteúdo",
+      "searchableItems": "Itens Pesquisáveis",
+      "languages": "Idiomas",
+      "yearsOnline": "Anos Online"
+    },
+    "disclaimers": {
+      "title": "Informações Importantes",
+      "notAffiliated": {
+        "title": "⚠️ Não Afiliado com Mazda",
+        "description": "Miatapedia é um projeto independente de entusiastas e não é afiliado, endossado ou conectado à Mazda Motor Corporation ou qualquer de suas subsidiárias. Todas as marcas registradas Mazda, MX-5, Miata e Eunos Roadster pertencem aos seus respectivos proprietários."
+      },
+      "technical": {
+        "title": "🔧 Informações Técnicas",
+        "description": "Embora nos esforcemos pela precisão, todas as informações técnicas são fornecidas apenas para fins educacionais. Sempre consulte mecânicos profissionais e manuais de serviço oficiais para reparos e modificações. Trabalhe no seu veículo por sua própria conta e risco."
+      },
+      "commercial": {
+        "title": "🛒 Links Comerciais",
+        "description": "Nossos diretórios de lojas e fornecedores são fornecidos como serviço comunitário. Não endossamos negócios específicos nem garantimos seus serviços. Alguns links podem conter códigos de afiliação para apoiar a manutenção do site, o que não afeta os preços."
+      }
+    },
+    "contact": {
+      "title": "Contato e Suporte",
+      "getInTouch": {
+        "title": "📧 Entre em Contato",
+        "description": "Tem correções, sugestões ou quer contribuir conteúdo? Adoraríamos ouvir você.",
+        "button": "Envie-nos um Email"
+      },
+      "support": {
+        "title": "☕ Apoie o Projeto",
+        "description": "Miatapedia é gratuita e sem anúncios. Considere apoiar nossos custos de servidor e tempo de desenvolvimento.",
+        "button": "Nos Apoie"
+      }
+    },
+    "footer": {
+      "copyright": "© {year} Miatapedia. Construído com obsessão, não obrigação.",
+      "search": "Buscar",
+      "contact": "Contato"
+    }
+  },
   "buyingGuide": {
     "title": "Guia de Compra MX-5",
     "subtitle": "Guias completos de compra para cada geração do MX-5. Aprenda o que procurar, problemas comuns, expectativas de preço e obtenha conselhos especializados para encontrar o seu Miata perfeito.",
