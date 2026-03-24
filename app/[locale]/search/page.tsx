@@ -5,12 +5,12 @@ import type { Locale } from '@/lib/i18n/config';
 
 interface SearchPageProps {
   params: Promise<{ locale: Locale }>;
-  searchParams: Promise<{ q?: string }>;
 }
 
-export default async function SearchPage({ params, searchParams }: SearchPageProps) {
+export default async function SearchPage({ params }: SearchPageProps) {
   const { locale } = await params;
-  const { q: query } = await searchParams;
+  // Query will be handled client-side via URL params
+  const query = undefined;
 
   return (
     <div className="min-h-screen px-6 lg:px-12 py-12">
@@ -58,18 +58,14 @@ export default async function SearchPage({ params, searchParams }: SearchPagePro
 }
 
 // Generate metadata for search pages
-export async function generateMetadata({ searchParams }: SearchPageProps) {
-  const { q: query } = await searchParams;
-
-  if (query) {
-    return {
-      title: `Search Results: "${query}" | Miatapedia`,
-      description: `Search results for "${query}" across MX-5 generations, guides, shops, and community resources.`
-    };
-  }
+export async function generateMetadata() {
+  // Static metadata since search is client-side
+  return {
+    title: 'Search | Miatapedia',
+    description: 'Search across MX-5 generations, guides, shops, and community resources.'
+  };
 
   return {
     title: 'Search | Miatapedia',
-    description: 'Search the complete MX-5 database including generations, special editions, technical guides, shops, and community resources.'
-  };
+}
 }
